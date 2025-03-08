@@ -1,18 +1,19 @@
 version: 2.1
 orbs:
-  node: circleci/node@7.0.0
+  node: circleci/node@7.1.0
   slack: circleci/slack@5.1.1
 
 jobs:
   build:
-    docker:
-      - image: cimg/node:lts
+    executor:
+      name: node/default
     resource_class: arm.medium
     steps:
       - checkout
+      - node/install:
+          install-yarn: true
       - node/install-packages:
           pkg-manager: yarn-berry
-          override-ci-command: yarn install --immutable
       - run:
           name: Build testing site
           command: yarn build
@@ -21,14 +22,15 @@ jobs:
           template: basic_fail_1
           channel: ntf-topmonks-webs
   test:
-    docker:
-      - image: cimg/node:lts
+    executor:
+      name: node/default
     resource_class: arm.medium
     steps:
       - checkout
+      - node/install:
+          install-yarn: true
       - node/install-packages:
           pkg-manager: yarn-berry
-          override-ci-command: yarn install --immutable
       - run: yarn test
       - slack/notify:
           event: fail
