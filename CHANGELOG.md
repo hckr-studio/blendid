@@ -1,5 +1,10 @@
 # Changelog
 
+
+## 9.3.2
+
+- Improved dependency resolution for less duplicate dependencies
+
 ## 9.3.1
 
 - Updated dependencies
