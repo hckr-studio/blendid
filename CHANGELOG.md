@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.3.1
+
+- Updated dependencies
+- Improved base/reset stylesheet
+
 ## 9.3.0
 
 - Updated Vite to 6.1.0
