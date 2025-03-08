@@ -1,5 +1,8 @@
 :root {
   --main-font: system-ui, sans-serif;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
   font-size: 100%;
   color-scheme: light dark;
   interpolate-size: allow-keywords;
@@ -12,7 +15,8 @@ body {
   font-variant-ligatures: common-ligatures contextual;
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "zero";
   font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "zero";
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
@@ -42,6 +46,13 @@ sub {
 
 table {
   font-variant-numeric: tabular-nums slashed-zero;
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+  font-family: inherit;
 }
 
 @view-transition {
