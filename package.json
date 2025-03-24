@@ -1,6 +1,6 @@
 {
   "name": "@hckr_/blendid",
-  "version": "9.3.2",
+  "version": "9.3.3",
   "description": "A full featured configurable front-end asset pipeline and static site builder",
   "license": "MIT",
   "main": "gulpfile.js/index.mjs",
@@ -75,7 +75,8 @@
     "@types/undertaker": "1.2.11",
     "@types/undertaker-registry": "1.0.4",
     "chai": "5.2.0",
-    "mocha": "11.1.0"
+    "mocha": "11.2.0",
+    "sinon": "19.0.2"
   },
   "resolutions": {
     "ansi-colors": "4.1.3",

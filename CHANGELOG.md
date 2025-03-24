@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.3.3
+
+- Updated dependencies
+- Workaround for broken gulp-cli on Node 22.12+
 
 ## 9.3.2
 

@@ -7,6 +7,7 @@ const gulpModulePath = path.dirname(require.resolve("gulp"));
 const gulpBinaryFile = path.join(gulpModulePath, "/bin/gulp");
 
 const gulp = childProcess.fork(gulpBinaryFile, [
+  "--no-experimental-require-module",
   "--cwd",
   process.cwd(),
   "--gulpfile",
