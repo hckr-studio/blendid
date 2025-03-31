@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.3.4
+
+- Security update for Vite
+
 ## 9.3.3
 
 - Updated dependencies
