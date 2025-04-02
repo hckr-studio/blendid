@@ -3615,10 +3615,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdn-data@npm:2.18.0":
-  version: 2.18.0
-  resolution: "mdn-data@npm:2.18.0"
-  checksum: 10c0/575afbab317aff662b4fafd406eb6bc26a116118cbcf725b742f88294e1f8f531885d5e8b90c459155bfa69b9766dca12259478e81d9a463e56fa44a7a5aab6e
+"mdn-data@npm:2.19.0":
+  version: 2.19.0
+  resolution: "mdn-data@npm:2.19.0"
+  checksum: 10c0/c35de13dc28cd6788c18876a8b2505b3a2eada864eb474306998ce63d774cc9d6843884e191aa55e74d2cfda2a1b78b779467b5843d711a77cfc67b8b6c9478a
   languageName: node
   linkType: hard
 
