@@ -31,32 +31,40 @@ import { WatchRegistry } from "./tasks/watch.mjs";
 import { RevRegistry } from "./tasks/rev.mjs";
 import projectPath from "./lib/projectPath.mjs";
 
-const mode = gulp_mode({ verbose: new Set(process.argv).has("-LLLL") });
-const pathConfig = await getPathConfig();
+const verbose = new Set(process.argv).has("-LLLL");
+const mode = gulp_mode({ verbose });
+const pathConfig = await getPathConfig(verbose);
 logger.info("Building sources", projectPath(pathConfig.src));
 
-const taskConfig = await getTaskConfig(mode);
+const taskConfig = await getTaskConfig(mode, verbose);
 
-gulp.registry(new CleanRegistry(taskConfig.clean, pathConfig, mode));
-gulp.registry(new CloudflareRegistry(taskConfig.cloudflare, pathConfig, mode));
-gulp.registry(new CloudinaryRegistry(taskConfig.cloudinary, pathConfig, mode));
-gulp.registry(new ESBuildRegistry(taskConfig.esbuild, pathConfig, mode));
-gulp.registry(new FontsRegistry(taskConfig.fonts, pathConfig, mode));
-gulp.registry(new GenerateRegistry(taskConfig, pathConfig, mode));
-gulp.registry(new HtmlRegistry(taskConfig, pathConfig, mode));
-gulp.registry(new ImagesRegistry(taskConfig.images, pathConfig, mode));
-gulp.registry(new ImportWPRegistry(taskConfig, pathConfig, mode));
-gulp.registry(new InitRegistry(taskConfig, pathConfig, mode));
-gulp.registry(new InitConfigRegistry(taskConfig, pathConfig, mode));
-gulp.registry(new StaticRegistry(taskConfig.static, pathConfig, mode));
+gulp.registry(new CleanRegistry(taskConfig.clean, pathConfig, mode, verbose));
 gulp.registry(
-  new StyleSheetsRegistry(taskConfig.stylesheets, pathConfig, mode)
+  new CloudflareRegistry(taskConfig.cloudflare, pathConfig, mode, verbose)
+);
+gulp.registry(
+  new CloudinaryRegistry(taskConfig.cloudinary, pathConfig, mode, verbose)
+);
+gulp.registry(
+  new ESBuildRegistry(taskConfig.esbuild, pathConfig, mode, verbose)
+);
+gulp.registry(new FontsRegistry(taskConfig.fonts, pathConfig, mode, verbose));
+gulp.registry(new GenerateRegistry(taskConfig, pathConfig, mode, verbose));
+gulp.registry(new HtmlRegistry(taskConfig, pathConfig, mode, verbose));
+gulp.registry(new ImagesRegistry(taskConfig.images, pathConfig, mode, verbose));
+gulp.registry(new ImportWPRegistry(taskConfig, pathConfig, mode, verbose));
+gulp.registry(new InitRegistry(taskConfig, pathConfig, mode, verbose));
+gulp.registry(new InitConfigRegistry(taskConfig, pathConfig, mode, verbose));
+gulp.registry(new StaticRegistry(taskConfig.static, pathConfig, mode, verbose));
+gulp.registry(
+  new StyleSheetsRegistry(taskConfig.stylesheets, pathConfig, mode, verbose)
 );
 
 // Register user provided registries
 if (Array.isArray(taskConfig.registries)) {
   for (const registry of taskConfig.registries) {
     registry.mode = mode;
+    registry.verbose = verbose;
     gulp.registry(registry);
   }
 }

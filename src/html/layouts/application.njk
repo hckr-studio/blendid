@@ -1,7 +1,7 @@
 {%- from 'macros/helpers.njk' import spriteTarget -%}
 <!doctype html>
-<html lang="{{ meta.lang }}">
-<head>
+<html lang="{{ lang or meta.lang }}">
+<head prefix="{{ prefix }}">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   {% if images %}
@@ -32,7 +32,7 @@
   {% include "shared/app-icons.html" %}
   {% block head %}{% endblock %}
 </head>
-<body>
+<body {% if schemaType %}itemscope itemtype="{{ schemaType }}"{% endif %}>
 {% block content %}{% endblock %}
 {% block scripts %}{% endblock %}
 {{ spriteTarget() }}

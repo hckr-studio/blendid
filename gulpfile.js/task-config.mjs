@@ -1,5 +1,6 @@
+import { texyTypography } from "@hckr_/blendid/lib/texy.mjs";
+
 export default {
-  html: true,
   images: true,
   cloudflare: false,
   cloudinary: false,
@@ -8,6 +9,23 @@ export default {
   svgSprite: true,
   stylesheets: true,
   esbuild: true,
+
+  html: {
+    // Fixes micro-typography issues.
+    // @see {@link https://texy.info/en/syntax-full#typography} for more details
+    markedExtensions: [texyTypography("en")],
+    data: {
+      collections: [
+        // explicitly import `data/${collection}.json` files into global context for use in HTML templates
+        // you can use `generate.json` task to create JSON files from directories with markdown files
+      ]
+    }
+  },
+
+  vite: {
+    appType: "mpa",
+    browserArgs: "--ignore-certificate-errors --allow-insecure-localhost"
+  },
 
   production: {
     rev: {

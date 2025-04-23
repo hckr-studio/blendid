@@ -55,6 +55,29 @@ button {
   font-family: inherit;
 }
 
+:where(abbr[title]) {
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+:where(audio, iframe, img, svg, video) {
+  max-block-size: 100%;
+  max-inline-size: 100%;
+}
+
+:where(label):has(+:where(textarea, input, select)) {
+  display: block;
+}
+
+:where(textarea:not([rows])) {
+  min-block-size: 6em;
+}
+:where(button, input, select, textarea) {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 @view-transition {
   navigation: none;
 }

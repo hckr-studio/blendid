@@ -12,7 +12,7 @@ nvm install $(< .nvmrc)
 yarn set version berry
 echo "nodeLinker: node-modules\nenableGlobalCache: false" >> .yarnrc.yml
 yarn init
-yarn add @hckr_/blendid
+yarn add -D @hckr_/blendid
 yarn blendid init
 yarn blendid
 ```

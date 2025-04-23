@@ -57,7 +57,6 @@ const unquote = (s) =>
 export function getTaskDefaults(mode) {
   return {
     esbuild: {
-      define: { __DEVELOPMENT__: mode.development() ? "true" : "undefined" },
       extensions: ["ts", "js", "mjs"],
       options: {
         bundle: true,
@@ -70,7 +69,8 @@ export function getTaskDefaults(mode) {
         format: "esm",
         platform: "browser",
         target: ["es2024"],
-        charset: "utf8"
+        charset: "utf8",
+        define: { __DEVELOPMENT__: mode.development() ? "true" : "undefined" }
       }
     },
 
@@ -121,6 +121,9 @@ export function getTaskDefaults(mode) {
           },
           assetUrl,
           cloudinaryUrl,
+          parseUrl(input, base) {
+            return URL.parse(input, base);
+          },
           processTypography(str, locale) {
             return processTypo(str, { locale });
           }

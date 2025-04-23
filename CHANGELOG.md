@@ -1,5 +1,13 @@
 # Changelog
 
+## 9.3.5
+
+- Updated dependencies
+- Better default config when `blendid init` is used to init the project
+- WordPress import task `import-wp` can be configured via `task-config.mjs` file instead of CLI params. CLI params will override the config values when set. This enables headless CMS scenario.
+- Esbuild task supports debug logging
+- Esbuild task doesnt use incremental mode in dev that was broken
+
 ## 9.3.4
 
 - Security update for Vite

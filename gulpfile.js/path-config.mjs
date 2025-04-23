@@ -1,6 +1,6 @@
 export default {
   src: "./src",
-  dest: "./public",
+  dest: "./.blendid/public",
 
   html: {
     src: "html",
@@ -25,6 +25,11 @@ export default {
   images: {
     src: "images",
     dest: "assets/img"
+  },
+
+  cloudflare: {
+    src: "cloudflare",
+    dest: "./"
   },
 
   cloudinary: {

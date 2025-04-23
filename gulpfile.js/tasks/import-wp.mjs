@@ -142,11 +142,11 @@ export class ImportWPRegistry extends DefaultRegistry {
       allowPositionals: true,
       args: process.argv,
       options: {
-        pages: { type: "boolean" }, // downloads Pages
-        posts: { type: "boolean" }, // downloads Posts
-        json: { type: "boolean" }, // saves original JSON data
-        force: { type: "boolean" }, // overrides existing files
-        url: { type: "string" } // root URL of the WordPress website
+        pages: { type: "boolean", default: config.pages }, // downloads Pages
+        posts: { type: "boolean", default: config.posts }, // downloads Posts
+        json: { type: "boolean", default: config.json }, // saves original JSON data
+        force: { type: "boolean", default: config.force }, // overrides existing files
+        url: { type: "string", default: config.url } // root URL of the WordPress website
       }
     }).values;
   }
