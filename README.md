@@ -7,7 +7,7 @@ development environment and site or app structure.
 ## Quick start on a fresh project (empty directory)
 
 ```bash
-echo "22.11" > .nvmrc
+echo "22" > .nvmrc
 nvm install $(< .nvmrc)
 yarn set version berry
 echo "nodeLinker: node-modules\nenableGlobalCache: false" >> .yarnrc.yml
