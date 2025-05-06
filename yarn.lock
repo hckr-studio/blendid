@@ -789,7 +789,7 @@ __metadata:
     "@types/undertaker-registry": "npm:1.0.4"
     "@vitejs/plugin-basic-ssl": "npm:2.0.0"
     chai: "npm:5.2.0"
-    cloudinary: "npm:2.6.0"
+    cloudinary: "npm:2.6.1"
     cssnano: "npm:7.0.6"
     del: "npm:8.0.0"
     gulp: "npm:5.0.0"
@@ -1720,13 +1720,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cloudinary@npm:2.6.0":
-  version: 2.6.0
-  resolution: "cloudinary@npm:2.6.0"
+"cloudinary@npm:2.6.1":
+  version: 2.6.1
+  resolution: "cloudinary@npm:2.6.1"
   dependencies:
     lodash: "npm:^4.17.21"
     q: "npm:^1.5.1"
-  checksum: 10c0/03fe9a264371b928dbdf52409e54a5d42b809a48a197f15576caadee6078ab68c4c35708b384645d74295090e0f429dfd19590116c4ff13b3ae4062fba8129df
+  checksum: 10c0/148693dfe8fb1ba918f1e2c3e7bfd6f46224b00f157978b7919260a31e6db7e17dd8d3416360253c1125aa9dbd1fb08913962e10b9c2b5e083597814a2c2f875
   languageName: node
   linkType: hard
 
