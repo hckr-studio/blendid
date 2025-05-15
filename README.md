@@ -37,18 +37,7 @@ You can then add `generate.json` and `html.collections: ["posts"]` into your `ta
 Blendid contains [Texy! Typography module](https://texy.info/en/syntax-full#typography) to correct many typographic mistakes.
 You can apply Nunjucks filter `processTypography(locale)` in your templates on any inline text.
 
-You can also add Texy! Typography module as a Marked extension:
-
-```javascript
-// task-config.mjs
-import { texyTypography } from "@hckr_/blendid/lib/texy.mjs";
-
-export default {
-  html: {
-    markedExtensions: [texyTypography("en")]
-  },
-}
-```
+Texy! Typography module is also included as Marked extension in default configuration.
 
 This will automatically apply typographic corrections on all your Markdowns - used in templates via `{% markdown %}`
 or in `data.collections` via `generate-json` task.

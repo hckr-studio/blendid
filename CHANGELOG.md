@@ -1,5 +1,12 @@
 # Changelog
 
+## 9.3.6
+
+- Updated dependencies
+- Added `resolveUrl` filter, that uses `URL.parse` to resolve URL to given base
+- Added canonical URL fallback into layout that uses `page.url` and resolves it `meta.url` base
+- Fixed issue in Texy! Typography module with unpaired quotes failing hard
+
 ## 9.3.5
 
 - Updated dependencies
