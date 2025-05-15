@@ -35,7 +35,7 @@ const locales = new Map([
     "da",
     {
       singleQuotes: ["›", "‹"],
-      doubleQuotes: [ "»", "«"]
+      doubleQuotes: ["»", "«"]
     }
   ],
 
@@ -69,7 +69,7 @@ const locales = new Map([
       singleQuotes: ["’", "’"],
       doubleQuotes: ["”", "”"]
     }
-  ],
+  ]
 ]);
 
 function definePatterns({ singleQuotes, doubleQuotes }) {
@@ -115,12 +115,12 @@ function definePatterns({ singleQuotes, doubleQuotes }) {
 
     // double ""
     [
-      /(?<!"|\w)"(?![ "])((?:[^"]+|")+?)(?<![ "])"(?!["\p{Letter}])()/gv,
+      /(?<!"|\w)"(?![ "])([^"]+)(?<![ "])"(?!["\p{Letter}])/gv,
       `${doubleQuotes[0]}$1${doubleQuotes[1]}`
     ],
     // single ''
     [
-      /(?<!'|\w)'(?![ '])((?:[^']+|')+?)(?<![ '])'(?!['\p{Letter}])()/gv,
+      /(?<!'|\w)'(?![ '])([^']+)(?<![ '])'(?!['\p{Letter}])/gv,
       `${singleQuotes[0]}$1${singleQuotes[1]}`
     ]
   ];
