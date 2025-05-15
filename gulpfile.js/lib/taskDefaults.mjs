@@ -124,6 +124,9 @@ export function getTaskDefaults(mode) {
           parseUrl(input, base) {
             return URL.parse(input, base);
           },
+          resolveUrl(input, base) {
+            return URL.parse(input, base).href;
+          },
           processTypography(str, locale) {
             return processTypo(str, { locale });
           }

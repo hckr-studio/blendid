@@ -28,7 +28,7 @@
   <meta name="generator" content="{{ generator or meta.generator }}">
   <meta name="color-scheme" content="light dark">
   <link rel="manifest" href="{{ 'manifest.json' | assetUrl('static') }}">
-  <link rel="canonical" href="{{ canonicalUrl or meta.url }}">
+  <link rel="canonical" href="{{ canonicalUrl or page.url | resolveUrl(meta.url) }}">
   {% include "shared/app-icons.html" %}
   {% block head %}{% endblock %}
 </head>
