@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.3.8
+
+- Updated dependencies
+- Task config can `export default function(mode) {}` returning configuration modifiable by mode (`gulp-mode`)
+
 ## 9.3.7
 
 - Updated dependencies
