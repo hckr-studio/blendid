@@ -34,14 +34,16 @@ async function getTaskConfigInternal() {
 }
 
 function withDefaults(taskConfig, mode) {
-  const result = Object.assign({}, taskConfig);
+  const config =
+    typeof taskConfig === "function" ? taskConfig(mode) : taskConfig;
+  const result = Object.assign({}, config);
   const taskDefaults = getTaskDefaults(mode);
   for (const key of Object.keys(taskDefaults)) {
-    if (taskConfig[key] === false) continue;
+    if (config[key] === false) continue;
     result[key] =
-      taskConfig[key] === true
+      config[key] === true
         ? taskDefaults[key]
-        : mergeWith(taskDefaults[key], taskConfig[key] ?? {}, replaceArrays);
+        : mergeWith(taskDefaults[key], config[key] ?? {}, replaceArrays);
   }
   return result;
 }
