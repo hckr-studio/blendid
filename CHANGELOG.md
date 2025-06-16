@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.4.0
+
+- Task config can `export default function(pathConfig, mode, verbose)`.
+- Updated sprite helpers
+
 ## 9.3.8
 
 - Updated dependencies
