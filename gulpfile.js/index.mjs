@@ -36,7 +36,7 @@ const mode = gulp_mode({ verbose });
 const pathConfig = await getPathConfig(verbose);
 logger.info("Building sources", projectPath(pathConfig.src));
 
-const taskConfig = await getTaskConfig(mode, verbose);
+const taskConfig = await getTaskConfig(pathConfig, mode, verbose);
 
 gulp.registry(new CleanRegistry(taskConfig.clean, pathConfig, mode, verbose));
 gulp.registry(

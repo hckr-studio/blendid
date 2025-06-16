@@ -33,9 +33,11 @@ async function getTaskConfigInternal() {
   return module.default;
 }
 
-function withDefaults(taskConfig, mode) {
+function withDefaults(taskConfig, pathConfig, mode, verbose) {
   const config =
-    typeof taskConfig === "function" ? taskConfig(mode) : taskConfig;
+    typeof taskConfig === "function"
+      ? taskConfig(pathConfig, mode, verbose)
+      : taskConfig;
   const result = Object.assign({}, config);
   const taskDefaults = getTaskDefaults(mode);
   for (const key of Object.keys(taskDefaults)) {
@@ -54,7 +56,7 @@ function replaceArrays(objValue, srcValue) {
   }
 }
 
-export async function getTaskConfig(mode) {
+export async function getTaskConfig(pathConfig, mode, verbose) {
   const config = await getTaskConfigInternal();
-  return withDefaults(config, mode);
+  return withDefaults(config, pathConfig, mode, verbose);
 }
