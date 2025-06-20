@@ -24,7 +24,7 @@
   "dependencies": {
     "@csstools/postcss-gamut-mapping": "2.0.10",
     "@vitejs/plugin-basic-ssl": "2.0.0",
-    "cloudinary": "2.6.1",
+    "cloudinary": "2.7.0",
     "cssnano": "7.0.7",
     "del": "8.0.0",
     "gulp": "5.0.1",
