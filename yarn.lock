@@ -828,9 +828,9 @@ __metadata:
     gulplog: "npm:2.2.0"
     lodash-es: "npm:4.17.21"
     marked: "npm:15.0.12"
-    marked-gfm-heading-id: "npm:4.1.1"
-    marked-highlight: "npm:2.2.1"
-    marked-mangle: "npm:1.1.10"
+    marked-gfm-heading-id: "npm:4.1.2"
+    marked-highlight: "npm:2.2.2"
+    marked-mangle: "npm:1.1.11"
     mocha: "npm:11.7.1"
     modify-filename: "npm:2.0.0"
     nunjucks: "npm:3.2.4"
@@ -3592,32 +3592,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked-gfm-heading-id@npm:4.1.1":
-  version: 4.1.1
-  resolution: "marked-gfm-heading-id@npm:4.1.1"
+"marked-gfm-heading-id@npm:4.1.2":
+  version: 4.1.2
+  resolution: "marked-gfm-heading-id@npm:4.1.2"
   dependencies:
     github-slugger: "npm:^2.0.0"
   peerDependencies:
-    marked: ">=13 <16"
-  checksum: 10c0/d5e0f130d57206c84d996d209fa30c392a0c5318e5a353ca17d1862e64378ca06c0e0300153e5cff174961f2e4af31f0fad4a9ec64daa8356a6f6e472c4ff2be
+    marked: ">=13 <17"
+  checksum: 10c0/981fc712c8ca734b752b351d95f95ee087577827ac5110ca06804ca506e4644ebfa96f064bd9214675235c771a9361ee7b5a0b5590acecf155e04d42c8f6a46a
   languageName: node
   linkType: hard
 
-"marked-highlight@npm:2.2.1":
-  version: 2.2.1
-  resolution: "marked-highlight@npm:2.2.1"
+"marked-highlight@npm:2.2.2":
+  version: 2.2.2
+  resolution: "marked-highlight@npm:2.2.2"
   peerDependencies:
-    marked: ">=4 <16"
-  checksum: 10c0/cc3240750e05a184576a991b3b23e5a84c90356d70b850a51f08a2144e2febce7332f957813d42645698ef24356d37c42825bb178a417d4ae9c8cc5ca37c6b45
+    marked: ">=4 <17"
+  checksum: 10c0/09fd6892d904e5ec5251f2cfc5acb9d69e9ae8ac1fe651fe18b45c5d8b487fa76dc5670f8aa24d5f1987d9a1e060db0b5f33e01ff2aa160a696abd54890a2e06
   languageName: node
   linkType: hard
 
-"marked-mangle@npm:1.1.10":
-  version: 1.1.10
-  resolution: "marked-mangle@npm:1.1.10"
+"marked-mangle@npm:1.1.11":
+  version: 1.1.11
+  resolution: "marked-mangle@npm:1.1.11"
   peerDependencies:
-    marked: ">=4 <16"
-  checksum: 10c0/085186a6c6cd99428e029ecb2f17dc501c640d16a38b833c5833aab5dc8e71955cac6341ec193e9040f7154a5ab149c867ca58bb77a7122a69062a08df0ca80b
+    marked: ">=4 <17"
+  checksum: 10c0/9b35647ad1306ecf962156ba19eeb88483baa6337cc54ae2ed4b8d483b0df462715eedd07fc2d65d93e3972e64a02034c36e5fa16dd907346e87faacb20505ea
   languageName: node
   linkType: hard
 
