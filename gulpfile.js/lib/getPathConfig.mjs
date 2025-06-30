@@ -16,13 +16,13 @@ export async function getPathConfig() {
     );
   }
 
-  const defaultEsm = projectPath("config/path-config.mjs");
+  const defaultEsm = projectPath("config", "path-config.mjs");
   if (fs.existsSync(defaultEsm)) {
     const module = await import(defaultEsm);
     return module.default;
   }
 
-  const defaultConfigPath = projectPath("config/path-config.json");
+  const defaultConfigPath = projectPath("config", "path-config.json");
   if (fs.existsSync(defaultConfigPath)) {
     return require(defaultConfigPath);
   }
