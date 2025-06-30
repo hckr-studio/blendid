@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.5.0
+
+- Updated dependencies - notably Vite.js 7.0
+- Use `export default function(pathConfig, mode, verbose)` in the generated `task-config.mjs`
+
 ## 9.4.0
 
 - Task config can `export default function(pathConfig, mode, verbose)`.
