@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.5.1
+
+- Updated dependencies
+
 ## 9.5.0
 
 - Updated dependencies - notably Vite.js 7.0
