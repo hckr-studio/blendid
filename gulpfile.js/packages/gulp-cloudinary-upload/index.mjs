@@ -1,7 +1,7 @@
 import path from "node:path";
 import { Transform } from "node:stream";
-import PluginError from "plugin-error";
 import { v2 as cloudinary } from "cloudinary";
+import PluginError from "plugin-error";
 import Vinyl from "vinyl";
 import { vinylFile } from "vinyl-file";
 
@@ -32,6 +32,11 @@ export default function (options) {
       const manifestKey = options.keyResolver(file.path);
       if (typeof options.folderResolver === "function") {
         uploadParams.folder = options.folderResolver(file.path);
+      }
+      if (typeof options.getMetadata === "function") {
+        uploadParams.metadata = Object.entries(options.getMetadata(file))
+          .map(([k, v]) => `${k}=${v}`)
+          .join("|");
       }
 
       if (file.isNull()) {
