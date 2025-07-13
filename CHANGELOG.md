@@ -1,5 +1,11 @@
 # Changelog
 
+## 9.6.0
+
+- Updated dependencies
+- Added configuration options for `cloudinary` task to allow customizing the upload options
+- Added `getMetadata(file)` option for `cloudinary` task to allow setting custom metadata from client code
+
 ## 9.5.1
 
 - Updated dependencies
