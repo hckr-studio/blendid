@@ -1,13 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
-import DefaultRegistry from "undertaker-registry";
 import changed from "gulp-changed";
 import debug from "gulp-debug";
 import logger from "gulplog";
+import DefaultRegistry from "undertaker-registry";
+import projectPath from "../lib/projectPath.mjs";
 import cloudinaryUpload, {
   manifest
 } from "../packages/gulp-cloudinary-upload/index.mjs";
-import projectPath from "../lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
@@ -89,7 +89,7 @@ export class CloudinaryRegistry extends DefaultRegistry {
           cloudinaryUpload({
             folderResolver(filePath) {
               const relativePath = getRelativePath(filePath);
-              let { dest } = pathConfig.cloudinary;
+              const { dest } = pathConfig.cloudinary;
               if (!(relativePath || dest)) return "";
               return path.join(dest, relativePath);
             },
@@ -98,7 +98,8 @@ export class CloudinaryRegistry extends DefaultRegistry {
                 paths.src,
                 path.resolve(import.meta.dirname, filePath)
               );
-            }
+            },
+            ...this.config
           })
         )
         .pipe(
