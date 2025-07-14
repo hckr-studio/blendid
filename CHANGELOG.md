@@ -1,8 +1,12 @@
 # Changelog
 
+## 9.6.1
+
+- Support for `async getMetadata(file)` option for `cloudinary`
+- Added `force` option for `cloudinary` task to reupload existing files and metadata
+
 ## 9.6.0
 
-- Updated dependencies
 - Added configuration options for `cloudinary` task to allow customizing the upload options
 - Added `getMetadata(file)` option for `cloudinary` task to allow setting custom metadata from client code
 
