@@ -42,6 +42,7 @@ export class CloudinaryRegistry extends DefaultRegistry {
    */
   init({ task, src, dest, lastRun }) {
     if (!this.config) return;
+    const { extensions, force, ...config } = this.config;
     const paths = this.paths;
     const pathConfig = this.pathConfig;
 
@@ -64,9 +65,7 @@ export class CloudinaryRegistry extends DefaultRegistry {
         path.join(
           paths.src,
           "**",
-          this.config.extensions.length > 1
-            ? `*.{${this.config.extensions}}`
-            : `*.${this.config.extensions}`
+          extensions.length > 1 ? `*.{${extensions}}` : `*.${extensions}`
         ),
         {
           encoding: false,
@@ -77,6 +76,7 @@ export class CloudinaryRegistry extends DefaultRegistry {
         .pipe(
           changed(paths.dest, {
             async hasChanged(sourceFile, targetPath) {
+              if (force) return true;
               const manifest = await readManifest(paths.manifest);
               const imagePath = getRelativeFilePath(sourceFile.path);
               if (!manifest?.[imagePath]) {
@@ -99,7 +99,7 @@ export class CloudinaryRegistry extends DefaultRegistry {
                 path.resolve(import.meta.dirname, filePath)
               );
             },
-            ...this.config
+            ...config
           })
         )
         .pipe(
