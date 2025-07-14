@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@csstools/postcss-gamut-mapping": "2.0.10",
+    "@lokesh.dhakar/quantize": "1.4.0",
     "@vitejs/plugin-basic-ssl": "2.1.0",
     "cloudinary": "2.7.0",
     "cssnano": "7.0.7",
@@ -52,6 +53,7 @@
     "marked-highlight": "2.2.2",
     "marked-mangle": "1.1.11",
     "modify-filename": "2.0.0",
+    "ndarray-pixels": "5.0.1",
     "nunjucks": "3.2.4",
     "nunjucks-markdown": "2.0.1",
     "plugin-error": "2.0.1",
@@ -61,6 +63,7 @@
     "postcss-preset-env": "10.2.4",
     "rev-hash": "4.1.0",
     "rev-path": "3.0.0",
+    "sharp": "0.34.3",
     "sort-keys": "5.1.0",
     "through2": "4.0.2",
     "undertaker-registry": "2.0.0",
