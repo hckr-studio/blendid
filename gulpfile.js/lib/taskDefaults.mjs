@@ -1,7 +1,9 @@
 import * as path from "node:path";
 import { v2 as cloudinary } from "cloudinary";
 import logger from "gulplog";
+import { defineLqipProperty } from "./cloudinary.mjs";
 import { getPathConfig } from "./getPathConfig.mjs";
+import { lqip } from "./lqip.mjs";
 import { processTypo } from "./texy.mjs";
 
 const pathConfig = await getPathConfig();
@@ -153,7 +155,16 @@ export function getTaskDefaults(mode) {
 
     cloudinary: {
       extensions: ["jpg", "jpeg", "png", "gif", "avif", "webp", "svg"],
-      manifest: "images.json"
+      manifest: "images.json",
+      lqip: true,
+      async getMetadata(file) {
+        if (this.lqip) return { lqip: await lqip(file.contents) };
+      },
+      async setup(cloudinary) {
+        if (this.lqip) {
+          await defineLqipProperty(cloudinary);
+        }
+      }
     },
 
     fonts: {
