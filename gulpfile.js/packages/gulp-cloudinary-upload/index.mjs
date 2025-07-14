@@ -5,6 +5,36 @@ import PluginError from "plugin-error";
 import Vinyl from "vinyl";
 import { vinylFile } from "vinyl-file";
 
+function asyncSetup(file, options, cb) {
+  const tasks = [];
+  const uploadParams = Object.assign({ overwrite: false }, options.params, {
+    public_id: path.basename(file.path, path.extname(file.path))
+  });
+
+  if (typeof options.setup === "function") {
+    tasks.push(options.setup(cloudinary));
+  }
+
+  if (typeof options.getMetadata === "function") {
+    const val = options.getMetadata(file);
+
+    const serialize = (obj) =>
+      obj
+        ? Object.entries(obj)
+            .map(([k, v]) => `${k}=${JSON.stringify(v)}`)
+            .join("|")
+        : undefined;
+
+    tasks.push(
+      Promise.resolve(val).then((x) => {
+        uploadParams.metadata = serialize(x);
+      })
+    );
+  }
+
+  Promise.all(tasks).then(() => cb(uploadParams));
+}
+
 export default function (options) {
   if (!process.env.CLOUDINARY_URL) {
     if (!options.config) {
@@ -25,34 +55,7 @@ export default function (options) {
   return new Transform({
     objectMode: true,
     transform(file, enc, cb) {
-      const uploadParams = Object.assign({ overwrite: false }, options.params, {
-        public_id: path.basename(file.path, path.extname(file.path))
-      });
-
-      if (typeof options.getMetadata === "function") {
-        const val = options.getMetadata(file);
-
-        const serialize = (obj) =>
-          obj
-            ? Object.entries(obj)
-                .map(([k, v]) => `${k}=${JSON.stringify(v)}`)
-                .join("|")
-            : undefined;
-
-        if (typeof val.then === "function") {
-          val.then((x) => {
-            uploadParams.metadata = serialize(x);
-            next();
-          });
-        } else {
-          uploadParams.metadata = serialize(val);
-          next();
-        }
-      } else {
-        next();
-      }
-
-      function next() {
+      asyncSetup(file, options, (uploadParams) => {
         const manifestKey = options.keyResolver(file.path);
         if (typeof options.folderResolver === "function") {
           uploadParams.folder = options.folderResolver(file.path);
@@ -105,7 +108,7 @@ export default function (options) {
             })
           );
         }
-      }
+      });
     }
   });
 }
