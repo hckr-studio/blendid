@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.6.2
+
+- Added support for `async setup(cloudinary)` option for `cloudinary`. Can be used e.g. to call API methods for metadata fields definition.
+- Added support for lqip hash computation and upload to Cloudinary as image metadata. Inspired by https://leanrada.com/notes/css-only-lqip/.
+
 ## 9.6.1
 
 - Support for `async getMetadata(file)` option for `cloudinary`
