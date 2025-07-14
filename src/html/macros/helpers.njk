@@ -19,7 +19,7 @@
 </script>
 {% endmacro %}
 
-{% macro image(image, images, width, height, alt, style, class="responsive", phoneWidth, phoneHeight, tabletWidth, title) -%}
+{% macro cloudinaryImage(image, images, width, height, alt, style, class="responsive", phoneWidth, phoneHeight, tabletWidth, title) -%}
   {% set imageUrl = images[image]["public_id"] %}
   {% set metadata = images[image].metadata %}
   {% set w = phoneWidth if phoneWidth else width %}
