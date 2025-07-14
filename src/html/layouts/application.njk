@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   {% if images %}
-    {# `images` can be collection populated by `cloudinary` task, or just set `images: true` in `data/global.mjs`
-       to enable this if you use another way to upload images to cloudinary #}
+    {# `images` can be collection populated by `cloudinary` task, variable defined in template or just set via
+      `images: true` in `data/global.mjs` to enable this if you use another way to upload images to cloudinary #}
     <meta http-equiv="delegate-ch"
           content="sec-ch-width https://res.cloudinary.com; sec-ch-dpr https://res.cloudinary.com; sec-ch-viewport-width https://res.cloudinary.com;">
   {% endif %}
