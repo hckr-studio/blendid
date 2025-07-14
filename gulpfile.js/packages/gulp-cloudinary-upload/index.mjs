@@ -29,61 +29,82 @@ export default function (options) {
         public_id: path.basename(file.path, path.extname(file.path))
       });
 
-      const manifestKey = options.keyResolver(file.path);
-      if (typeof options.folderResolver === "function") {
-        uploadParams.folder = options.folderResolver(file.path);
-      }
       if (typeof options.getMetadata === "function") {
-        uploadParams.metadata = Object.entries(options.getMetadata(file))
-          .map(([k, v]) => `${k}=${v}`)
-          .join("|");
+        const val = options.getMetadata(file);
+
+        const serialize = (obj) =>
+          obj
+            ? Object.entries(obj)
+                .map(([k, v]) => `${k}=${JSON.stringify(v)}`)
+                .join("|")
+            : undefined;
+
+        if (typeof val.then === "function") {
+          val.then((x) => {
+            uploadParams.metadata = serialize(x);
+            next();
+          });
+        } else {
+          uploadParams.metadata = serialize(val);
+          next();
+        }
+      } else {
+        next();
       }
 
-      if (file.isNull()) {
-        cb(null, file);
-        return;
-      }
+      function next() {
+        const manifestKey = options.keyResolver(file.path);
+        if (typeof options.folderResolver === "function") {
+          uploadParams.folder = options.folderResolver(file.path);
+        }
 
-      if (file.isBuffer()) {
-        cloudinary.uploader
-          .upload_stream(uploadParams, (error, result) => {
-            if (error) {
-              return cb(
-                new PluginError("gulp-cloudinary-upload", error.message)
-              );
-            }
+        if (file.isNull()) {
+          cb(null, file);
+          return;
+        }
 
-            file.cloudinary = Object.assign(result, {
-              original_filename: path.basename(
-                file.path,
-                path.extname(file.path)
-              ),
-              manifest_key: manifestKey
-            });
-            return cb(null, file);
-          })
-          .end(file.contents);
-      }
+        console.log(uploadParams);
+        if (file.isBuffer()) {
+          cloudinary.uploader
+            .upload_stream(uploadParams, (error, result) => {
+              if (error) {
+                return cb(
+                  new PluginError("gulp-cloudinary-upload", error.message)
+                );
+              }
 
-      if (file.isStream()) {
-        file.contents.pipe(
-          cloudinary.uploader.upload_stream(uploadParams, (error, result) => {
-            if (error) {
-              return cb(
-                new PluginError("gulp-cloudinary-upload", error.message)
-              );
-            }
+              file.cloudinary = Object.assign(result, {
+                original_filename: path.basename(
+                  file.path,
+                  path.extname(file.path)
+                ),
+                manifest_key: manifestKey
+              });
+              return cb(null, file);
+            })
+            .end(file.contents);
+        }
 
-            file.cloudinary = Object.assign(result, {
-              original_filename: path.basename(
-                file.path,
-                path.extname(file.path)
-              ),
-              manifest_key: manifestKey
-            });
-            return cb(null, file);
-          })
-        );
+        if (file.isStream()) {
+          file.contents.pipe(
+            cloudinary.uploader.upload_stream(uploadParams, (error, result) => {
+              if (error) {
+                return cb(
+                  new PluginError("gulp-cloudinary-upload", error.message)
+                );
+              }
+
+              file.cloudinary = Object.assign(result, {
+                original_filename: path.basename(
+                  file.path,
+                  path.extname(file.path)
+                ),
+                manifest_key: manifestKey
+              });
+              return cb(null, file);
+            })
+          );
+        }
       }
     }
   });
