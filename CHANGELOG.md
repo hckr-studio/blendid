@@ -1,9 +1,17 @@
 # Changelog
 
+## 9.6.3
+
+- Updated dependencies
+- Fixed `cloudinary.force` behavior
+- improved LQIP rendering
+
 ## 9.6.2
 
-- Added support for `async setup(cloudinary)` option for `cloudinary`. Can be used e.g. to call API methods for metadata fields definition.
-- Added support for lqip hash computation and upload to Cloudinary as image metadata. Inspired by https://leanrada.com/notes/css-only-lqip/.
+- Added support for `async setup(cloudinary)` option for `cloudinary`. Can be used e.g. to call API methods for metadata
+  fields definition.
+- Added support for lqip hash computation and upload to Cloudinary as image metadata. Inspired
+  by https://leanrada.com/notes/css-only-lqip/.
 
 ## 9.6.1
 
@@ -49,7 +57,8 @@
 
 - Updated dependencies
 - Better default config when `blendid init` is used to init the project
-- WordPress import task `import-wp` can be configured via `task-config.mjs` file instead of CLI params. CLI params will override the config values when set. This enables headless CMS scenario.
+- WordPress import task `import-wp` can be configured via `task-config.mjs` file instead of CLI params. CLI params will
+  override the config values when set. This enables headless CMS scenario.
 - Esbuild task supports debug logging
 - Esbuild task doesnt use incremental mode in dev that was broken
 
@@ -104,7 +113,8 @@
 
 ## 9.1.0
 
-- Added [Texy! Typography module](https://texy.info/en/syntax-full#typography) for usage as marked extension and as a Nunjucks filter `processTypography(locale)`
+- Added [Texy! Typography module](https://texy.info/en/syntax-full#typography) for usage as marked extension and as a
+  Nunjucks filter `processTypography(locale)`
 - Added `{MarkedExtension[]} html.markedExtensions` configuration option to allow the use of marked extensions
 
 ## 9.0.2
@@ -120,13 +130,15 @@
 
 - Updated to Vite.js 6
 - Removed Sass from `stylesheets` pipeline. If you need Sass, use `gulp-sass` via `stylesheets.alternateTask`.
-- Removed BrowserSync in favor of Vite.js. If you need [BrowserSync, use it as Vite plugin](https://github.com/Applelo/vite-plugin-browser-sync).
+- Removed BrowserSync in favor of Vite.js. If you
+  need [BrowserSync, use it as Vite plugin](https://github.com/Applelo/vite-plugin-browser-sync).
 - Removed WorkBox. We will provide separate package with WorkBoxRegistry, that can be used via `additionalTasks`.
 - Removed `gulp-notify` dependency.
 - Cleaned and pinned dependencies, so the overall package size after installation is much smaller (>50% reduction).
 - `gulp-mode` is now resolved just once and injected into Registries for later use.
 - Path config is in `mjs` instead of JSON. JSON config is still supported, but migration to ESM encouraged.
-- Support for `mjs` collection files for injection into HTML or generators input. Support for JSON is kept, but ESM is favored.
+- Support for `mjs` collection files for injection into HTML or generators input. Support for JSON is kept, but ESM is
+  favored.
 - Added `posthtml` step for additional tasks
 - Added `import-wp` task for import of WordPress Posts and Pages
 - Sensible layout template a CSS styles for modern web development
@@ -139,7 +151,8 @@
 
 - static files are copied after reving
 - fixed cases when there are more tasks in `prebuild` and `postbuild` additional tasks. They are run in series.
-- added optional `CloudflareRegistry` with `cloudflare-pages` task, it bahaves like `static` task, but can be included in `prebuild` stage
+- added optional `CloudflareRegistry` with `cloudflare-pages` task, it bahaves like `static` task, but can be included
+  in `prebuild` stage
 
 ## 8.6.2
 
