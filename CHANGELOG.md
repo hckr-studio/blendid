@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.6.4
+
+- Updated dependencies
+
 ## 9.6.3
 
 - Updated dependencies
