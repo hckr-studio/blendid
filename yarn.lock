@@ -892,7 +892,7 @@ __metadata:
     rev-path: "npm:3.0.0"
     sharp: "npm:0.34.3"
     sinon: "npm:21.0.0"
-    sort-keys: "npm:5.1.0"
+    sort-keys: "npm:6.0.0"
     through2: "npm:4.0.2"
     undertaker-registry: "npm:2.0.0"
     vinyl: "npm:3.0.1"
@@ -3591,7 +3591,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-plain-obj@npm:^4.0.0":
+"is-plain-obj@npm:^4.1.0":
   version: 4.1.0
   resolution: "is-plain-obj@npm:4.1.0"
   checksum: 10c0/32130d651d71d9564dc88ba7e6fda0e91a1010a3694648e9f4f47bb6080438140696d3e3e15c741411d712e47ac9edc1a8a9de1fe76f3487b0d90be06ac9975e
@@ -5761,12 +5761,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sort-keys@npm:5.1.0":
-  version: 5.1.0
-  resolution: "sort-keys@npm:5.1.0"
+"sort-keys@npm:6.0.0":
+  version: 6.0.0
+  resolution: "sort-keys@npm:6.0.0"
   dependencies:
-    is-plain-obj: "npm:^4.0.0"
-  checksum: 10c0/fdb7aeb02368ad91b2ea947b59f3c95d80f8c71bbcb5741ebd55852994f54a129af3b3663b280951566fe5897de056428810dbb58c61db831e588c0ac110f2b0
+    is-plain-obj: "npm:^4.1.0"
+  checksum: 10c0/48184c26c970b989c5a096a24282e15e986b583589e62b21b5d742994a53c3cb3e1e4cbbdce7bfd751d22664017a4a99e7e212f978a3b9a58661c60f941ee161
   languageName: node
   linkType: hard
 
