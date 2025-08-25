@@ -64,7 +64,7 @@
     "rev-hash": "4.1.0",
     "rev-path": "3.0.0",
     "sharp": "0.34.3",
-    "sort-keys": "5.1.0",
+    "sort-keys": "6.0.0",
     "through2": "4.0.2",
     "undertaker-registry": "2.0.0",
     "vinyl": "3.0.1",
