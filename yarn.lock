@@ -871,7 +871,7 @@ __metadata:
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
     "@types/nunjucks": "npm:3.2.6"
-    "@types/undertaker": "npm:1.2.11"
+    "@types/undertaker": "npm:1.2.12"
     "@types/undertaker-registry": "npm:1.0.4"
     "@vitejs/plugin-basic-ssl": "npm:2.1.0"
     chai: "npm:6.2.0"
@@ -1690,7 +1690,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/undertaker@npm:1.2.11, @types/undertaker@npm:>=1.2.6":
+"@types/undertaker@npm:1.2.12":
+  version: 1.2.12
+  resolution: "@types/undertaker@npm:1.2.12"
+  dependencies:
+    "@types/node": "npm:*"
+    "@types/undertaker-registry": "npm:*"
+    async-done: "npm:~1.3.2"
+  checksum: 10c0/c1518da09b1f4fdaa3aae5f9d68067da0499b23bed6c89af95d19d60a69ae90c9fb4ed5b1094b329bcb8dfa82a1f6b1e638f4ac5c1d6a4233db1b8a4d53751a4
+  languageName: node
+  linkType: hard
+
+"@types/undertaker@npm:>=1.2.6":
   version: 1.2.11
   resolution: "@types/undertaker@npm:1.2.11"
   dependencies:
