@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.6.6
+
+- Updated dependencies
+- Fixed cloudinary metadata serialization when lqip value is `null`
+
 ## 9.6.5
 
 - Updated dependencies
