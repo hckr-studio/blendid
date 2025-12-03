@@ -158,7 +158,10 @@ export function getTaskDefaults(mode) {
       manifest: "images.json",
       lqip: true,
       async getMetadata(file) {
-        if (this.lqip) return { lqip: await lqip(file.contents) };
+        if (this.lqip) {
+          const val = await lqip(file.contents);
+          if (val) return { lqip: val };
+        }
       },
       async setup(cloudinary) {
         if (this.lqip) {
