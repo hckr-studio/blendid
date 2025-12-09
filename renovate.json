@@ -2,11 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "forkProcessing": "enabled",
   "extends": [
-    "config:base",
+    "config:recommended",
     "schedule:daily",
     "group:postcss",
     ":preserveSemverRanges",
-    ":dependencyDashboard",
+    ":configMigration",
+    ":pinDevDependencies",
+    "abandonments:recommended",
+    "security:minimumReleaseAgeNpm",
     "customManagers:biomeVersions"
   ],
   "automerge": true,
