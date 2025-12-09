@@ -18,8 +18,10 @@
   "packageRules": [
     {
       "groupName": "marked",
-      "matchPackageNames": ["marked"],
-      "matchPackagePrefixes": ["marked-"]
+      "matchPackageNames": [
+        "marked",
+        "marked-{/,}**"
+      ]
     }
   ]
 }
