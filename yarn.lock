@@ -965,7 +965,7 @@ __metadata:
     undertaker-registry: "npm:2.0.0"
     vinyl: "npm:3.0.1"
     vinyl-file: "npm:5.0.0"
-    vite: "npm:7.3.0"
+    vite: "npm:7.3.1"
   bin:
     blendid: bin/blendid.js
   languageName: unknown
