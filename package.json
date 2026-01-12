@@ -24,7 +24,7 @@
   "dependencies": {
     "@csstools/postcss-gamut-mapping": "2.0.11",
     "@lokesh.dhakar/quantize": "1.4.0",
-    "@vitejs/plugin-basic-ssl": "2.1.0",
+    "@vitejs/plugin-basic-ssl": "2.1.3",
     "cloudinary": "2.8.0",
     "cssnano": "7.1.2",
     "del": "8.0.1",
