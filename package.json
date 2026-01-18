@@ -22,7 +22,7 @@
     "outdated": "yarn upgrade-interactive"
   },
   "dependencies": {
-    "@csstools/postcss-gamut-mapping": "2.0.11",
+    "@csstools/postcss-gamut-mapping": "3.0.0",
     "@lokesh.dhakar/quantize": "1.4.0",
     "@vitejs/plugin-basic-ssl": "2.1.3",
     "cloudinary": "2.8.0",
