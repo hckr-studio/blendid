@@ -24,6 +24,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
+  font-variant-numeric: lining-nums;
 }
 
 p, ul, ol, dl {
@@ -32,6 +33,12 @@ p, ul, ol, dl {
 
 abbr {
   font-variant-caps: all-petite-caps;
+  text-decoration: none;
+
+  &[title] {
+    cursor: help;
+    text-decoration: underline dotted;
+  }
 }
 
 sup, sub {
@@ -154,11 +161,14 @@ sub {
       rgb(from var(--lqip-cf-clr) r g b / calc(var(--lqip-stop20))) 80%,
       rgb(from var(--lqip-cf-clr) r g b / calc(var(--lqip-stop10))) 90%,
       transparent
-    ), linear-gradient(0deg, var(--lqip-base-clr), var(--lqip-base-clr));
+    ),
+    linear-gradient(0deg, var(--lqip-base-clr), var(--lqip-base-clr));
 }
 
+math,
+time,
 table {
-  font-variant-numeric: tabular-nums slashed-zero;
+  font-variant-numeric: tabular-nums lining-nums slashed-zero;
 }
 
 input,
