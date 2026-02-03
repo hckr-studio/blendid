@@ -1,5 +1,11 @@
 # Changelog
 
+## 9.6.9
+
+- Support Text scaling in layouts
+- Improved default stylesheet
+- Updated dependencies
+
 ## 9.6.8
 
 - Updated dependencies
