@@ -79,7 +79,7 @@
     "@types/undertaker-registry": "1.0.4",
     "chai": "6.2.2",
     "mocha": "11.7.5",
-    "sinon": "21.0.2"
+    "sinon": "21.0.3"
   },
   "resolutions": {
     "ansi-colors": "4.1.3",
