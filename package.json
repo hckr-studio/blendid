@@ -1,6 +1,6 @@
 {
   "name": "@hckr_/blendid",
-  "version": "9.6.9",
+  "version": "9.6.10",
   "description": "A full featured configurable front-end asset pipeline and static site builder",
   "license": "MIT",
   "main": "gulpfile.js/index.mjs",

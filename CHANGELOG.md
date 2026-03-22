@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.6.10
+
+- Updated dependencies
+
 ## 9.6.9
 
 - Support Text scaling in layouts
