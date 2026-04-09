@@ -19,3 +19,5 @@ yarn-error.log
 **/generated/_icons.sass
 npm-debug.log
 .vscode/
+
+.blendid/

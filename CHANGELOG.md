@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.6.11
+
+- Updated dependencies
+- Markdown is preprocessed with Texy typography module
+
 ## 9.6.10
 
 - Updated dependencies
