@@ -25,7 +25,13 @@ export class ViteRegistry extends DefaultRegistry {
       if (browserArgs) process.env.BROWSER_ARGS = browserArgs;
       plugins.push(basicSsl());
       const server = await createServer({
-        build: false,
+        build: {
+          target: false,
+          assetsInlineLimit: 0,
+          cssMinify: false,
+          minify: false,
+          sourcemap: "inline"
+        },
         configFile: false,
         envFile: false,
         optimizeDeps: { include: [] },
