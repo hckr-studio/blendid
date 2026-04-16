@@ -938,7 +938,7 @@ __metadata:
     "@types/nunjucks": "npm:3.2.6"
     "@types/undertaker": "npm:1.2.12"
     "@types/undertaker-registry": "npm:1.0.4"
-    "@vitejs/plugin-basic-ssl": "npm:2.2.0"
+    "@vitejs/plugin-basic-ssl": "npm:2.3.0"
     chai: "npm:6.2.2"
     cloudinary: "npm:2.9.0"
     cssnano: "npm:7.1.3"
@@ -1616,12 +1616,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-basic-ssl@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@vitejs/plugin-basic-ssl@npm:2.2.0"
+"@vitejs/plugin-basic-ssl@npm:2.3.0":
+  version: 2.3.0
+  resolution: "@vitejs/plugin-basic-ssl@npm:2.3.0"
   peerDependencies:
     vite: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 10c0/d3082fc3d08499b6b48870a6421c29e51a8c322544316c19eaa10c9eb3ecf1982ec5ddbc4bde82f3807d2029b8b648ed98c920895cc32cf89d2a434c0e0d28dd
+  checksum: 10c0/754ebe29a61ac694e665477187f425b7c3b41e30af8d392613250bf65f9b2741e7f5a6ec00a3f88f1a14bfda96e93c6b5e0f75e86357737bc4e92c8dc455c1c0
   languageName: node
   linkType: hard
 
