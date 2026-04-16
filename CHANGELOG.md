@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.6.12
+
+- Fixed vite default config
+
 ## 9.6.11
 
 - Updated dependencies
