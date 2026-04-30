@@ -2300,14 +2300,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dom-serializer@npm:2.0.0":
-  version: 2.0.0
-  resolution: "dom-serializer@npm:2.0.0"
+"dom-serializer@npm:3.0.0":
+  version: 3.0.0
+  resolution: "dom-serializer@npm:3.0.0"
   dependencies:
-    domelementtype: "npm:^2.3.0"
-    domhandler: "npm:^5.0.2"
-    entities: "npm:^4.2.0"
-  checksum: 10c0/d5ae2b7110ca3746b3643d3ef60ef823f5f078667baf530cec096433f1627ec4b6fa8c072f09d079d7cda915fd2c7bc1b7b935681e9b09e591e1e15f4040b8e2
+    domelementtype: "npm:^3.0.0"
+    domhandler: "npm:^6.0.0"
+    entities: "npm:^8.0.0"
+  checksum: 10c0/62cea6b1bd9f671b0df5a147c8f14e3db8a81080f19b64b6cf2ff84dc924e96e50e2cdce402035e0c202e0ba2c8d26380aaf2bad9bc5ba0090d73c029f44d536
   languageName: node
   linkType: hard
 
