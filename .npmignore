@@ -4,6 +4,7 @@ renovate.json
 public/
 .blendid/
 .circleci/
+.github/
 .idea/
 .yarn/
 .editorconfig
