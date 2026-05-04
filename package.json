@@ -57,7 +57,7 @@
     "nunjucks": "3.2.4",
     "nunjucks-markdown": "2.0.1",
     "plugin-error": "2.0.1",
-    "postcss": "8.5.12",
+    "postcss": "8.5.13",
     "postcss-functions": "4.0.2",
     "postcss-import": "16.1.1",
     "postcss-preset-env": "11.2.1",
