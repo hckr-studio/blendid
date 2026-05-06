@@ -2426,14 +2426,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dom-serializer@npm:3.0.0":
-  version: 3.0.0
-  resolution: "dom-serializer@npm:3.0.0"
+"dom-serializer@npm:3.1.1":
+  version: 3.1.1
+  resolution: "dom-serializer@npm:3.1.1"
   dependencies:
     domelementtype: "npm:^3.0.0"
     domhandler: "npm:^6.0.0"
     entities: "npm:^8.0.0"
-  checksum: 10c0/62cea6b1bd9f671b0df5a147c8f14e3db8a81080f19b64b6cf2ff84dc924e96e50e2cdce402035e0c202e0ba2c8d26380aaf2bad9bc5ba0090d73c029f44d536
+  checksum: 10c0/dc700204f0ef4a4c5a344bd8773703d5476dcca1a4af8b2d3fd9bcbbace833439b6ea3d3c48c4b387fa0b2456dd839caca354eed7f7c7f17bc47da8e217742ca
   languageName: node
   linkType: hard
 
