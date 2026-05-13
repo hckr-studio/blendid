@@ -80,7 +80,7 @@
     "chai": "6.2.2",
     "esbuild": "0.28.0",
     "mocha": "11.7.5",
-    "sinon": "21.1.2"
+    "sinon": "22.0.0"
   },
   "resolutions": {
     "ansi-colors": "4.1.3",
