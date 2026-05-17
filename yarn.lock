@@ -130,6 +130,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@csstools/css-calc@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@csstools/css-calc@npm:3.2.1"
+  peerDependencies:
+    "@csstools/css-parser-algorithms": ^4.0.0
+    "@csstools/css-tokenizer": ^4.0.0
+  checksum: 10c0/0191c8d1cd4dffa0d3b6bfd1e78a721934b1d7a6c972966e4fdaa72208c6789e8ff443ee81764a32f1e6107825695b5524ef2b4dc1681b5b29230f2a1277e5df
+  languageName: node
+  linkType: hard
+
 "@csstools/css-color-parser@npm:^4.1.0":
   version: 4.1.0
   resolution: "@csstools/css-color-parser@npm:4.1.0"
@@ -140,6 +150,19 @@ __metadata:
     "@csstools/css-parser-algorithms": ^4.0.0
     "@csstools/css-tokenizer": ^4.0.0
   checksum: 10c0/b5b8a697b4c1b22dd535b4d93b2ffce338d38e587ac1ab20b781c08328bfa99e5f763a99d990983560df543862fa9bd578ee966c18f9d3381c8e33c641d32a0e
+  languageName: node
+  linkType: hard
+
+"@csstools/css-color-parser@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@csstools/css-color-parser@npm:4.1.1"
+  dependencies:
+    "@csstools/color-helpers": "npm:^6.0.2"
+    "@csstools/css-calc": "npm:^3.2.1"
+  peerDependencies:
+    "@csstools/css-parser-algorithms": ^4.0.0
+    "@csstools/css-tokenizer": ^4.0.0
+  checksum: 10c0/427bd32f1a8917342a70a6fd97b93bb492aae7c8790e7782b5d6edc8c08064bb8aef0a86099f286db00288f9afea85eb92c46350e9057f5fea058e03a2a09203
   languageName: node
   linkType: hard
 
@@ -321,7 +344,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-gamut-mapping@npm:3.0.3, @csstools/postcss-gamut-mapping@npm:^3.0.3":
+"@csstools/postcss-gamut-mapping@npm:3.0.4":
+  version: 3.0.4
+  resolution: "@csstools/postcss-gamut-mapping@npm:3.0.4"
+  dependencies:
+    "@csstools/css-color-parser": "npm:^4.1.1"
+    "@csstools/css-parser-algorithms": "npm:^4.0.0"
+    "@csstools/css-tokenizer": "npm:^4.0.0"
+  peerDependencies:
+    postcss: ^8.4
+  checksum: 10c0/8a61c21310a3b2f69e1fb8602b158fc50444417c0b29216baa302c7c1c479c57cc210ded20b1ef491d295da595517e08796fb87c7974ecf465503663ddd98b1e
+  languageName: node
+  linkType: hard
+
+"@csstools/postcss-gamut-mapping@npm:^3.0.3":
   version: 3.0.3
   resolution: "@csstools/postcss-gamut-mapping@npm:3.0.3"
   dependencies:
@@ -967,7 +1003,7 @@ __metadata:
   resolution: "@hckr_/blendid@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.4.15"
-    "@csstools/postcss-gamut-mapping": "npm:3.0.3"
+    "@csstools/postcss-gamut-mapping": "npm:3.0.4"
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
     "@types/nunjucks": "npm:3.2.6"
