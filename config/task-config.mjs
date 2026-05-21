@@ -2,8 +2,9 @@ import { texyTypography } from "@hckr_/blendid/lib/texy.mjs";
 
 /**
  * @param {Record<string, *>} pathConfig
- * @param {{development: function(): boolean, production: function(): boolean}} mode
+ * @param {{development: () => boolean, production: () => boolean}} mode
  * @param {Boolean} verbose
+ * @return {TaskConfig}
  */
 export default function (pathConfig, mode, verbose) {
   return {
