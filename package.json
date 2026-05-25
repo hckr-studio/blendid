@@ -79,7 +79,7 @@
     "@types/undertaker-registry": "1.0.4",
     "chai": "6.2.2",
     "esbuild": "0.28.0",
-    "mocha": "11.7.5",
+    "mocha": "11.7.6",
     "sinon": "22.0.0"
   },
   "resolutions": {
