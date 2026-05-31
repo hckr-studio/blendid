@@ -1,5 +1,19 @@
 # Changelog
 
+## 9.6.16
+
+- Texy moved to separate package `@gryphoon/texy`
+
+## 9.6.15
+
+- Texy support for `sk` locale
+
+## 9.6.14
+
+- Updated dependencies
+- Removed Texy marked extension in favor of userland injected one
+- Improved Texy locale handling to fall back to `en` when unknown locale is resolved.
+
 ## 9.6.13
 
 - Updated dependencies
