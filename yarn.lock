@@ -130,19 +130,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-color-parser@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@csstools/css-color-parser@npm:4.1.1"
-  dependencies:
-    "@csstools/color-helpers": "npm:^6.0.2"
-    "@csstools/css-calc": "npm:^3.2.1"
-  peerDependencies:
-    "@csstools/css-parser-algorithms": ^4.0.0
-    "@csstools/css-tokenizer": ^4.0.0
-  checksum: 10/05bcfb0b05070387dbaf3b498091998fc23b4442c04e5469ce7b1af600113032c43946b07d4c6ae04f2e4c2c4d49ecfca8b2a42fe9d53d7cec4bf2642b2a33e8
-  languageName: node
-  linkType: hard
-
 "@csstools/css-color-parser@npm:^4.1.7":
   version: 4.1.7
   resolution: "@csstools/css-color-parser@npm:4.1.7"
@@ -346,20 +333,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-gamut-mapping@npm:3.0.4":
-  version: 3.0.4
-  resolution: "@csstools/postcss-gamut-mapping@npm:3.0.4"
-  dependencies:
-    "@csstools/css-color-parser": "npm:^4.1.1"
-    "@csstools/css-parser-algorithms": "npm:^4.0.0"
-    "@csstools/css-tokenizer": "npm:^4.0.0"
-  peerDependencies:
-    postcss: ^8.4
-  checksum: 10/d4aadc71f5b5df537b9cb519f841ef52299502f0cefa300b8d8ada849aab425df9928d604668827c856372c395c20552a2186138ab5e4984ac0e427952742533
-  languageName: node
-  linkType: hard
-
-"@csstools/postcss-gamut-mapping@npm:^3.0.5":
+"@csstools/postcss-gamut-mapping@npm:3.0.5, @csstools/postcss-gamut-mapping@npm:^3.0.5":
   version: 3.0.5
   resolution: "@csstools/postcss-gamut-mapping@npm:3.0.5"
   dependencies:
@@ -1019,7 +993,7 @@ __metadata:
   resolution: "@hckr_/blendid@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.4.16"
-    "@csstools/postcss-gamut-mapping": "npm:3.0.4"
+    "@csstools/postcss-gamut-mapping": "npm:3.0.5"
     "@gryphoon/texy": "npm:1.0.0"
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
