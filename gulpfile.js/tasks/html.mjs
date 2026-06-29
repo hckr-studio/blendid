@@ -11,7 +11,7 @@ import svgstore from "gulp-svgstore";
 import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
 import nunjucksMarkdown from "nunjucks-markdown";
-import { objectTransform } from "through2";
+import through2 from "through2";
 import DefaultRegistry from "undertaker-registry";
 import { marked } from "../lib/markdown.mjs";
 import projectPath from "../lib/projectPath.mjs";
@@ -221,12 +221,12 @@ export class HtmlRegistry extends DefaultRegistry {
                   return file.contents.toString();
                 }
               })
-            : objectTransform()
+            : through2.obj()
         )
         .pipe(
           this.config.svgSprite
             ? debug({ title: "injectsvg", logger: logger.debug })
-            : objectTransform()
+            : through2.obj()
         )
         .pipe(this.mode.production(htmlmin(config.htmlmin)))
         .pipe(
