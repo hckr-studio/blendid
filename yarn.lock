@@ -1044,7 +1044,7 @@ __metadata:
     rev-path: "npm:3.0.0"
     sharp: "npm:0.35.2"
     sinon: "npm:22.0.0"
-    sort-keys: "npm:6.0.0"
+    sort-keys: "npm:6.0.1"
     through2: "npm:4.0.2"
     undertaker-registry: "npm:2.0.0"
     vinyl: "npm:3.0.1"
@@ -5962,12 +5962,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sort-keys@npm:6.0.0":
-  version: 6.0.0
-  resolution: "sort-keys@npm:6.0.0"
+"sort-keys@npm:6.0.1":
+  version: 6.0.1
+  resolution: "sort-keys@npm:6.0.1"
   dependencies:
     is-plain-obj: "npm:^4.1.0"
-  checksum: 10/8474c4b1e52bc55f5f6fe48de3bdfa1c15c3ae7c1260a955f268746f7122d99dcbc9e84b04e4f0316cde13a94052d59def4278563780e74940d682a028c8ab2b
+  checksum: 10/9417d805d78368fd2ed387d092b45ba36c0d47c1c8663e95ccd0b088a618fc4fed9bfbf8586f1fe89615d134d247c87096b63474c18ffb36dae5ec705839c4f2
   languageName: node
   linkType: hard
 
