@@ -81,7 +81,7 @@
     "chai": "6.2.2",
     "esbuild": "0.28.1",
     "mocha": "11.7.6",
-    "sinon": "22.0.0"
+    "sinon": "22.1.0"
   },
   "resolutions": {
     "ansi-colors": "4.1.3",
