@@ -1056,7 +1056,7 @@ __metadata:
     gulp-nunjucks-render: "npm:2.2.3"
     gulp-postcss: "npm:10.0.0"
     gulp-rev-delete-original: "npm:0.2.3"
-    gulp-rev-rewrite: "npm:=5.0.0"
+    gulp-rev-rewrite: "npm:=7.0.0"
     gulp-sizereport: "npm:1.2.1"
     gulp-svgmin: "npm:4.1.0"
     gulp-svgstore: "npm:9.0.0"
@@ -3542,14 +3542,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gulp-rev-rewrite@npm:=5.0.0":
-  version: 5.0.0
-  resolution: "gulp-rev-rewrite@npm:5.0.0"
+"gulp-rev-rewrite@npm:=7.0.0":
+  version: 7.0.0
+  resolution: "gulp-rev-rewrite@npm:7.0.0"
   dependencies:
-    lodash.escaperegexp: "npm:^4.1.2"
-    plugin-error: "npm:^1.0.1"
-    through2: "npm:^4.0.2"
-  checksum: 10/4b7562584991ac152ce0be0eedcadc32f63a0fbbe41adc3382d24100c91891a74e5eb3fff87bfe2fddacc96ed0a14397e1d235a4f41c09c090d5362e458959d2
+    plugin-error: "npm:^2.0.1"
+  checksum: 10/97dbc4d7b21dad4842eb05a8e1a58f3941042e78246e69ac28da9321b52a9551d1b55c19b7120062ce9591f1edd82919fa8df1d5baf95181ca75e28077f9e3bb
   languageName: node
   linkType: hard
 
@@ -4156,13 +4154,6 @@ __metadata:
   version: 4.5.0
   resolution: "lodash.clonedeep@npm:4.5.0"
   checksum: 10/957ed243f84ba6791d4992d5c222ffffca339a3b79dbe81d2eaf0c90504160b500641c5a0f56e27630030b18b8e971ea10b44f928a977d5ced3c8948841b555f
-  languageName: node
-  linkType: hard
-
-"lodash.escaperegexp@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "lodash.escaperegexp@npm:4.1.2"
-  checksum: 10/6d99452b1cfd6073175a9b741a9b09ece159eac463f86f02ea3bee2e2092923fce812c8d2bf446309cc52d1d61bf9af51c8118b0d7421388e6cead7bd3798f0f
   languageName: node
   linkType: hard
 
