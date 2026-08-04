@@ -54,7 +54,7 @@
     "marked-highlight": "2.2.4",
     "marked-mangle": "1.1.13",
     "modify-filename": "2.0.0",
-    "ndarray-pixels": "5.0.1",
+    "ndarray-pixels": "5.2.0",
     "nunjucks": "3.2.4",
     "nunjucks-markdown": "2.0.1",
     "plugin-error": "2.0.1",
