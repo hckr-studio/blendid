@@ -1991,10 +1991,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:1.0.30001806":
-  version: 1.0.30001806
-  resolution: "caniuse-lite@npm:1.0.30001806"
-  checksum: 10/25d4ed6a2f03f51519bf302739cbe53e5522205607e47455cfcf19fdde975f2fdb890b78ead7b18961d5635ee676f03c73dea1ef30e9ef1d3fe11b9f02485f86
+"caniuse-lite@npm:1.0.30001807":
+  version: 1.0.30001807
+  resolution: "caniuse-lite@npm:1.0.30001807"
+  checksum: 10/8f948749ad2d7ce444bc101675bc38db0aef3d70a8a3e21b6c1a0813836e5d5a371157f6e28735b27108278d548bf5808fdf18969875f7d773f0f4e2daa34648
   languageName: node
   linkType: hard
 
