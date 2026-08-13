@@ -3960,10 +3960,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdn-data@npm:2.29.0":
-  version: 2.29.0
-  resolution: "mdn-data@npm:2.29.0"
-  checksum: 10/f979df6a712613539687eaf263e60fe5e7c6011170e3b3ce2f4ade9e376630457f885415551d096f5b0c8f7cb48e57b0d07bf60d205217173dd47360ca01fb28
+"mdn-data@npm:2.31.0":
+  version: 2.31.0
+  resolution: "mdn-data@npm:2.31.0"
+  checksum: 10/60a6a9c6a3b07d531c017befc6241c95b76431f19295d8754506d7ddec44583fb99d8f5a683775689a3778397e5671b96ea5bf1562a4c04039a9cab1eeb7b8d1
   languageName: node
   linkType: hard
 
