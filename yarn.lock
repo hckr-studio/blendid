@@ -3924,10 +3924,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdn-data@npm:2.32.0":
-  version: 2.32.0
-  resolution: "mdn-data@npm:2.32.0"
-  checksum: 10/1d043f22e7bd52908830beea46287b4402a93227cb50c419be67459db8fb10142117c94c1792949da63b19f50fff4161df5edfebb688702999bcc30ed54e092e
+"mdn-data@npm:2.33.0":
+  version: 2.33.0
+  resolution: "mdn-data@npm:2.33.0"
+  checksum: 10/1224f59a4e33a6b969a2bcd90d6a4edf32c80a39a4a06098ad245d81a7d90375537b87674d8ffb9e0161eec12a475906bc2d24919d5843fb56b32539b017473e
   languageName: node
   linkType: hard
 
