@@ -73,7 +73,7 @@
     "vite": "8.2.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.8",
+    "@biomejs/biome": "2.5.9",
     "@types/gulp": "4.0.18",
     "@types/nunjucks": "3.2.6",
     "@types/undertaker": "1.2.12",
