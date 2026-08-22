@@ -49,7 +49,7 @@
     "gulp-svgstore": "9.0.0",
     "gulplog": "2.2.0",
     "lodash-es": "4.18.1",
-    "marked": "18.0.9",
+    "marked": "18.0.10",
     "marked-gfm-heading-id": "4.1.4",
     "marked-highlight": "2.2.4",
     "marked-mangle": "1.1.13",
