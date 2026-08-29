@@ -1675,10 +1675,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"argparse@npm:3.0.0":
-  version: 3.0.0
-  resolution: "argparse@npm:3.0.0"
-  checksum: 10/a0658e98cac7727470b62c7665562f14b7aed16aee429a2805a6c0eaeed1f6c724f7ca7226499dda596f7584c052d6115e45ee8b9ac218151ec5723d567092c2
+"argparse@npm:3.0.1":
+  version: 3.0.1
+  resolution: "argparse@npm:3.0.1"
+  checksum: 10/afaa394d8a221f6c09df962f294e15afc1292e2a9bcc9f359cd4695cf38169d7e79d51f9c6bec449abc2d4ca2aa49f855002bf85cdaeb5857883a4cbe2016bff
   languageName: node
   linkType: hard
 
