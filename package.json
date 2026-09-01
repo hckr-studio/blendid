@@ -61,7 +61,7 @@
     "postcss": "8.5.26",
     "postcss-functions": "4.0.2",
     "postcss-import": "17.0.0",
-    "postcss-preset-env": "11.4.0",
+    "postcss-preset-env": "11.5.0",
     "rev-hash": "4.1.0",
     "rev-path": "3.0.0",
     "sharp": "0.35.4",
