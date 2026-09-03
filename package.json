@@ -27,7 +27,7 @@
     "@lokesh.dhakar/quantize": "1.4.0",
     "@vitejs/plugin-basic-ssl": "2.3.0",
     "cloudinary": "2.11.0",
-    "cssnano": "8.0.10",
+    "cssnano": "9.0.1",
     "del": "8.0.1",
     "gulp": "5.0.1",
     "gulp-changed": "5.0.4",
