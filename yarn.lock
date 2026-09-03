@@ -2116,6 +2116,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"boolbase@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "boolbase@npm:2.0.0"
+  checksum: 10/517079543665b03caaea5ea93fb59c98bc688bcbe8263f54b6914b200cfe5dddf9d3ca844f2b1ceffe19568db77ecd7a17a9bfb51a3aa0bcfcd55d0bb38e25f3
+  languageName: node
+  linkType: hard
+
 "brace-expansion@npm:^5.0.8":
   version: 5.0.9
   resolution: "brace-expansion@npm:5.0.9"
@@ -2433,16 +2440,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-select@npm:6.0.0":
-  version: 6.0.0
-  resolution: "css-select@npm:6.0.0"
+"css-select@npm:7.0.0":
+  version: 7.0.0
+  resolution: "css-select@npm:7.0.0"
   dependencies:
-    boolbase: "npm:^1.0.0"
-    css-what: "npm:^7.0.0"
-    domhandler: "npm:^5.0.3"
-    domutils: "npm:^3.2.2"
-    nth-check: "npm:^2.1.1"
-  checksum: 10/361b07f67bdf2a30771a58adf3a7b1e8d4ba52a9e2a020c9fd0cd846e9a6b9149dc9a043b6fc02a6c07e47d58a3a606b97051ecddabddeadafc06a9e88c96e70
+    boolbase: "npm:^2.0.0"
+    css-what: "npm:^8.0.0"
+    domhandler: "npm:^6.0.1"
+    domutils: "npm:^4.0.2"
+    nth-check: "npm:^3.0.1"
+  checksum: 10/3fffcf51b2ff4428c9bf3298a48cc3ce737279e701bebf3dbaa401b1f6bc6c007859a04a27192fefea6f1028f4e5bb3e6c9e81871e0f04d58d285e82f3d672e1
   languageName: node
   linkType: hard
 
@@ -2477,6 +2484,13 @@ __metadata:
   version: 7.0.0
   resolution: "css-what@npm:7.0.0"
   checksum: 10/253c3013f8aee74b60d7d5c60bc62f3151a32f59ec6a9cc74527bb514d3aa746466f81fc10d57d85c58ee777d6e82eced7c5733a2181a884458dfc134518afab
+  languageName: node
+  linkType: hard
+
+"css-what@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "css-what@npm:8.0.0"
+  checksum: 10/74ede3c326689247fcb0f4eed1ad63bb9e980ca80b08afe6328d89884aa9c5a3b04973dfe7f73ec79b0cab9b4a253527fc5355eb0b4685cac17eee2fc219cdba
   languageName: node
   linkType: hard
 
@@ -4433,12 +4447,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nth-check@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "nth-check@npm:2.1.1"
+"nth-check@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "nth-check@npm:3.0.1"
   dependencies:
-    boolbase: "npm:^1.0.0"
-  checksum: 10/5afc3dafcd1573b08877ca8e6148c52abd565f1d06b1eb08caf982e3fa289a82f2cae697ffb55b5021e146d60443f1590a5d6b944844e944714a5b549675bcd3
+    boolbase: "npm:^2.0.0"
+  checksum: 10/5e7bf10b282a46a2154ea5f76f49721e69719ce3d701bad66203ebd6d149935bd7d02dcaa172144546cfee8ad3878c09facf5dbd06963787944921fb6627a6da
   languageName: node
   linkType: hard
 
