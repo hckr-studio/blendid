@@ -1070,7 +1070,7 @@ __metadata:
     sharp: "npm:0.35.4"
     sinon: "npm:22.1.0"
     sort-keys: "npm:6.0.1"
-    through2: "npm:4.0.2"
+    through2: "npm:5.0.11"
     undertaker-registry: "npm:2.0.0"
     vinyl: "npm:3.0.1"
     vinyl-file: "npm:5.0.0"
@@ -6236,12 +6236,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"through2@npm:4.0.2":
-  version: 4.0.2
-  resolution: "through2@npm:4.0.2"
+"through2@npm:5.0.11":
+  version: 5.0.11
+  resolution: "through2@npm:5.0.11"
   dependencies:
-    readable-stream: "npm:3"
-  checksum: 10/72c246233d9a989bbebeb6b698ef0b7b9064cb1c47930f79b25d87b6c867e075432811f69b7b2ac8da00ca308191c507bdab913944be8019ac43b036ce88f6ba
+    readable-stream: "npm:^4.7.0"
+  checksum: 10/1b29b54ac4b7628c9a836636ec844ca51b1b0c970942e274999fe831ff9b16d6602f244e058b8dbd5cbbfce4e5c29b8d20d205d3c2306c8d12a19937850b0aea
   languageName: node
   linkType: hard
 
