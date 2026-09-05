@@ -1002,7 +1002,7 @@ __metadata:
     "@vitejs/plugin-basic-ssl": "npm:2.3.0"
     chai: "npm:6.2.2"
     cloudinary: "npm:2.11.0"
-    cssnano: "npm:9.0.1"
+    cssnano: "npm:9.0.2"
     del: "npm:8.0.1"
     esbuild: "npm:0.28.2"
     gulp: "npm:5.0.1"
@@ -2470,7 +2470,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano-preset-default@npm:^9.0.1":
+"cssnano-preset-default@npm:^9.0.2":
   version: 9.0.2
   resolution: "cssnano-preset-default@npm:9.0.2"
   dependencies:
@@ -2518,14 +2518,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano@npm:9.0.1":
-  version: 9.0.1
-  resolution: "cssnano@npm:9.0.1"
+"cssnano@npm:9.0.2":
+  version: 9.0.2
+  resolution: "cssnano@npm:9.0.2"
   dependencies:
-    cssnano-preset-default: "npm:^9.0.1"
+    cssnano-preset-default: "npm:^9.0.2"
   peerDependencies:
     postcss: ^8.5.26
-  checksum: 10/c0d70cabf2b13968e9d04bde4309b6d83a211855d3ad9052f2b624162748369c5b1bc72b9bcf63a936eaaeb2394c7b6e8c3a49533f11863cb678460b6bf4141e
+  checksum: 10/a6029c3f018483fb0bdda4274bae44bcdc9da368908640a4824d0bf440a6cd226045dcffb521f46976c63a91ec4a9ef0149534d519bbe2e63a3d29b9ba72aeaa
   languageName: node
   linkType: hard
 
