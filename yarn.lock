@@ -1009,7 +1009,7 @@ __metadata:
     gulp-changed: "npm:5.0.4"
     gulp-data: "npm:1.3.1"
     gulp-debug: "npm:5.0.1"
-    gulp-esbuild: "npm:0.14.1"
+    gulp-esbuild: "npm:0.15.0"
     gulp-htmlmin-next: "npm:6.0.1"
     gulp-if: "npm:3.0.0"
     gulp-inject: "npm:5.0.5"
@@ -3308,15 +3308,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gulp-esbuild@npm:0.14.1":
-  version: 0.14.1
-  resolution: "gulp-esbuild@npm:0.14.1"
+"gulp-esbuild@npm:0.15.0":
+  version: 0.15.0
+  resolution: "gulp-esbuild@npm:0.15.0"
   dependencies:
     plugin-error: "npm:^2.0.1"
-    vinyl: "npm:^3.0.0"
+    vinyl: "npm:^3.0.1"
   peerDependencies:
     esbuild: ">=0.17"
-  checksum: 10/dd8f9cc99508749f5652afb90b81b707cecc0898651e82a632c443116aad4d75669c32084a87084b036667d0b1dee5d9bbc395f4d40ff09c1100c84145c4ce3d
+    gulp: ">=4"
+  checksum: 10/999bd5c511282de1794e37c8c826ac65fce13d8b2640396130724437475b359e3ec862f6d869f76675762293922e82236c9149b2b691164f6a50cab1c1ff66cd
   languageName: node
   linkType: hard
 
