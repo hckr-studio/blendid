@@ -342,7 +342,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-gamut-mapping@npm:3.0.10, @csstools/postcss-gamut-mapping@npm:^3.0.10":
+"@csstools/postcss-gamut-mapping@npm:3.0.11":
+  version: 3.0.11
+  resolution: "@csstools/postcss-gamut-mapping@npm:3.0.11"
+  dependencies:
+    "@csstools/css-color-parser": "npm:^4.2.2"
+    "@csstools/css-parser-algorithms": "npm:^4.0.0"
+    "@csstools/css-tokenizer": "npm:^4.0.0"
+  peerDependencies:
+    postcss: ^8.4
+  checksum: 10/6050174ac5ba123eca74d64eef85f45c83aa1aa7ba716296cb390893295940e1defcfd2f5e84fa4284810556013922fa1da2bb875001e60b160d2812cb1e4312
+  languageName: node
+  linkType: hard
+
+"@csstools/postcss-gamut-mapping@npm:^3.0.10":
   version: 3.0.10
   resolution: "@csstools/postcss-gamut-mapping@npm:3.0.10"
   dependencies:
@@ -992,7 +1005,7 @@ __metadata:
   resolution: "@hckr_/blendid@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.5.12"
-    "@csstools/postcss-gamut-mapping": "npm:3.0.10"
+    "@csstools/postcss-gamut-mapping": "npm:3.0.11"
     "@gryphoon/texy": "npm:1.0.0"
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
