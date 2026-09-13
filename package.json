@@ -124,7 +124,7 @@
     "vite": "8.2.2",
     "which": "7.0.0",
     "yallist": "5.0.0",
-    "yargs": "17.7.3"
+    "yargs": "18.1.0"
   },
   "overrides": {
     "ansi-colors": "4.1.3",
@@ -169,7 +169,7 @@
     "vite": "8.2.2",
     "which": "7.0.0",
     "yallist": "5.0.0",
-    "yargs": "17.7.3"
+    "yargs": "18.1.0"
   },
   "engines": {
     "node": ">=22"
