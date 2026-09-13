@@ -1,4 +1,5 @@
-import { expect } from "chai";
+import { describe, it } from "node:test";
+import { strict as assert } from "node:assert";
 import { getTaskDefaults } from "../taskDefaults.mjs";
 
 describe("Task Defaults", () => {
@@ -10,12 +11,11 @@ describe("Task Defaults", () => {
 
     const defaults = getTaskDefaults(mode);
 
-    expect(defaults).to.have.property("esbuild");
-    expect(defaults.esbuild.options).to.include({
-      bundle: true,
-      splitting: true,
-      treeShaking: true,
-      minify: true
-    });
+    assert.ok(defaults.esbuild);
+    assert.ok(defaults.esbuild.options);
+    assert.equal(defaults.esbuild.options.bundle, true);
+    assert.equal(defaults.esbuild.options.splitting, true);
+    assert.equal(defaults.esbuild.options.treeShaking, true);
+    assert.equal(defaults.esbuild.options.minify, true);
   });
 });
