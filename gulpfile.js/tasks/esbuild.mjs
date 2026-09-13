@@ -1,8 +1,8 @@
-import DefaultRegistry from "undertaker-registry";
-import esbuild from "gulp-esbuild";
-import projectPath from "../lib/projectPath.mjs";
 import debug from "gulp-debug";
+import { gulpEsbuild } from "gulp-esbuild";
 import logger from "gulplog";
+import DefaultRegistry from "undertaker-registry";
+import projectPath from "../lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 export class ESBuildRegistry extends DefaultRegistry {
@@ -41,7 +41,7 @@ export class ESBuildRegistry extends DefaultRegistry {
     task("esbuild", () =>
       src(this.paths.src)
         .pipe(debug({ title: "esbuild:", logger: logger.debug }))
-        .pipe(esbuild(this.config.options))
+        .pipe(gulpEsbuild(this.config.options))
         .pipe(dest(this.paths.dest))
     );
   }
