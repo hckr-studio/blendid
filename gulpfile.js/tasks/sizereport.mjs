@@ -1,6 +1,6 @@
-import DefaultRegistry from "undertaker-registry";
 import sizereport from "gulp-sizereport";
-import projectPath from "../lib/projectPath.mjs";
+import DefaultRegistry from "undertaker-registry";
+import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 

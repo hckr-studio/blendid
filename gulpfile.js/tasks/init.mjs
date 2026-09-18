@@ -2,7 +2,7 @@ import { Readable } from "node:stream";
 import { styleText } from "node:util";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
-import projectPath from "../lib/projectPath.mjs";
+import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 

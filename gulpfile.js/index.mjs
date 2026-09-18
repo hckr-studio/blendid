@@ -7,11 +7,12 @@
 */
 
 import gulp from "gulp";
-import logger from "gulplog";
 import gulp_mode from "gulp-mode";
-import getEnabledTasks from "./lib/getEnabledTasks.mjs";
-import { getPathConfig } from "./lib/getPathConfig.mjs";
-import { getTaskConfig } from "./lib/getTaskConfig.mjs";
+import logger from "gulplog";
+import getEnabledTasks from "#lib/getEnabledTasks.mjs";
+import { getPathConfig } from "#lib/getPathConfig.mjs";
+import { getTaskConfig } from "#lib/getTaskConfig.mjs";
+import projectPath from "#lib/projectPath.mjs";
 import { CleanRegistry } from "./tasks/clean.mjs";
 import { CloudflareRegistry } from "./tasks/cloudflare.mjs";
 import { CloudinaryRegistry } from "./tasks/cloudinary.mjs";
@@ -23,13 +24,12 @@ import { ImagesRegistry } from "./tasks/images.mjs";
 import { ImportWPRegistry } from "./tasks/import-wp.mjs";
 import { InitRegistry } from "./tasks/init.mjs";
 import { InitConfigRegistry } from "./tasks/init-config.mjs";
+import { RevRegistry } from "./tasks/rev.mjs";
 import { SizeReportRegistry } from "./tasks/sizereport.mjs";
 import { StaticRegistry } from "./tasks/static.mjs";
 import { StyleSheetsRegistry } from "./tasks/stylesheets.mjs";
 import { ViteRegistry } from "./tasks/vite.mjs";
 import { WatchRegistry } from "./tasks/watch.mjs";
-import { RevRegistry } from "./tasks/rev.mjs";
-import projectPath from "./lib/projectPath.mjs";
 
 const verbose = new Set(process.argv).has("-LLLL");
 const mode = gulp_mode({ verbose });

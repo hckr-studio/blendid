@@ -1009,7 +1009,7 @@ __metadata:
     gulp-changed: "npm:5.0.4"
     gulp-data: "npm:1.3.1"
     gulp-debug: "npm:5.0.1"
-    gulp-esbuild: "npm:0.15.0"
+    gulp-esbuild: "npm:0.14.1"
     gulp-htmlmin-next: "npm:6.0.1"
     gulp-if: "npm:3.0.0"
     gulp-inject: "npm:5.0.5"
@@ -1018,7 +1018,6 @@ __metadata:
     gulp-mode: "npm:1.1.0"
     gulp-nunjucks-render: "npm:2.2.3"
     gulp-postcss: "npm:10.0.0"
-    gulp-rev-delete-original: "npm:0.2.3"
     gulp-rev-rewrite: "npm:=7.0.0"
     gulp-sizereport: "npm:1.2.1"
     gulp-svgmin: "npm:4.1.0"
@@ -1040,6 +1039,7 @@ __metadata:
     postcss-preset-env: "npm:11.5.2"
     rev-hash: "npm:4.1.0"
     rev-path: "npm:3.0.0"
+    rimraf: "npm:6.1.3"
     sharp: "npm:0.35.4"
     sort-keys: "npm:6.0.1"
     through2: "npm:5.0.11"
@@ -3226,16 +3226,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gulp-esbuild@npm:0.15.0":
-  version: 0.15.0
-  resolution: "gulp-esbuild@npm:0.15.0"
+"gulp-esbuild@npm:0.14.1":
+  version: 0.14.1
+  resolution: "gulp-esbuild@npm:0.14.1"
   dependencies:
     plugin-error: "npm:^2.0.1"
-    vinyl: "npm:^3.0.1"
+    vinyl: "npm:^3.0.0"
   peerDependencies:
     esbuild: ">=0.17"
-    gulp: ">=4"
-  checksum: 10/999bd5c511282de1794e37c8c826ac65fce13d8b2640396130724437475b359e3ec862f6d869f76675762293922e82236c9149b2b691164f6a50cab1c1ff66cd
+  checksum: 10/dd8f9cc99508749f5652afb90b81b707cecc0898651e82a632c443116aad4d75669c32084a87084b036667d0b1dee5d9bbc395f4d40ff09c1100c84145c4ce3d
   languageName: node
   linkType: hard
 
@@ -3373,16 +3372,6 @@ __metadata:
   peerDependencies:
     postcss: ^8.0.0
   checksum: 10/71af893e18101f5d49a25bc02a5ded49603446bc7dfd9995fee67319e21236f6f8d0fdb0babdd39224e68d267303f31905bd5d2b0e3b2247de52507d56b79739
-  languageName: node
-  linkType: hard
-
-"gulp-rev-delete-original@npm:0.2.3":
-  version: 0.2.3
-  resolution: "gulp-rev-delete-original@npm:0.2.3"
-  dependencies:
-    rimraf: "npm:^2.3.4"
-    through2: "npm:^0.6.5"
-  checksum: 10/a5d41f39648e91f24f292f59b0f2e7d7b583041467b2b883b37e1aa9797bc43596cabd560c8058a7885a8e732409c32238e924c39beb45875f4ddb50e5f9336e
   languageName: node
   linkType: hard
 
@@ -4294,6 +4283,13 @@ __metadata:
   version: 7.0.4
   resolution: "p-map@npm:7.0.4"
   checksum: 10/ef48c3b2e488f31c693c9fcc0df0ef76518cf6426a495cf9486ebbb0fd7f31aef7f90e96f72e0070c0ff6e3177c9318f644b512e2c29e3feee8d7153fcb6782e
+  languageName: node
+  linkType: hard
+
+"package-json-from-dist@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "package-json-from-dist@npm:1.0.1"
+  checksum: 10/58ee9538f2f762988433da00e26acc788036914d57c71c246bf0be1b60cdbd77dd60b6a3e1a30465f0b248aeb80079e0b34cb6050b1dfa18c06953bb1cbc7602
   languageName: node
   linkType: hard
 
@@ -5396,14 +5392,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:3.0.2":
-  version: 3.0.2
-  resolution: "rimraf@npm:3.0.2"
+"rimraf@npm:6.1.3":
+  version: 6.1.3
+  resolution: "rimraf@npm:6.1.3"
   dependencies:
-    glob: "npm:^7.1.3"
+    glob: "npm:^13.0.3"
+    package-json-from-dist: "npm:^1.0.1"
   bin:
-    rimraf: bin.js
-  checksum: 10/063ffaccaaaca2cfd0ef3beafb12d6a03dd7ff1260d752d62a6077b5dfff6ae81bea571f655bb6b589d366930ec1bdd285d40d560c0dae9b12f125e54eb743d5
+    rimraf: dist/esm/bin.mjs
+  checksum: 10/dd98ec2ad7cd2cccae1c7110754d472eac8edb2bab8a8b057dce04edfe1433dab246a889b3fd85a66c78ca81caa1429caa0e736c7647f6832b04fd5d4dfb8ab8
   languageName: node
   linkType: hard
 
@@ -5971,16 +5968,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"through2@npm:^0.6.5":
-  version: 0.6.5
-  resolution: "through2@npm:0.6.5"
-  dependencies:
-    readable-stream: "npm:>=1.0.33-1 <1.1.0-0"
-    xtend: "npm:>=4.0.0 <4.1.0-0"
-  checksum: 10/37571f0bd4fa3d22f421ecf27af4c4b5eee34f350e6ca81d1a748dc09e0ede589a88248497d5bb2855c61a583a8e0dc9cd751e71c130040fceb19f778d43503d
-  languageName: node
-  linkType: hard
-
 "through2@npm:^2.0.0, through2@npm:^2.0.1, through2@npm:^2.0.3":
   version: 2.0.5
   resolution: "through2@npm:2.0.5"
@@ -6369,7 +6356,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xtend@npm:>=4.0.0 <4.1.0-0, xtend@npm:~4.0.1":
+"xtend@npm:~4.0.1":
   version: 4.0.2
   resolution: "xtend@npm:4.0.2"
   checksum: 10/ac5dfa738b21f6e7f0dd6e65e1b3155036d68104e67e5d5d1bde74892e327d7e5636a076f625599dc394330a731861e87343ff184b0047fef1360a7ec0a5a36a

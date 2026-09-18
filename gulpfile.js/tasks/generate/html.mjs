@@ -13,7 +13,7 @@ import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
 import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
-import projectPath from "../../lib/projectPath.mjs";
+import projectPath from "#lib/projectPath.mjs";
 import {
   createDataFunction,
   createDataFunctionV2,

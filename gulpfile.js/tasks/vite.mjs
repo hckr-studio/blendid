@@ -1,9 +1,9 @@
-import DefaultRegistry from "undertaker-registry";
-import logger from "gulplog";
-import { createServer, version } from "vite";
-import basicSsl from "@vitejs/plugin-basic-ssl";
-import projectPath from "../lib/projectPath.mjs";
 import { styleText } from "node:util";
+import basicSsl from "@vitejs/plugin-basic-ssl";
+import logger from "gulplog";
+import DefaultRegistry from "undertaker-registry";
+import { createServer, version } from "vite";
+import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 

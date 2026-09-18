@@ -1,5 +1,5 @@
 import debug from "gulp-debug";
-import { gulpEsbuild } from "gulp-esbuild";
+import gulpEsbuild from "gulp-esbuild";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
 import projectPath from "../lib/projectPath.mjs";

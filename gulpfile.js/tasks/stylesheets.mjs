@@ -2,8 +2,8 @@ import debug from "gulp-debug";
 import postcss from "gulp-postcss";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
-import getPostCSSPlugins from "../lib/postCSS.mjs";
-import projectPath from "../lib/projectPath.mjs";
+import getPostCSSPlugins from "#lib/postCSS.mjs";
+import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 

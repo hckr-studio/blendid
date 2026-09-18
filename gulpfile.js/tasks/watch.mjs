@@ -1,5 +1,5 @@
 import DefaultRegistry from "undertaker-registry";
-import projectPath from "../lib/projectPath.mjs";
+import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 

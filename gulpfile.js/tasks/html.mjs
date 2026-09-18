@@ -13,8 +13,8 @@ import cloneDeep from "lodash-es/cloneDeep.js";
 import nunjucksMarkdown from "nunjucks-markdown";
 import { objectTransform } from "through2";
 import DefaultRegistry from "undertaker-registry";
-import { marked } from "../lib/markdown.mjs";
-import projectPath from "../lib/projectPath.mjs";
+import { marked } from "#lib/markdown.mjs";
+import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/nunjucks").Environment} Environment */
 /** @typedef {import("@types/gulp")} Undertaker */

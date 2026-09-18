@@ -4,10 +4,8 @@ import changed from "gulp-changed";
 import debug from "gulp-debug";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
+import cloudinaryUpload, { manifest } from "#gulp-cloudinary-upload/index.mjs";
 import projectPath from "../lib/projectPath.mjs";
-import cloudinaryUpload, {
-  manifest
-} from "../packages/gulp-cloudinary-upload/index.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 

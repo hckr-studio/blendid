@@ -1,10 +1,10 @@
-import * as fs from "node:fs/promises";
 import { existsSync } from "node:fs";
+import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { parseArgs, styleText } from "node:util";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
-import projectPath from "../lib/projectPath.mjs";
+import projectPath from "#lib/projectPath.mjs";
 
 async function fetchObjects(objectType, url) {
   const hostname = new URL(url).hostname;

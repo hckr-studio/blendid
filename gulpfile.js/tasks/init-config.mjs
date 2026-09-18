@@ -1,7 +1,7 @@
-import DefaultRegistry from "undertaker-registry";
-import logger from "gulplog";
 import { styleText } from "node:util";
-import projectPath from "../lib/projectPath.mjs";
+import logger from "gulplog";
+import DefaultRegistry from "undertaker-registry";
+import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
