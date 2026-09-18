@@ -1,6 +1,6 @@
-import { describe, it, beforeEach } from "node:test";
 import { strict as assert } from "node:assert";
-import getEnabledTasks from "../getEnabledTasks.mjs";
+import { beforeEach, describe, it } from "node:test";
+import getEnabledTasks from "./getEnabledTasks.mjs";
 
 let ENV = "development";
 let taskConfig = {};

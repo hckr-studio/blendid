@@ -1,6 +1,6 @@
-import { describe, it } from "node:test";
 import { strict as assert } from "node:assert";
-import { getTaskDefaults } from "../taskDefaults.mjs";
+import { describe, it } from "node:test";
+import { getTaskDefaults } from "./taskDefaults.mjs";
 
 describe("Task Defaults", () => {
   it("should return correct default configuration", () => {

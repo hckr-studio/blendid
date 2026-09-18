@@ -1,6 +1,6 @@
-import { describe, it, before, after } from "node:test";
 import { strict as assert } from "node:assert";
-import projectPath from "../projectPath.mjs";
+import { after, before, describe, it } from "node:test";
+import projectPath from "./projectPath.mjs";
 
 describe("projectPath", () => {
   let originalEnv;

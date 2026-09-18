@@ -1,6 +1,6 @@
-import { describe, it } from "node:test";
 import { strict as assert } from "node:assert";
-import { marked } from "../markdown.mjs";
+import { describe, it } from "node:test";
+import { marked } from "./markdown.mjs";
 
 describe("Markdown Processing", () => {
   it("should process markdown with heading ID extension", () => {
