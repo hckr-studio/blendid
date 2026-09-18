@@ -1,12 +1,12 @@
 import path from "node:path";
 import { Transform } from "node:stream";
+import modifyFilename from "modify-filename";
+import PluginError from "plugin-error";
 import revHash from "rev-hash";
 import { revPath } from "rev-path";
 import sortKeys from "sort-keys";
-import modifyFilename from "modify-filename";
 import Vinyl from "vinyl";
 import { vinylFile } from "vinyl-file";
-import PluginError from "plugin-error";
 
 function relativePath(base, filePath) {
   filePath = filePath.replace(/\\/g, "/");
@@ -150,7 +150,7 @@ plugin.manifest = (path_, options) => {
     ...path_
   };
 
-  let manifest = {};
+  const manifest = {};
 
   return new Transform({
     objectMode: true,
@@ -182,7 +182,7 @@ plugin.manifest = (path_, options) => {
       const push = (file) => this.push(file);
       const transformRevManifest = (manifest) =>
         options.transformer.stringify(sortKeys(manifest), undefined, 2);
-      let toRootRelativePaths = ([key, val]) => [`/${key}`, `/${val}`];
+      const toRootRelativePaths = ([key, val]) => [`/${key}`, `/${val}`];
       const transformImportmap = (manifest) =>
         options.transformer.stringify(
           {
@@ -196,7 +196,7 @@ plugin.manifest = (path_, options) => {
           2
         );
 
-      let transformations = [
+      const transformations = [
         createManifest(manifest, transformRevManifest, options).then((x) =>
           push(x)
         )
