@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { Transform } from "node:stream";
 import gulp from "gulp";
 import data from "gulp-data";
 import debug from "gulp-debug";
@@ -11,7 +12,6 @@ import svgstore from "gulp-svgstore";
 import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
 import nunjucksMarkdown from "nunjucks-markdown";
-import { objectTransform } from "through2";
 import DefaultRegistry from "undertaker-registry";
 import { marked } from "#lib/markdown.mjs";
 import projectPath from "#lib/projectPath.mjs";
@@ -64,6 +64,7 @@ export function createDataFunctionV2(cols, pathConfig, paths) {
     );
     return { data, collections };
   }
+
   let cache;
   return async (file) => {
     if (!cache) {
@@ -221,12 +222,22 @@ export class HtmlRegistry extends DefaultRegistry {
                   return file.contents.toString();
                 }
               })
-            : objectTransform()
+            : new Transform({
+                objectMode: true,
+                transform(chunk, _, cb) {
+                  cb(null, chunk);
+                }
+              })
         )
         .pipe(
           this.config.svgSprite
             ? debug({ title: "injectsvg", logger: logger.debug })
-            : objectTransform()
+            : new Transform({
+                objectMode: true,
+                transform(chunk, _, cb) {
+                  cb(null, chunk);
+                }
+              })
         )
         .pipe(this.mode.production(htmlmin(config.htmlmin)))
         .pipe(
