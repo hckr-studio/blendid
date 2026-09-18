@@ -1054,7 +1054,6 @@ __metadata:
     gulp-mode: "npm:1.1.0"
     gulp-nunjucks-render: "npm:2.2.3"
     gulp-postcss: "npm:10.0.0"
-    gulp-rev-rewrite: "npm:=7.0.0"
     gulp-sizereport: "npm:1.2.1"
     gulp-svgmin: "npm:4.1.0"
     gulp-svgstore: "npm:9.0.0"
@@ -3408,15 +3407,6 @@ __metadata:
   peerDependencies:
     postcss: ^8.0.0
   checksum: 10/71af893e18101f5d49a25bc02a5ded49603446bc7dfd9995fee67319e21236f6f8d0fdb0babdd39224e68d267303f31905bd5d2b0e3b2247de52507d56b79739
-  languageName: node
-  linkType: hard
-
-"gulp-rev-rewrite@npm:=7.0.0":
-  version: 7.0.0
-  resolution: "gulp-rev-rewrite@npm:7.0.0"
-  dependencies:
-    plugin-error: "npm:^2.0.1"
-  checksum: 10/97dbc4d7b21dad4842eb05a8e1a58f3941042e78246e69ac28da9321b52a9551d1b55c19b7120062ce9591f1edd82919fa8df1d5baf95181ca75e28077f9e3bb
   languageName: node
   linkType: hard
 

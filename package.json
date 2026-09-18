@@ -19,7 +19,8 @@
     "#lib/*.mjs": "./gulpfile.js/lib/*.mjs",
     "#gulp-cloudinary-upload/*.mjs": "./gulpfile.js/packages/gulp-cloudinary-upload/*.mjs",
     "#gulp-rev/*.mjs": "./gulpfile.js/packages/gulp-rev/*.mjs",
-    "#gulp-rev-delete-original/*.mjs": "./gulpfile.js/packages/gulp-rev-delete-original/*.mjs"
+    "#gulp-rev-delete-original/*.mjs": "./gulpfile.js/packages/gulp-rev-delete-original/*.mjs",
+    "#gulp-rev-rewrite/*.mjs": "./gulpfile.js/packages/gulp-rev-rewrite/*.mjs"
   },
   "scripts": {
     "start": "./bin/blendid.js",
@@ -48,7 +49,6 @@
     "gulp-mode": "1.1.0",
     "gulp-nunjucks-render": "2.2.3",
     "gulp-postcss": "10.0.0",
-    "gulp-rev-rewrite": "=7.0.0",
     "gulp-sizereport": "1.2.1",
     "gulp-svgmin": "4.1.0",
     "gulp-svgstore": "9.0.0",
