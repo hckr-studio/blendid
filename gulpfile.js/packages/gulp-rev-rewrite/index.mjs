@@ -2,10 +2,22 @@ import { Buffer } from "node:buffer";
 import path from "node:path";
 import { Transform } from "node:stream";
 import PluginError from "plugin-error";
-import replace from "./lib/replace.mjs";
 
 function relativePath(from, to) {
   return path.relative(from, to).replaceAll("\\", "/");
+}
+function replace(contents, manifest) {
+  let newContents = contents;
+  for (const [originalPath, revisionedPath] of Object.entries(manifest)) {
+    const regexp = new RegExp(
+      String.raw`(?<![\w\-])${RegExp.escape(originalPath)}(?![\w.])`,
+      "gv"
+    );
+
+    newContents = newContents.replace(regexp, () => revisionedPath);
+  }
+
+  return newContents;
 }
 
 export default function plugin({ manifest } = {}) {
