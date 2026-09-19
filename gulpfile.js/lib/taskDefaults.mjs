@@ -144,8 +144,7 @@ export function getTaskDefaults(mode) {
         minifyCSS: true,
         removeAttributeQuotes: true,
         removeOptionalTags: true,
-        removeRedundantAttributes: true,
-        removeStyleLinkTypeAttributes: true
+        removeRedundantAttributes: true
       }
     },
 
