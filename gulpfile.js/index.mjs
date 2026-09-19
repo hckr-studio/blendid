@@ -7,8 +7,8 @@
 */
 
 import gulp from "gulp";
-import gulp_mode from "gulp-mode";
 import logger from "gulplog";
+import gulp_mode from "#gulp-mode";
 import getEnabledTasks from "#lib/getEnabledTasks.mjs";
 import { getPathConfig } from "#lib/getPathConfig.mjs";
 import { getTaskConfig } from "#lib/getTaskConfig.mjs";
