@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { extname, join, normalize } from "node:path";
 import { describe, it } from "node:test";
 import Vinyl from "vinyl";
-import nunjucksRender from "./index.mjs";
+import nunjucksRender, { deepClone } from "./index.mjs";
 
 function getFile(filepath) {
   return new Vinyl({
@@ -157,14 +157,12 @@ describe("gulp-nunjucks-render", () => {
     const file2 = getFile("test-fixtures/hello-world.nunj");
 
     stream.once("data", (output) => {
-      // First file
       assert.ok(output);
       assert.ok(output.contents);
       assert.equal(output.path, normalize("test-fixtures/set.html"));
       assert.equal(output.contents.toString(), expected1);
 
       stream.once("data", (output) => {
-        // Second file
         assert.ok(output);
         assert.ok(output.contents);
         assert.equal(output.path, normalize("test-fixtures/hello-world.html"));
@@ -306,4 +304,136 @@ describe("gulp-nunjucks-render", () => {
     streamAutoescape.write(fileAutoescape);
     streamAutoescape.end();
   });
+});
+
+describe("deepClone with Temporal objects", () => {
+  if (typeof Temporal === "undefined") {
+    it.skip("Temporal API not available - skipping Temporal tests", () => {});
+  } else {
+    it("should deep clone Temporal.PlainDate", () => {
+      const original = Temporal.PlainDate.from("2024-01-15");
+      const cloned = deepClone(original);
+
+      assert.ok(cloned instanceof Temporal.PlainDate);
+      assert.equal(cloned.year, original.year);
+      assert.equal(cloned.month, original.month);
+      assert.equal(cloned.day, original.day);
+      assert.notStrictEqual(cloned, original);
+    });
+
+    it("should deep clone Temporal.PlainTime", () => {
+      const original = Temporal.PlainTime.from("10:30:45");
+      const cloned = deepClone(original);
+
+      assert.ok(cloned instanceof Temporal.PlainTime);
+      assert.equal(cloned.hour, original.hour);
+      assert.equal(cloned.minute, original.minute);
+      assert.equal(cloned.second, original.second);
+      assert.notStrictEqual(cloned, original);
+    });
+
+    it("should deep clone Temporal.PlainDateTime", () => {
+      const original = Temporal.PlainDateTime.from("2024-01-15T10:30:45");
+      const cloned = deepClone(original);
+
+      assert.ok(cloned instanceof Temporal.PlainDateTime);
+      assert.equal(cloned.year, original.year);
+      assert.equal(cloned.month, original.month);
+      assert.equal(cloned.day, original.day);
+      assert.equal(cloned.hour, original.hour);
+      assert.equal(cloned.minute, original.minute);
+      assert.equal(cloned.second, original.second);
+      assert.notStrictEqual(cloned, original);
+    });
+
+    it("should deep clone Temporal.ZonedDateTime", () => {
+      const original = Temporal.ZonedDateTime.from("2024-01-15T10:30:45[America/New_York]");
+      const cloned = deepClone(original);
+
+      assert.ok(cloned instanceof Temporal.ZonedDateTime);
+      assert.equal(cloned.year, original.year);
+      assert.equal(cloned.month, original.month);
+      assert.equal(cloned.day, original.day);
+      assert.notStrictEqual(cloned, original);
+    });
+
+    it("should deep clone Temporal.PlainMonthDay", () => {
+      const original = Temporal.PlainMonthDay.from("01-15");
+      const cloned = deepClone(original);
+
+      assert.ok(cloned instanceof Temporal.PlainMonthDay);
+      assert.equal(cloned.month, original.month);
+      assert.equal(cloned.day, original.day);
+      assert.notStrictEqual(cloned, original);
+    });
+
+    it("should deep clone Temporal.PlainYearMonth", () => {
+      const original = Temporal.PlainYearMonth.from("2024-01");
+      const cloned = deepClone(original);
+
+      assert.ok(cloned instanceof Temporal.PlainYearMonth);
+      assert.equal(cloned.year, original.year);
+      assert.equal(cloned.month, original.month);
+      assert.notStrictEqual(cloned, original);
+    });
+
+    it("should deep clone Temporal.Duration", () => {
+      const original = Temporal.Duration.from({ hours: 2, minutes: 30, seconds: 15 });
+      const cloned = deepClone(original);
+
+      assert.ok(cloned instanceof Temporal.Duration);
+      assert.equal(cloned.hours, original.hours);
+      assert.equal(cloned.minutes, original.minutes);
+      assert.equal(cloned.seconds, original.seconds);
+      assert.notStrictEqual(cloned, original);
+    });
+
+    it("should deep clone Temporal.Instant", () => {
+      const original = Temporal.Instant.from("2024-01-15T10:30:45Z");
+      const cloned = deepClone(original);
+
+      assert.ok(cloned instanceof Temporal.Instant);
+      assert.equal(cloned.epochSeconds, original.epochSeconds);
+      assert.equal(cloned.epochMilliseconds, original.epochMilliseconds);
+      assert.notStrictEqual(cloned, original);
+    });
+
+    it("should deep clone objects containing Temporal values", () => {
+      const originalDate = Temporal.PlainDate.from("2024-01-15");
+      const originalTime = Temporal.PlainTime.from("10:30:00");
+      const original = {
+        date: originalDate,
+        time: originalTime,
+        nested: {
+          date: originalDate
+        }
+      };
+
+      const cloned = deepClone(original);
+
+      assert.ok(cloned.date instanceof Temporal.PlainDate);
+      assert.ok(cloned.time instanceof Temporal.PlainTime);
+      assert.ok(cloned.nested.date instanceof Temporal.PlainDate);
+      assert.notStrictEqual(cloned.date, original.date);
+      assert.notStrictEqual(cloned.time, original.time);
+      assert.notStrictEqual(cloned.nested.date, original.date);
+      assert.notStrictEqual(cloned.nested, original.nested);
+    });
+
+    it("should deep clone arrays containing Temporal values", () => {
+      const originalDate = Temporal.PlainDate.from("2024-01-15");
+      const originalTime = Temporal.PlainTime.from("10:30:00");
+      const original = [originalDate, originalTime];
+
+      const cloned = deepClone(original);
+
+      assert.ok(Array.isArray(cloned));
+      assert.equal(cloned.length, 2);
+      assert.ok(cloned[0] instanceof Temporal.PlainDate);
+      assert.ok(cloned[1] instanceof Temporal.PlainTime);
+      assert.notStrictEqual(cloned[0], original[0]);
+      assert.notStrictEqual(cloned[1], original[1]);
+      assert.notStrictEqual(cloned, original);
+    });
+  }
 });
