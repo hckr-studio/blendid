@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { Transform } from "node:stream";
 import gulp from "gulp";
-import data from "gulp-data";
 import debug from "gulp-debug";
 import htmlmin from "gulp-htmlmin-next";
 import inject from "gulp-inject";
@@ -13,6 +12,7 @@ import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
 import nunjucksMarkdown from "nunjucks-markdown";
 import DefaultRegistry from "undertaker-registry";
+import data from "#gulp-data/index.mjs";
 import { marked } from "#lib/markdown.mjs";
 import projectPath from "#lib/projectPath.mjs";
 

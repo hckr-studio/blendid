@@ -18,6 +18,7 @@
   "imports": {
     "#lib/*.mjs": "./gulpfile.js/lib/*.mjs",
     "#gulp-cloudinary-upload/*.mjs": "./gulpfile.js/packages/gulp-cloudinary-upload/*.mjs",
+    "#gulp-data/*.mjs": "./gulpfile.js/packages/gulp-data/*.mjs",
     "#gulp-rev/*.mjs": "./gulpfile.js/packages/gulp-rev/*.mjs",
     "#gulp-rev-delete-original/*.mjs": "./gulpfile.js/packages/gulp-rev-delete-original/*.mjs",
     "#gulp-rev-rewrite/*.mjs": "./gulpfile.js/packages/gulp-rev-rewrite/*.mjs"
@@ -38,7 +39,6 @@
     "del": "8.0.1",
     "gulp": "5.0.1",
     "gulp-changed": "5.0.4",
-    "gulp-data": "1.3.1",
     "gulp-debug": "5.0.1",
     "gulp-esbuild": "0.14.1",
     "gulp-htmlmin-next": "6.0.1",

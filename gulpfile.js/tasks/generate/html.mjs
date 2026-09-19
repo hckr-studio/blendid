@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { Transform } from "node:stream";
-import data from "gulp-data";
 import debug from "gulp-debug";
 import htmlmin from "gulp-htmlmin-next";
 import gulpif from "gulp-if";
@@ -13,6 +12,7 @@ import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
 import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
+import data from "#gulp-data/index.mjs";
 import projectPath from "#lib/projectPath.mjs";
 import {
   createDataFunction,
