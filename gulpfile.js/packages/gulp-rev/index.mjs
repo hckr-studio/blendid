@@ -55,7 +55,7 @@ async function getManifestFile(options) {
   }
 }
 
-const plugin = () => {
+function plugin() {
   const sourcemaps = [];
   const pathMap = {};
 
@@ -118,7 +118,7 @@ const plugin = () => {
       callback();
     }
   });
-};
+}
 
 async function createManifest(manifest, transform, options) {
   const manifestFile = await getManifestFile(options);
