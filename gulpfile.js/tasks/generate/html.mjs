@@ -5,7 +5,6 @@ import debug from "gulp-debug";
 import htmlmin from "gulp-htmlmin-next";
 import gulpif from "gulp-if";
 import inject from "gulp-inject";
-import nunjucksRender from "gulp-nunjucks-render";
 import svgmin from "gulp-svgmin";
 import svgstore from "gulp-svgstore";
 import logger from "gulplog";
@@ -13,6 +12,7 @@ import cloneDeep from "lodash-es/cloneDeep.js";
 import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
 import data from "#gulp-data/index.mjs";
+import nunjucksRender from "#gulp-nunjucks-render/index.mjs";
 import projectPath from "#lib/projectPath.mjs";
 import {
   createDataFunction,

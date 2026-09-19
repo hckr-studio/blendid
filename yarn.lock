@@ -1016,7 +1016,6 @@ __metadata:
     gulp-markdown-to-json: "npm:1.1.0"
     gulp-merge-json: "npm:2.2.1"
     gulp-mode: "npm:1.1.0"
-    gulp-nunjucks-render: "npm:2.2.3"
     gulp-postcss: "npm:10.0.0"
     gulp-svgmin: "npm:4.1.0"
     gulp-svgstore: "npm:9.0.0"
@@ -1029,7 +1028,6 @@ __metadata:
     modify-filename: "npm:2.0.0"
     ndarray-pixels: "npm:5.2.0"
     nunjucks: "npm:3.2.4"
-    nunjucks-markdown: "npm:2.0.1"
     plugin-error: "npm:2.0.1"
     postcss: "npm:8.5.28"
     postcss-functions: "npm:4.0.2"
@@ -3298,19 +3296,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gulp-nunjucks-render@npm:2.2.3":
-  version: 2.2.3
-  resolution: "gulp-nunjucks-render@npm:2.2.3"
-  dependencies:
-    lodash: "npm:^4.17.11"
-    nunjucks: "npm:^3.1.2"
-    plugin-error: "npm:^1.0.1"
-    replace-ext: "npm:^1.0.0"
-    through2: "npm:^2.0.3"
-  checksum: 10/e39745355968f97e34735f43b1e8e034e666f19867d9aeb7e7b37ab8119e02ef705d00ddfcd9ffdc4830a459cee380180cc6f7276166dc1742f85ce4a81741d8
-  languageName: node
-  linkType: hard
-
 "gulp-plugin-extras@npm:^0.3.0":
   version: 0.3.0
   resolution: "gulp-plugin-extras@npm:0.3.0"
@@ -4136,16 +4121,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nunjucks-markdown@npm:2.0.1":
-  version: 2.0.1
-  resolution: "nunjucks-markdown@npm:2.0.1"
-  peerDependencies:
-    nunjucks: ^2.3.0 || ^3.0.0
-  checksum: 10/a7db839e356183c15d41feb5472f86411b67479f730d9647a558922d9d498e24c6c4db9f0c46bc6e0dbd64c6cc16d73cd79b0f47ef145d2c45f7c84cc191a414
-  languageName: node
-  linkType: hard
-
-"nunjucks@npm:3.2.4, nunjucks@npm:^3.1.2":
+"nunjucks@npm:3.2.4":
   version: 3.2.4
   resolution: "nunjucks@npm:3.2.4"
   dependencies:
@@ -5831,7 +5807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"through2@npm:^2.0.0, through2@npm:^2.0.1, through2@npm:^2.0.3":
+"through2@npm:^2.0.0, through2@npm:^2.0.1":
   version: 2.0.5
   resolution: "through2@npm:2.0.5"
   dependencies:

@@ -5,15 +5,15 @@ import gulp from "gulp";
 import debug from "gulp-debug";
 import htmlmin from "gulp-htmlmin-next";
 import inject from "gulp-inject";
-import nunjucksRender from "gulp-nunjucks-render";
 import svgmin from "gulp-svgmin";
 import svgstore from "gulp-svgstore";
 import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
-import nunjucksMarkdown from "nunjucks-markdown";
 import DefaultRegistry from "undertaker-registry";
 import data from "#gulp-data/index.mjs";
+import nunjucksRender from "#gulp-nunjucks-render/index.mjs";
 import { marked } from "#lib/markdown.mjs";
+import { Markdown } from "#lib/nunjucksMarkdow.mjs";
 import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/nunjucks").Environment} Environment */
@@ -126,7 +126,7 @@ export function getNunjucksRenderOptions(config, pathConfig) {
     if (Array.isArray(config.markedExtensions)) {
       marked.use(...config.markedExtensions);
     }
-    nunjucksMarkdown.register(env, marked.parse);
+    env.addExtension("markdown", new Markdown(env, marked.parse));
     for (const key of Object.keys(globals)) {
       env.addGlobal(key, globals[key]);
     }

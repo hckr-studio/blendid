@@ -3,11 +3,11 @@ import path from "node:path";
 import { Transform } from "node:stream";
 import debug from "gulp-debug";
 import htmlmin from "gulp-htmlmin-next";
-import nunjucksRender from "gulp-nunjucks-render";
 import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
 import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
+import nunjucksRender from "#gulp-nunjucks-render/index.mjs";
 import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
