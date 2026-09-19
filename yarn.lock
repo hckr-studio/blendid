@@ -1010,7 +1010,6 @@ __metadata:
     gulp-changed: "npm:5.0.4"
     gulp-debug: "npm:5.0.1"
     gulp-esbuild: "npm:0.14.1"
-    gulp-htmlmin-next: "npm:6.0.1"
     gulp-inject: "npm:5.0.5"
     gulp-merge-json: "npm:2.2.1"
     gulp-mode: "npm:1.1.0"
@@ -1018,6 +1017,7 @@ __metadata:
     gulp-svgmin: "npm:4.1.0"
     gulp-svgstore: "npm:9.0.0"
     gulplog: "npm:2.2.0"
+    html-minifier: "npm:4.0.0"
     istextorbinary: "npm:9.5.0"
     js-yaml: "npm:5.4.2"
     lodash-es: "npm:4.18.1"
@@ -3156,17 +3156,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gulp-htmlmin-next@npm:6.0.1":
-  version: 6.0.1
-  resolution: "gulp-htmlmin-next@npm:6.0.1"
-  dependencies:
-    html-minifier: "npm:^4.0.0"
-    plugin-error: "npm:^1.0.1"
-    through2: "npm:^3.0.1"
-  checksum: 10/c975feacab0c5ca2c13d31490e704554e6344e16382ebd3ba806cbc86ad71e4aa60d8d2c1b29302458802e88c66c499f7d427d2190e5c0a96c1f06e56d7fc13d
-  languageName: node
-  linkType: hard
-
 "gulp-inject@npm:5.0.5":
   version: 5.0.5
   resolution: "gulp-inject@npm:5.0.5"
@@ -3315,7 +3304,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-minifier@npm:^4.0.0":
+"html-minifier@npm:4.0.0":
   version: 4.0.0
   resolution: "html-minifier@npm:4.0.0"
   dependencies:

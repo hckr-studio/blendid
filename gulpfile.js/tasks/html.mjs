@@ -1,9 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
-import { Transform } from "node:stream";
+import { PassThrough } from "node:stream";
 import gulp from "gulp";
 import debug from "gulp-debug";
-import htmlmin from "gulp-htmlmin-next";
 import inject from "gulp-inject";
 import svgmin from "gulp-svgmin";
 import svgstore from "gulp-svgstore";
@@ -11,6 +10,7 @@ import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
 import DefaultRegistry from "undertaker-registry";
 import data from "#gulp-data";
+import htmlmin from "#gulp-htmlmin-next";
 import nunjucksRender from "#gulp-nunjucks-render";
 import { marked } from "#lib/markdown.mjs";
 import { Markdown } from "#lib/nunjucksMarkdow.mjs";
@@ -222,22 +222,12 @@ export class HtmlRegistry extends DefaultRegistry {
                   return file.contents.toString();
                 }
               })
-            : new Transform({
-                objectMode: true,
-                transform(chunk, _, cb) {
-                  cb(null, chunk);
-                }
-              })
+            : new PassThrough()
         )
         .pipe(
           this.config.svgSprite
             ? debug({ title: "injectsvg", logger: logger.debug })
-            : new Transform({
-                objectMode: true,
-                transform(chunk, _, cb) {
-                  cb(null, chunk);
-                }
-              })
+            : new PassThrough()
         )
         .pipe(this.mode.production(htmlmin(config.htmlmin)))
         .pipe(
