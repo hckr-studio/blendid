@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.7.1
+
+- Added support for `Temporal` values in `gulp-nunjucks-render`
+
 ## 9.7.0
 
 - Updated dependencies
