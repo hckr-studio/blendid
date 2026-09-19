@@ -1,8 +1,8 @@
 import debug from "gulp-debug";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
-import rev from "#gulp-rev/index.mjs";
-import revdel from "#gulp-rev-delete-original/index.mjs";
+import rev from "#gulp-rev";
+import revdel from "#gulp-rev-delete-original";
 import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */

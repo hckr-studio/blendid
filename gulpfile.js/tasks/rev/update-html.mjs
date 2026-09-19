@@ -3,8 +3,8 @@ import debug from "gulp-debug";
 import inject from "gulp-inject";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
-import revReplace from "#gulp-rev-rewrite/index.mjs";
 import when from "#gulp-if";
+import revReplace from "#gulp-rev-rewrite";
 import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */

@@ -10,9 +10,9 @@ import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
 import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
-import data from "#gulp-data/index.mjs";
-import nunjucksRender from "#gulp-nunjucks-render/index.mjs";
+import data from "#gulp-data";
 import gulpif from "#gulp-if";
+import nunjucksRender from "#gulp-nunjucks-render";
 import projectPath from "#lib/projectPath.mjs";
 import {
   createDataFunction,

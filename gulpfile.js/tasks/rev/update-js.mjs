@@ -2,7 +2,7 @@ import fs from "node:fs";
 import debug from "gulp-debug";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
-import revReplace from "#gulp-rev-rewrite/index.mjs";
+import revReplace from "#gulp-rev-rewrite";
 import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
