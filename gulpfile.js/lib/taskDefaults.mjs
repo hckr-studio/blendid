@@ -180,7 +180,7 @@ export function getTaskDefaults(mode) {
       }
     },
 
-    sizeReport: { gzip: true },
+    sizeReport: { gzip: true, brotli: true, zstd: true },
 
     watch: {
       tasks: []

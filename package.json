@@ -21,7 +21,8 @@
     "#gulp-data/*.mjs": "./gulpfile.js/packages/gulp-data/*.mjs",
     "#gulp-rev/*.mjs": "./gulpfile.js/packages/gulp-rev/*.mjs",
     "#gulp-rev-delete-original/*.mjs": "./gulpfile.js/packages/gulp-rev-delete-original/*.mjs",
-    "#gulp-rev-rewrite/*.mjs": "./gulpfile.js/packages/gulp-rev-rewrite/*.mjs"
+    "#gulp-rev-rewrite/*.mjs": "./gulpfile.js/packages/gulp-rev-rewrite/*.mjs",
+    "#gulp-sizereport/*.mjs": "./gulpfile.js/packages/gulp-sizereport/*.mjs"
   },
   "scripts": {
     "start": "./bin/blendid.js",
@@ -34,6 +35,8 @@
     "@gryphoon/texy": "1.0.0",
     "@lokesh.dhakar/quantize": "1.4.0",
     "@vitejs/plugin-basic-ssl": "2.3.0",
+    "brotli-size": "4.0.0",
+    "cli-table": "0.3.11",
     "cloudinary": "2.11.0",
     "cssnano": "9.0.4",
     "del": "8.0.1",
@@ -53,6 +56,7 @@
     "gulp-svgmin": "4.1.0",
     "gulp-svgstore": "9.0.0",
     "gulplog": "2.2.0",
+    "gzip-size": "7.0.0",
     "lodash-es": "4.18.1",
     "marked": "18.0.13",
     "marked-gfm-heading-id": "4.1.4",
@@ -67,6 +71,7 @@
     "postcss-functions": "4.0.2",
     "postcss-import": "17.0.0",
     "postcss-preset-env": "11.5.3",
+    "pretty-bytes": "7.1.3",
     "rev-hash": "4.1.0",
     "rev-path": "3.0.0",
     "sharp": "0.35.4",
@@ -74,7 +79,8 @@
     "undertaker-registry": "2.0.0",
     "vinyl": "3.0.1",
     "vinyl-file": "5.0.0",
-    "vite": "8.3.0"
+    "vite": "8.3.0",
+    "zstd-size": "1.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.13",
