@@ -1,11 +1,11 @@
 import { Transform } from "node:stream";
 import { styleText } from "node:util";
-import { sync as brotliSizeSync } from "brotli-size";
 import Table from "cli-table";
 import { gzipSizeSync } from "gzip-size";
 import PluginError from "plugin-error";
 import prettyBytes from "pretty-bytes";
 import { sync as zstdSizeSync } from "zstd-size";
+import { brotliSizeSync } from "#brotli-size/index.mjs";
 
 const COMPRESSION_TYPES = [
   {
@@ -57,9 +57,9 @@ class SizeReportTransform extends Transform {
 
     for (const { key, defaultOptions } of COMPRESSION_TYPES) {
       const userOpt = options?.[key];
-      
+
       // Determine if compression is enabled
-      if (typeof userOpt === 'object' && userOpt !== null) {
+      if (typeof userOpt === "object" && userOpt !== null) {
         // Object form: { level: 9 } or { quality: 11, mode: 'text' }
         this.opts[key] = true;
         this.compressionOptions[key] = { ...defaultOptions, ...userOpt };
@@ -137,7 +137,10 @@ class SizeReportTransform extends Transform {
   buildTotalRow() {
     const row = [
       "",
-      styleText("bold", this.getSizeToDisplay(this.totals.original, "maxTotalSize", "*"))
+      styleText(
+        "bold",
+        this.getSizeToDisplay(this.totals.original, "maxTotalSize", "*")
+      )
     ];
 
     for (const { key } of COMPRESSION_TYPES) {
@@ -159,7 +162,11 @@ class SizeReportTransform extends Transform {
       row.push(
         styleText(
           "bold",
-          this.getSizeToDisplay(this.totals.minified, "maxTotalMinifiedSize", "*")
+          this.getSizeToDisplay(
+            this.totals.minified,
+            "maxTotalMinifiedSize",
+            "*"
+          )
         )
       );
 
@@ -205,14 +212,12 @@ class SizeReportTransform extends Transform {
     for (const { key, sizeSync } of COMPRESSION_TYPES) {
       if (this.opts[key]) {
         const opts = this.compressionOptions[key];
-        const compressedSize = opts ? sizeSync(file.contents, opts) : sizeSync(file.contents);
+        const compressedSize = opts
+          ? sizeSync(file.contents, opts)
+          : sizeSync(file.contents);
         this.totals.compressed[key] += compressedSize;
         row.push(
-          this.getSizeToDisplay(
-            compressedSize,
-            getMaxKey(key),
-            file.relative
-          )
+          this.getSizeToDisplay(compressedSize, getMaxKey(key), file.relative)
         );
       }
     }
@@ -229,7 +234,9 @@ class SizeReportTransform extends Transform {
       for (const { key, sizeSync } of COMPRESSION_TYPES) {
         if (this.opts[key]) {
           const opts = this.compressionOptions[key];
-          const compressedSize = opts ? sizeSync(minified, opts) : sizeSync(minified);
+          const compressedSize = opts
+            ? sizeSync(minified, opts)
+            : sizeSync(minified);
           this.totals.minifiedCompressed[key] += compressedSize;
           row.push(
             this.getSizeToDisplay(

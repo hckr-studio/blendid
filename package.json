@@ -17,6 +17,7 @@
   },
   "imports": {
     "#lib/*.mjs": "./gulpfile.js/lib/*.mjs",
+    "#brotli-size/*.mjs": "./gulpfile.js/packages/brotli-size/*.mjs",
     "#gulp-cloudinary-upload/*.mjs": "./gulpfile.js/packages/gulp-cloudinary-upload/*.mjs",
     "#gulp-data/*.mjs": "./gulpfile.js/packages/gulp-data/*.mjs",
     "#gulp-rev/*.mjs": "./gulpfile.js/packages/gulp-rev/*.mjs",
@@ -35,7 +36,6 @@
     "@gryphoon/texy": "1.0.0",
     "@lokesh.dhakar/quantize": "1.4.0",
     "@vitejs/plugin-basic-ssl": "2.3.0",
-    "brotli-size": "4.0.0",
     "cli-table": "0.3.11",
     "cloudinary": "2.11.0",
     "cssnano": "9.0.4",
