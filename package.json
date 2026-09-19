@@ -17,7 +17,6 @@
   },
   "imports": {
     "#lib/*.mjs": "./gulpfile.js/lib/*.mjs",
-    "#brotli-size/*.mjs": "./gulpfile.js/packages/brotli-size/*.mjs",
     "#gulp-cloudinary-upload/*.mjs": "./gulpfile.js/packages/gulp-cloudinary-upload/*.mjs",
     "#gulp-data/*.mjs": "./gulpfile.js/packages/gulp-data/*.mjs",
     "#gulp-rev/*.mjs": "./gulpfile.js/packages/gulp-rev/*.mjs",
@@ -55,7 +54,6 @@
     "gulp-svgmin": "4.1.0",
     "gulp-svgstore": "9.0.0",
     "gulplog": "2.2.0",
-    "gzip-size": "7.0.0",
     "lodash-es": "4.18.1",
     "marked": "18.0.13",
     "marked-gfm-heading-id": "4.1.4",
@@ -78,8 +76,7 @@
     "undertaker-registry": "2.0.0",
     "vinyl": "3.0.1",
     "vinyl-file": "5.0.0",
-    "vite": "8.3.0",
-    "zstd-size": "1.0.0"
+    "vite": "8.3.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.13",

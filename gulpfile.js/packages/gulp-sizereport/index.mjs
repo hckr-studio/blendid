@@ -1,11 +1,68 @@
 import { Transform } from "node:stream";
 import { styleText } from "node:util";
+import {
+  brotliCompressSync,
+  constants,
+  gzipSync,
+  zstdCompressSync
+} from "node:zlib";
 import Table from "cli-table";
-import { gzipSizeSync } from "gzip-size";
 import PluginError from "plugin-error";
 import prettyBytes from "pretty-bytes";
-import { sync as zstdSizeSync } from "zstd-size";
-import { brotliSizeSync } from "#brotli-size/index.mjs";
+
+const formatBuffer = (incoming) =>
+  typeof incoming === "string" ? Buffer.from(incoming, "utf8") : incoming;
+
+function brotliOptionFormatter(passed, toEncode) {
+  return {
+    params: {
+      [constants.BROTLI_PARAM_MODE]:
+        passed?.mode ?? constants.BROTLI_DEFAULT_MODE,
+      [constants.BROTLI_PARAM_QUALITY]:
+        passed?.quality ?? constants.BROTLI_MAX_QUALITY,
+      [constants.BROTLI_PARAM_SIZE_HINT]: toEncode?.byteLength ?? 0
+    }
+  };
+}
+
+/**
+ * @param {Buffer|string} incoming - Either a Buffer or string of the value to encode.
+ * @param {object} [options] - Subset of Encoding Parameters.
+ * @returns {number} Length of encoded Buffer.
+ */
+export function brotliSizeSync(incoming, options) {
+  const buffer = formatBuffer(incoming);
+  return brotliCompressSync(buffer, brotliOptionFormatter(options, buffer))
+    .byteLength;
+}
+
+function zstdFormatOptions(passed) {
+  const params = {
+    [constants.ZSTD_c_compressionLevel]:
+      passed?.level ?? constants.ZSTD_CLEVEL_DEFAULT
+  };
+
+  if (passed?.strategy != null) {
+    params[constants.ZSTD_c_strategy] = passed.strategy;
+  }
+
+  return { params };
+}
+
+/**
+ * @param {Buffer|string} incoming - Either a Buffer or string of the value to encode.
+ * @param {object} [options] - Subset of Encoding Parameters.
+ * @returns {number} Length of encoded Buffer.
+ */
+function zstdSizeSync(incoming, options) {
+  const buffer = formatBuffer(incoming);
+  return zstdCompressSync(buffer, zstdFormatOptions(options)).byteLength;
+}
+
+function gzipSizeSync(input, options) {
+  const getOptions = (options) => ({ level: 9, ...options });
+  return gzipSync(input, getOptions(options)).length;
+}
 
 const COMPRESSION_TYPES = [
   {
