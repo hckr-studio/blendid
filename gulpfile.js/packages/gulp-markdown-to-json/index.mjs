@@ -1,10 +1,10 @@
 import { Buffer } from "node:buffer";
 import { basename, extname, sep } from "node:path";
 import { Transform } from "node:stream";
-import frontmatter from "front-matter";
 import { isText } from "istextorbinary";
 import PluginError from "plugin-error";
 import Vinyl from "vinyl";
+import frontmatter from "./lib/front-matter.mjs";
 
 const NAME = "gulp-markdown-to-json";
 
