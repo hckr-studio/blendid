@@ -1,8 +1,8 @@
 import debug from "gulp-debug";
-import markdownToJSON from "gulp-markdown-to-json";
 import merge from "gulp-merge-json";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
+import markdownToJSON from "#gulp-markdown-to-json/index.mjs";
 import { marked } from "#lib/markdown.mjs";
 import projectPath from "#lib/projectPath.mjs";
 
