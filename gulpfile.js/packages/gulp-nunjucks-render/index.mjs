@@ -63,7 +63,7 @@ function defaultsDeep(target, source) {
         typeof val === "object" &&
         !Array.isArray(val)
       ) {
-        result[key] = deepMerge(deepClone(val), result[key]);
+        result[key] = deepMerge(result[key], deepClone(val));
       } else if (val !== undefined) {
         result[key] = deepClone(val);
       }
@@ -117,7 +117,7 @@ class NunjucksTransform extends Transform {
     }
 
     if (file.data) {
-      data = deepMerge(data, file.data);
+      data = deepMerge(file.data, data);
     }
 
     if (file.isStream()) {
