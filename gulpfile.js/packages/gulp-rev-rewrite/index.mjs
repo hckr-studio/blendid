@@ -6,28 +6,29 @@ import PluginError from "plugin-error";
 function relativePath(from, to) {
   return path.relative(from, to).replaceAll("\\", "/");
 }
+
 function replace(contents, manifest) {
   let newContents = contents;
-  for (const [originalPath, revisionedPath] of Object.entries(manifest)) {
+  for (const { unreved, reved } of manifest) {
     const regexp = new RegExp(
-      String.raw`(?<![\w\-])${RegExp.escape(originalPath)}(?![\w.])`,
+      String.raw`(?<![\w\-])${RegExp.escape(unreved)}(?![\w.])`,
       "gv"
     );
 
-    newContents = newContents.replace(regexp, () => revisionedPath);
+    newContents = newContents.replace(regexp, () => reved);
   }
 
   return newContents;
 }
 
-export default function plugin({ manifest } = {}) {
+export default function plugin({ manifest, ...options } = {}) {
   return new Transform({
     objectMode: true,
 
     construct(callback) {
       this.revisions = {};
       this.files = [];
-
+      this.options = options;
       callback();
     },
 
@@ -51,6 +52,8 @@ export default function plugin({ manifest } = {}) {
         const originalPath = relativePath(file.revOrigBase, file.revOrigPath);
         const revisionedPath = relativePath(file.base, file.path);
 
+        console.log({ originalPath, revisionedPath });
+
         this.revisions[originalPath] = revisionedPath;
       }
 
@@ -67,8 +70,18 @@ export default function plugin({ manifest } = {}) {
 
       // Rewrite paths
       for (const file of this.files) {
+        const modifiedRenames = Object.entries(this.revisions).map((entry) => {
+          const [unreved, reved] = entry;
+          const modifiedUnreved = this.options.modifyUnreved
+            ? this.options.modifyUnreved(unreved, file)
+            : unreved;
+          const modifiedReved = this.options.modifyReved
+            ? this.options.modifyReved(reved, file)
+            : reved;
+          return { unreved: modifiedUnreved, reved: modifiedReved };
+        });
         const contents = file.contents.toString();
-        const newContents = replace(contents, this.revisions);
+        const newContents = replace(contents, modifiedRenames);
 
         // Update contents only if they changed
         if (newContents !== contents) {
