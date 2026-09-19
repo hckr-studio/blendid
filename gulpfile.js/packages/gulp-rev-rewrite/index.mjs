@@ -2,7 +2,7 @@ import { Buffer } from "node:buffer";
 import path from "node:path";
 import { Transform } from "node:stream";
 import PluginError from "plugin-error";
-import replace from "./lib/replace.js";
+import replace from "./lib/replace.mjs";
 
 function relativePath(from, to) {
   return path.relative(from, to).replaceAll("\\", "/");
