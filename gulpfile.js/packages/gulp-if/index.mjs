@@ -1,4 +1,4 @@
-import { Transform } from "node:stream";
+import { PassThrough, Transform } from "node:stream";
 import { minimatch } from "minimatch";
 import PluginError from "plugin-error";
 
@@ -70,12 +70,7 @@ function matchFile(file, condition, options) {
 }
 
 function passthrough() {
-  return new Transform({
-    objectMode: true,
-    transform(chunk, encoding, callback) {
-      callback(null, chunk);
-    }
-  });
+  return new PassThrough({ objectMode: true });
 }
 
 export default function gulpIf(
@@ -98,13 +93,11 @@ export default function gulpIf(
 
   // For non-boolean conditions, return a Transform that applies the condition
   // and passes through to the appropriate child stream
-  // This is a simplified implementation that uses the child streams' transforms
-  // by piping files through them internally
   const stream = new Transform({
     objectMode: true,
     transform(file, encoding, callback) {
       const useTrue = classifier(file);
-      const targetStream = useTrue ? trueChild : falseChild || null;
+      const targetStream = useTrue ? trueChild : falseChild || passthrough();
 
       if (targetStream && typeof targetStream._transform === "function") {
         // Use the child stream's transform method directly
@@ -114,14 +107,11 @@ export default function gulpIf(
           encoding,
           (err, result) => {
             if (err) return callback(err);
-            callback(null, result || file);
+            callback(null, result !== undefined ? result : file);
           }
         );
-      } else if (falseChild && !useTrue) {
-        // No direct transform access, just pass through
-        callback(null, file);
       } else {
-        // Pass through
+        // Pass through - targetStream is already a passthrough if falseChild is null
         callback(null, file);
       }
     }

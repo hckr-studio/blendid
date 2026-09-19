@@ -1,6 +1,7 @@
 import assert from "node:assert";
 import { Transform } from "node:stream";
 import { describe, it } from "node:test";
+import Vinyl from "vinyl";
 import gulpif from "./index.mjs";
 
 function createTransform(objMode, transformFn) {
@@ -22,7 +23,7 @@ function createTransform(objMode, transformFn) {
   });
 }
 
-const tempFile = "./temp.txt";
+const tempFile = "temp.txt";
 const tempFileContent = "A test generated this file and it is safe to delete";
 
 describe("gulp-if", () => {
@@ -30,10 +31,10 @@ describe("gulp-if", () => {
     it("should pass file structure through", () => {
       const condition = false;
       let called = 0;
-      const fakeFile = {
+      const fakeFile = new Vinyl({
         path: tempFile,
         contents: Buffer.from(tempFileContent)
-      };
+      });
 
       const s = gulpif(
         condition,
@@ -116,10 +117,10 @@ describe("gulp-if", () => {
     it("should call the function when passed truthy", () => {
       const condition = () => true;
       let called = 0;
-      const fakeFile = {
+      const fakeFile = new Vinyl({
         path: tempFile,
         contents: Buffer.from(tempFileContent)
-      };
+      });
       const changedContent = "changed_content";
 
       const s = gulpif(
@@ -157,10 +158,10 @@ describe("gulp-if", () => {
     it("should not call the function when passed falsey", () => {
       const condition = () => false;
       let called = 0;
-      const fakeFile = {
+      const fakeFile = new Vinyl({
         path: tempFile,
         contents: Buffer.from(tempFileContent)
-      };
+      });
 
       const s = gulpif(
         condition,
@@ -188,10 +189,10 @@ describe("gulp-if", () => {
     it("should call the function when passed truthy", () => {
       const condition = true;
       let called = 0;
-      const fakeFile = {
+      const fakeFile = new Vinyl({
         path: tempFile,
         contents: Buffer.from(tempFileContent)
-      };
+      });
 
       const s = gulpif(
         condition,
@@ -217,10 +218,10 @@ describe("gulp-if", () => {
     it("should not call the function when passed falsey", () => {
       const condition = false;
       let called = 0;
-      const fakeFile = {
+      const fakeFile = new Vinyl({
         path: tempFile,
         contents: Buffer.from(tempFileContent)
-      };
+      });
 
       const s = gulpif(
         condition,
@@ -246,10 +247,10 @@ describe("gulp-if", () => {
     it("should call the false function when passed truthy", () => {
       const condition = false;
       let called = 0;
-      const fakeFile = {
+      const fakeFile = new Vinyl({
         path: tempFile,
         contents: Buffer.from(tempFileContent)
-      };
+      });
 
       const s = gulpif(
         condition,
