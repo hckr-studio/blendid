@@ -3,7 +3,6 @@ import path from "node:path";
 import { Transform } from "node:stream";
 import debug from "gulp-debug";
 import htmlmin from "gulp-htmlmin-next";
-import gulpif from "gulp-if";
 import inject from "gulp-inject";
 import svgmin from "gulp-svgmin";
 import svgstore from "gulp-svgstore";
@@ -13,6 +12,7 @@ import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
 import data from "#gulp-data/index.mjs";
 import nunjucksRender from "#gulp-nunjucks-render/index.mjs";
+import gulpif from "#gulp-if";
 import projectPath from "#lib/projectPath.mjs";
 import {
   createDataFunction,

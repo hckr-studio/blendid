@@ -25,6 +25,7 @@
     "#gulp-rev-delete-original/*.mjs": "./gulpfile.js/packages/gulp-rev-delete-original/*.mjs",
     "#gulp-rev-rewrite/*.mjs": "./gulpfile.js/packages/gulp-rev-rewrite/*.mjs",
     "#gulp-sizereport/*.mjs": "./gulpfile.js/packages/gulp-sizereport/*.mjs"
+    "#gulp-if": "./gulpfile.js/packages/gulp-if/index.mjs",
   },
   "scripts": {
     "start": "./bin/blendid.js",
@@ -47,7 +48,6 @@
     "gulp-debug": "5.0.1",
     "gulp-esbuild": "0.14.1",
     "gulp-htmlmin-next": "6.0.1",
-    "gulp-if": "3.0.0",
     "gulp-inject": "5.0.5",
     "gulp-merge-json": "2.2.1",
     "gulp-mode": "1.1.0",
@@ -61,6 +61,7 @@
     "marked-gfm-heading-id": "4.1.4",
     "marked-highlight": "2.2.4",
     "marked-mangle": "1.1.13",
+    "minimatch": "10.2.6",
     "modify-filename": "2.0.0",
     "ndarray-pixels": "5.2.0",
     "nunjucks": "3.2.4",

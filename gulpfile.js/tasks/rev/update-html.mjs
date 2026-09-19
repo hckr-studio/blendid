@@ -1,10 +1,10 @@
 import fs from "node:fs";
 import debug from "gulp-debug";
-import when from "gulp-if";
 import inject from "gulp-inject";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
 import revReplace from "#gulp-rev-rewrite/index.mjs";
+import when from "#gulp-if";
 import projectPath from "#lib/projectPath.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
