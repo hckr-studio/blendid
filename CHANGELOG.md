@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.7.0
+
+- Updated dependencies
+- Moved in old unmaintained packages, so they are now updated to the latest Node.js idioms and cleaned up of legacy stuff
+
 ## 9.6.16
 
 - Texy moved to separate package `@gryphoon/texy`
