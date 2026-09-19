@@ -87,7 +87,7 @@ describe("gulp-htmlmin", () => {
       const stream = minify();
       stream.write(errorFile);
       const [err] = await once(stream, "error");
-      assert.strictEqual(err.message, "Parse Error: " + errorFileContents);
+      assert(err.message.includes(errorFileContents));
       assert.strictEqual(err.fileName, errorFile.path);
     });
 
@@ -95,7 +95,7 @@ describe("gulp-htmlmin", () => {
       const stream = minify({ showStack: true });
       stream.write(errorFile);
       const [err] = await once(stream, "error");
-      assert.strictEqual(err.message, "Parse Error: " + errorFileContents);
+      assert(err.message.includes(errorFileContents));
       assert.strictEqual(err.fileName, errorFile.path);
       assert(err.showStack);
     });
@@ -121,7 +121,7 @@ describe("gulp-htmlmin", () => {
       const stream = minify();
       stream.write(new File({ contents: toStream(errorFileContents) }));
       const [err] = await once(stream, "error");
-      assert.strictEqual(err.message, "Parse Error: " + errorFileContents);
+      assert(err.message.includes(errorFileContents));
     });
   });
 });

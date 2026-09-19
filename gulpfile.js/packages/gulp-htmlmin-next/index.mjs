@@ -1,19 +1,20 @@
 import { Transform } from "node:stream";
-import htmlmin from "html-minifier";
+import htmlmin from "html-minifier-next";
 import PluginError from "plugin-error";
 
 export default function index(options) {
   return new Transform({
     objectMode: true,
-    transform(file, encoding, next) {
+    async transform(file, encoding, next) {
       if (file.isNull()) {
         next(null, file);
         return;
       }
 
-      const minify = (buf, _, cb) => {
+      const minify = async (buf, _, cb) => {
         try {
-          const contents = Buffer.from(htmlmin.minify(buf.toString(), options));
+          const result = await htmlmin.minify(buf.toString(), options);
+          const contents = Buffer.from(result);
           if (next === cb) {
             file.contents = contents;
             cb(null, file);
@@ -35,13 +36,13 @@ export default function index(options) {
       if (file.isStream()) {
         file.contents = file.contents.pipe(
           new Transform({
-            transform(buf, enc, cb) {
-              minify(buf, enc, cb);
+            async transform(buf, enc, cb) {
+              await minify(buf, enc, cb);
             }
           })
         );
       } else {
-        minify(file.contents, null, next);
+        await minify(file.contents, null, next);
       }
     }
   });
