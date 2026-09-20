@@ -14,10 +14,8 @@ function replace(contents, manifest) {
       String.raw`(?<![\w\-])${RegExp.escape(unreved)}(?![\w.])`,
       "gv"
     );
-
     newContents = newContents.replace(regexp, () => reved);
   }
-
   return newContents;
 }
 
@@ -34,31 +32,23 @@ export default function plugin({ manifest, ...options } = {}) {
 
     transform(file, _, callback) {
       if (file.isNull()) {
-        callback(null, file);
-
-        return;
+        return callback(null, file);
       }
 
       if (file.isStream()) {
-        callback(
+        return callback(
           new PluginError("gulp-rev-rewrite", "Streaming not supported")
         );
-
-        return;
       }
 
       // Collect original and revisioned paths directly from the vinyl files in the stream
       if (file.revOrigPath) {
         const originalPath = relativePath(file.revOrigBase, file.revOrigPath);
         const revisionedPath = relativePath(file.base, file.path);
-
-        console.log({ originalPath, revisionedPath });
-
         this.revisions[originalPath] = revisionedPath;
       }
 
       this.files.push(file);
-
       callback();
     },
 
@@ -87,10 +77,8 @@ export default function plugin({ manifest, ...options } = {}) {
         if (newContents !== contents) {
           file.contents = Buffer.from(newContents);
         }
-
         this.push(file);
       }
-
       callback();
     }
   });
