@@ -91,31 +91,64 @@ export default function gulpIf(
     return !!matchFile(file, condition, minimatchOptions);
   }
 
-  // For non-boolean conditions, return a Transform that applies the condition
-  // and passes through to the appropriate child stream
-  const stream = new Transform({
+  // Return a Transform that classifies and routes files
+  const result = new Transform({
     objectMode: true,
     transform(file, encoding, callback) {
       const useTrue = classifier(file);
-      const targetStream = useTrue ? trueChild : falseChild || passthrough();
+      const child = useTrue ? trueChild : (falseChild ?? passthrough());
 
-      if (targetStream && typeof targetStream._transform === "function") {
-        // Use the child stream's transform method directly
-        targetStream._transform.call(
-          targetStream,
-          file,
-          encoding,
-          (err, result) => {
-            if (err) return callback(err);
-            callback(null, result !== undefined ? result : file);
-          }
-        );
-      } else {
-        // Pass through - targetStream is already a passthrough if falseChild is null
-        callback(null, file);
-      }
+      let calledBack = false;
+      const cleanup = () => {
+        child.off("data", onData);
+        child.off("end", onEnd);
+        child.off("error", onError);
+      };
+
+      const onData = (data) => {
+        if (calledBack) return;
+        calledBack = true;
+        cleanup();
+        this.push(data);
+        callback();
+      };
+
+      const onEnd = () => {
+        if (calledBack) return;
+        calledBack = true;
+        cleanup();
+        // If child emitted end without data, push the original file
+        this.push(file);
+        callback();
+      };
+
+      const onError = (err) => {
+        if (calledBack) return;
+        calledBack = true;
+        cleanup();
+        callback(err);
+      };
+
+      child.on("data", onData);
+      child.on("end", onEnd);
+      child.on("error", onError);
+
+      child.write(file, encoding);
+      // Don't end - let the child stream stay open for more files
     }
   });
 
-  return stream;
+  // Handle child stream end
+  trueChild.on("end", () => result.push(null));
+  if (falseChild) {
+    falseChild.on("end", () => result.push(null));
+  }
+
+  // Error propagation
+  trueChild.on("error", (err) => result.emit("error", err));
+  if (falseChild) {
+    falseChild.on("error", (err) => result.emit("error", err));
+  }
+
+  return result;
 }
