@@ -1,6 +1,7 @@
-import { PassThrough, Transform } from "node:stream";
+import { PassThrough } from "node:stream";
 import { minimatch } from "minimatch";
 import PluginError from "plugin-error";
+import ternaryStream from "./lib/ternary-stream.mjs";
 
 function matchFile(file, condition, options) {
   if (!file) {
@@ -87,68 +88,14 @@ export default function gulpIf(
     return condition ? trueChild : (falseChild ?? passthrough());
   }
 
-  function classifier(file) {
+  // For non-boolean conditions, use ternaryStream with a wrapper condition
+  function fileClassifier(file) {
     return !!matchFile(file, condition, minimatchOptions);
   }
 
-  // Return a Transform that classifies and routes files
-  const result = new Transform({
-    objectMode: true,
-    transform(file, encoding, callback) {
-      const useTrue = classifier(file);
-      const child = useTrue ? trueChild : (falseChild ?? passthrough());
+  // Create a stream that classifies files and routes to appropriate child
+  const trueStream = trueChild;
+  const falseStream = falseChild ?? passthrough();
 
-      let calledBack = false;
-      const cleanup = () => {
-        child.off("data", onData);
-        child.off("end", onEnd);
-        child.off("error", onError);
-      };
-
-      const onData = (data) => {
-        if (calledBack) return;
-        calledBack = true;
-        cleanup();
-        this.push(data);
-        callback();
-      };
-
-      const onEnd = () => {
-        if (calledBack) return;
-        calledBack = true;
-        cleanup();
-        // If child emitted end without data, push the original file
-        this.push(file);
-        callback();
-      };
-
-      const onError = (err) => {
-        if (calledBack) return;
-        calledBack = true;
-        cleanup();
-        callback(err);
-      };
-
-      child.on("data", onData);
-      child.on("end", onEnd);
-      child.on("error", onError);
-
-      child.write(file, encoding);
-      // Don't end - let the child stream stay open for more files
-    }
-  });
-
-  // Handle child stream end
-  trueChild.on("end", () => result.push(null));
-  if (falseChild) {
-    falseChild.on("end", () => result.push(null));
-  }
-
-  // Error propagation
-  trueChild.on("error", (err) => result.emit("error", err));
-  if (falseChild) {
-    falseChild.on("error", (err) => result.emit("error", err));
-  }
-
-  return result;
+  return ternaryStream(fileClassifier, trueStream, falseStream);
 }
