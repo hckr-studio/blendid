@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.7.3
+
+- Fixed `gulp-if`
+- Added many tests
+
 ## 9.7.2
 
 - Fixed `gulp-rev-rewrite`
