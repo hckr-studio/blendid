@@ -1033,7 +1033,6 @@ __metadata:
     istextorbinary: "npm:9.5.0"
     js-yaml: "npm:5.4.2"
     linkedom: "npm:0.18.13"
-    lodash-es: "npm:4.18.1"
     marked: "npm:18.0.13"
     marked-gfm-heading-id: "npm:4.1.4"
     marked-highlight: "npm:2.2.4"
@@ -3730,13 +3729,6 @@ __metadata:
     canvas:
       optional: true
   checksum: 10/45304e54cebeae6dab613558f4a6a0af5eb8b9a2cc05e7ab58d4648322c6a9de56f7e4245f8824ba6565e9954556ddd2dc8f75389ddbeee6f39a198ccd831884
-  languageName: node
-  linkType: hard
-
-"lodash-es@npm:4.18.1":
-  version: 4.18.1
-  resolution: "lodash-es@npm:4.18.1"
-  checksum: 10/8bfad225ef09ef42b04283cdaf7830efcc2ba29ae41b56501c74422155ee1ccaa1f0f6e8319def3451a1fe54dec501c8e4bee622bae2b2d98ac993731e0a5cce
   languageName: node
   linkType: hard
 

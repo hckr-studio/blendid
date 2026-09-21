@@ -4,7 +4,6 @@ import gulp from "gulp";
 import debug from "gulp-debug";
 import inject from "gulp-inject";
 import logger from "gulplog";
-import cloneDeep from "lodash-es/cloneDeep.js";
 import DefaultRegistry from "undertaker-registry";
 import data from "#gulp-data";
 import htmlmin from "#gulp-htmlmin-next";
@@ -15,6 +14,20 @@ import svgstore from "#gulp-svgstore";
 import { marked } from "#lib/markdown.mjs";
 import { Markdown } from "#lib/nunjucksMarkdow.mjs";
 import projectPath from "#lib/projectPath.mjs";
+
+function cloneDeep(value) {
+  if (value === null || typeof value !== "object") {
+    return value;
+  }
+  if (Array.isArray(value)) {
+    return value.map(cloneDeep);
+  }
+  const cloned = {};
+  for (const key of Object.keys(value)) {
+    cloned[key] = cloneDeep(value[key]);
+  }
+  return cloned;
+}
 
 /** @typedef {import("@types/nunjucks").Environment} Environment */
 /** @typedef {import("@types/gulp")} Undertaker */
