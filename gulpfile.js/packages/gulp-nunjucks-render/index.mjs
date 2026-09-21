@@ -1,6 +1,6 @@
 import { basename, dirname, extname, join } from "node:path";
 import { Transform } from "node:stream";
-import nunjucks from "nunjucks";
+import nunjucks from "@11ty/nunjucks";
 import PluginError from "plugin-error";
 
 function replaceExtension(filePath, newExt) {

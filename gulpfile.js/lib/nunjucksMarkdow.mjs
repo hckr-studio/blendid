@@ -1,4 +1,4 @@
-import nunjucks from "nunjucks";
+import nunjucks from "@11ty/nunjucks";
 
 export class Markdown {
   tags = ["markdown"];

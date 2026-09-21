@@ -38,6 +38,7 @@
     "outdated": "yarn upgrade-interactive"
   },
   "dependencies": {
+    "@11ty/nunjucks": "4.0.0-alpha.3",
     "@csstools/postcss-gamut-mapping": "3.0.12",
     "@gryphoon/texy": "1.0.0",
     "@lokesh.dhakar/quantize": "1.4.0",
@@ -66,7 +67,6 @@
     "minimatch": "10.2.6",
     "modify-filename": "2.0.0",
     "ndarray-pixels": "5.2.0",
-    "nunjucks": "3.2.4",
     "plugin-error": "2.0.1",
     "postcss": "8.5.28",
     "postcss-functions": "4.0.2",

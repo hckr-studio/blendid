@@ -5,6 +5,13 @@ __metadata:
   version: 10
   cacheKey: 10
 
+"@11ty/nunjucks@npm:4.0.0-alpha.3":
+  version: 4.0.0-alpha.3
+  resolution: "@11ty/nunjucks@npm:4.0.0-alpha.3"
+  checksum: 10/d3948d0425bef6e0a8a694a4f5184a8910bb17c896e509c1e1eb16ba868a067f886ecb5a63b39c63dc73595664e956b3fee3a0a7e71b873a15f84eeaf7b42b16
+  languageName: node
+  linkType: hard
+
 "@biomejs/biome@npm:2.5.14":
   version: 2.5.14
   resolution: "@biomejs/biome@npm:2.5.14"
@@ -999,6 +1006,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hckr_/blendid@workspace:."
   dependencies:
+    "@11ty/nunjucks": "npm:4.0.0-alpha.3"
     "@biomejs/biome": "npm:2.5.14"
     "@csstools/postcss-gamut-mapping": "npm:3.0.12"
     "@gryphoon/texy": "npm:1.0.0"
@@ -1033,7 +1041,6 @@ __metadata:
     minimatch: "npm:10.2.6"
     modify-filename: "npm:2.0.0"
     ndarray-pixels: "npm:5.2.0"
-    nunjucks: "npm:3.2.4"
     plugin-error: "npm:2.0.1"
     postcss: "npm:8.5.28"
     postcss-functions: "npm:4.0.2"
@@ -1868,13 +1875,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"a-sync-waterfall@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "a-sync-waterfall@npm:1.0.1"
-  checksum: 10/6069080aff936c88fc32f798cc172a8b541e35b993dc5d2e43b74b6f37c522744eec107e1d475d2c624825c6cb7d2ec9ec020dbe4520578afcae74f11902daa2
-  languageName: node
-  linkType: hard
-
 "abbrev@npm:^4.0.0":
   version: 4.0.0
   resolution: "abbrev@npm:4.0.0"
@@ -1972,13 +1972,6 @@ __metadata:
   version: 2.0.1
   resolution: "arrify@npm:2.0.1"
   checksum: 10/067c4c1afd182806a82e4c1cb8acee16ab8b5284fbca1ce29408e6e91281c36bb5b612f6ddfbd40a0f7a7e0c75bf2696eb94c027f6e328d6e9c52465c98e4209
-  languageName: node
-  linkType: hard
-
-"asap@npm:^2.0.3":
-  version: 2.0.6
-  resolution: "asap@npm:2.0.6"
-  checksum: 10/b244c0458c571945e4b3be0b14eb001bea5596f9868cc50cc711dc03d58a7e953517d3f0dad81ccde3ff37d1f074701fa76a6f07d41aaa992d7204a37b915dda
   languageName: node
   linkType: hard
 
@@ -3976,24 +3969,6 @@ __metadata:
   dependencies:
     boolbase: "npm:^1.0.0"
   checksum: 10/5afc3dafcd1573b08877ca8e6148c52abd565f1d06b1eb08caf982e3fa289a82f2cae697ffb55b5021e146d60443f1590a5d6b944844e944714a5b549675bcd3
-  languageName: node
-  linkType: hard
-
-"nunjucks@npm:3.2.4":
-  version: 3.2.4
-  resolution: "nunjucks@npm:3.2.4"
-  dependencies:
-    a-sync-waterfall: "npm:^1.0.0"
-    asap: "npm:^2.0.3"
-    commander: "npm:^5.1.0"
-  peerDependencies:
-    chokidar: ^3.3.0
-  peerDependenciesMeta:
-    chokidar:
-      optional: true
-  bin:
-    nunjucks-precompile: bin/precompile
-  checksum: 10/8decb8bb762501aa1a44366acff50ab9d4ff9e57034455e62056b4ac117da40140e1f34f2270c38884f1a5b84b7d97c4afcb2e8c789ddd09f4dcfe71ce7b56bf
   languageName: node
   linkType: hard
 
