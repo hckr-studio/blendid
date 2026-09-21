@@ -131,7 +131,7 @@ export class GenerateHtmlRegistry extends DefaultRegistry {
           .pipe(nunjucksRender(nunjucksRenderOptions))
           .pipe(
             gulpif(
-              taskConfig.svgSprite,
+              Boolean(taskConfig.svgSprite),
               inject(svgs, {
                 quiet: true,
                 removeTags: true,

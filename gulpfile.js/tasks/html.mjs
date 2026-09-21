@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { PassThrough } from "node:stream";
 import gulp from "gulp";
 import debug from "gulp-debug";
 import inject from "gulp-inject";
@@ -11,6 +10,7 @@ import cloneDeep from "lodash-es/cloneDeep.js";
 import DefaultRegistry from "undertaker-registry";
 import data from "#gulp-data";
 import htmlmin from "#gulp-htmlmin-next";
+import gulpIf from "#gulp-if";
 import nunjucksRender from "#gulp-nunjucks-render";
 import { marked } from "#lib/markdown.mjs";
 import { Markdown } from "#lib/nunjucksMarkdow.mjs";
@@ -214,20 +214,22 @@ export class HtmlRegistry extends DefaultRegistry {
         .pipe(nunjucksRender(nunjucksRenderOptions))
         .pipe(debug({ title: "html+njk:", logger: logger.debug }))
         .pipe(
-          this.config.svgSprite
-            ? inject(svgs, {
-                quiet: true,
-                removeTags: true,
-                transform(_, file) {
-                  return file.contents.toString();
-                }
-              })
-            : new PassThrough()
+          gulpIf(
+            Boolean(this.config.svgSprite),
+            inject(svgs, {
+              quiet: true,
+              removeTags: true,
+              transform(_, file) {
+                return file.contents.toString();
+              }
+            })
+          )
         )
         .pipe(
-          this.config.svgSprite
-            ? debug({ title: "injectsvg", logger: logger.debug })
-            : new PassThrough()
+          gulpIf(
+            Boolean(this.config.svgSprite),
+            debug({ title: "injectsvg", logger: logger.debug })
+          )
         )
         .pipe(this.mode.production(htmlmin(config.htmlmin)))
         .pipe(

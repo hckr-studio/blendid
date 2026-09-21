@@ -95,6 +95,6 @@ function createMethod(env, argv, allModes, targetMode, isDefaultMode) {
     }
     return matchMode(env, argv, allModes, targetMode, isDefaultMode)
       ? callback
-      : new PassThrough();
+      : new PassThrough({ objectMode: true });
   };
 }
