@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.7.6
+
+- Fixed `html` task when SVG sprites are disabled
+- Updated cssnano
+
 ## 9.7.5
 
 - Fixed `gulp-mode`
