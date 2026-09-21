@@ -28,7 +28,8 @@
     "#gulp-rev-delete-original": "./gulpfile.js/packages/gulp-rev-delete-original/index.mjs",
     "#gulp-rev-rewrite": "./gulpfile.js/packages/gulp-rev-rewrite/index.mjs",
     "#gulp-sizereport": "./gulpfile.js/packages/gulp-sizereport/index.mjs",
-    "#gulp-svgmin": "./gulpfile.js/packages/gulp-svgmin/index.mjs"
+    "#gulp-svgmin": "./gulpfile.js/packages/gulp-svgmin/index.mjs",
+    "#gulp-svgstore": "./gulpfile.js/packages/gulp-svgstore/index.mjs"
   },
   "scripts": {
     "start": "./bin/blendid.js",
@@ -52,11 +53,11 @@
     "gulp-inject": "5.0.5",
     "gulp-merge-json": "2.2.1",
     "gulp-postcss": "10.0.0",
-    "gulp-svgstore": "9.0.0",
     "gulplog": "2.2.0",
     "html-minifier-next": "8.5.2",
     "istextorbinary": "9.5.0",
     "js-yaml": "5.4.2",
+    "linkedom": "0.18.13",
     "lodash-es": "4.18.1",
     "marked": "18.0.13",
     "marked-gfm-heading-id": "4.1.4",
@@ -103,7 +104,6 @@
     "dom-serializer": "3.1.1",
     "domhandler": "6.0.1",
     "domutils": "3.2.2",
-    "entities": "8.1.0",
     "escape-string-regexp": "5.0.0",
     "fancy-log": "2.0.0",
     "glob-parent": "6.0.2",
@@ -139,7 +139,6 @@
     "dom-serializer": "3.1.1",
     "domhandler": "6.0.1",
     "domutils": "3.2.2",
-    "entities": "8.1.0",
     "escape-string-regexp": "5.0.0",
     "fancy-log": "2.0.0",
     "glob-parent": "6.0.2",
