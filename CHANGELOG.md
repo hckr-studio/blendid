@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.7.4
+
+- Improved implementation of `gulp-if`
+
 ## 9.7.3
 
 - Fixed `gulp-if`
