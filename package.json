@@ -27,7 +27,8 @@
     "#gulp-rev": "./gulpfile.js/packages/gulp-rev/index.mjs",
     "#gulp-rev-delete-original": "./gulpfile.js/packages/gulp-rev-delete-original/index.mjs",
     "#gulp-rev-rewrite": "./gulpfile.js/packages/gulp-rev-rewrite/index.mjs",
-    "#gulp-sizereport": "./gulpfile.js/packages/gulp-sizereport/index.mjs"
+    "#gulp-sizereport": "./gulpfile.js/packages/gulp-sizereport/index.mjs",
+    "#gulp-svgmin": "./gulpfile.js/packages/gulp-svgmin/index.mjs"
   },
   "scripts": {
     "start": "./bin/blendid.js",
@@ -51,7 +52,6 @@
     "gulp-inject": "5.0.5",
     "gulp-merge-json": "2.2.1",
     "gulp-postcss": "10.0.0",
-    "gulp-svgmin": "4.1.0",
     "gulp-svgstore": "9.0.0",
     "gulplog": "2.2.0",
     "html-minifier-next": "8.5.2",
@@ -76,6 +76,7 @@
     "rev-path": "3.0.0",
     "sharp": "0.35.4",
     "sort-keys": "6.0.1",
+    "svgo": "4.1.0",
     "undertaker-registry": "2.0.0",
     "vinyl": "3.0.1",
     "vinyl-file": "5.0.0",

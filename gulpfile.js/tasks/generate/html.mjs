@@ -3,7 +3,6 @@ import path from "node:path";
 import { Transform } from "node:stream";
 import debug from "gulp-debug";
 import inject from "gulp-inject";
-import svgmin from "gulp-svgmin";
 import svgstore from "gulp-svgstore";
 import logger from "gulplog";
 import cloneDeep from "lodash-es/cloneDeep.js";
@@ -13,6 +12,7 @@ import data from "#gulp-data";
 import htmlmin from "#gulp-htmlmin-next";
 import gulpif from "#gulp-if";
 import nunjucksRender from "#gulp-nunjucks-render";
+import svgmin from "#gulp-svgmin";
 import projectPath from "#lib/projectPath.mjs";
 import {
   createDataFunction,
