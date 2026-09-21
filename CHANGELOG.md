@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.7.5
+
+- Fixed `gulp-mode`
+- Improved reliability of HTML and Generate HTML tasks
+
 ## 9.7.4
 
 - Improved implementation of `gulp-if`
