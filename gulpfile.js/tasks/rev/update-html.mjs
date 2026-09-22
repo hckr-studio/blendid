@@ -1,9 +1,9 @@
 import fs from "node:fs";
 import debug from "gulp-debug";
-import inject from "gulp-inject";
 import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
 import when from "#gulp-if";
+import inject from "#gulp-inject";
 import revReplace from "#gulp-rev-rewrite";
 import projectPath from "#lib/projectPath.mjs";
 
