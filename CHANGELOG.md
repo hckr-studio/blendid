@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.7.8
+
+- Fix `gulp-inject` internal usage
+
 ## 9.7.7
 
 - Moved to `@11ty/nunjucks`
