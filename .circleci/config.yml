@@ -14,6 +14,7 @@ jobs:
           install-yarn: true
       - node/install-packages:
           pkg-manager: yarn-berry
+          with-cache: false
       - run:
           name: Build testing site
           command: yarn build
@@ -31,6 +32,7 @@ jobs:
           install-yarn: true
       - node/install-packages:
           pkg-manager: yarn-berry
+          with-cache: false
       - run: yarn test
       - slack/notify:
           event: fail
