@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>gulp-inject</title>
+  <!-- inject:html -->
+  <link rel="import" href="/my-test-dir/test-fixtures/component.html">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/my-test-dir/test-fixtures/styles.css">
+  <!-- endinject -->
+</head>
+<body>
+  <!-- inject:png -->
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <script src="/my-test-dir/test-fixtures/lib.js"></script>
+  <script src="/my-test-dir/test-fixtures/lib2.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:jsx -->
+  <script type="text/jsx" src="/my-test-dir/test-fixtures/lib.jsx"></script>
+  <!-- endinject -->
+</body>
+</html>

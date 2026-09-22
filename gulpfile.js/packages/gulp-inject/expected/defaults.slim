@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title gulp-inject
+    / inject:html
+    link rel="import" href="/test-fixtures/component.html"
+    / endinject
+    / inject:css
+    link rel="stylesheet" href="/test-fixtures/styles.css"
+    / endinject
+  body
+
+    / inject:js
+    script src="/test-fixtures/lib.js"
+    / endinject
