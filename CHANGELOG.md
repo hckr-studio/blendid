@@ -1,5 +1,11 @@
 # Changelog
 
+## 9.7.7
+
+- Moved to `@11ty/nunjucks`
+- Removed dependency on `lodash-es`
+- Moved in another bunch of unmaintained packages, so they are now updated to the latest Node.js idioms and cleaned up of legacy stuff
+
 ## 9.7.6
 
 - Fixed `html` task when SVG sprites are disabled
