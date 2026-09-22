@@ -1,4 +1,6 @@
 gulpfile.js/**/*.test.js
+gulpfile.js/**/test-fixture/**/*
+gulpfile.js/**/expected/**/*
 biome.json
 renovate.json
 public/
