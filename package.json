@@ -62,7 +62,7 @@
     "marked": "18.0.13",
     "marked-gfm-heading-id": "4.1.4",
     "marked-highlight": "2.2.4",
-    "marked-mangle": "1.1.13",
+    "marked-mangle": "1.1.14",
     "minimatch": "10.2.6",
     "modify-filename": "2.0.0",
     "ndarray-pixels": "5.2.0",
