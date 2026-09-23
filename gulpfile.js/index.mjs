@@ -60,7 +60,7 @@ gulp.registry(
   new StyleSheetsRegistry(taskConfig.stylesheets, pathConfig, mode, verbose)
 );
 
-// Register user provided registries
+// Register user-provided registries
 if (Array.isArray(taskConfig.registries)) {
   for (const registry of taskConfig.registries) {
     registry.mode = mode;

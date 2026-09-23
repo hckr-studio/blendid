@@ -1,27 +1,10 @@
 import fs from "node:fs";
 import module from "node:module";
+import { mergeWith } from "./object.mjs";
 import projectPath from "./projectPath.mjs";
 import { getTaskDefaults } from "./taskDefaults.mjs";
 
 const require = module.createRequire(import.meta.url);
-
-function mergeWith(object, source, customizer) {
-  const result = Object.assign({}, object);
-  for (const key of Object.keys(source)) {
-    const srcValue = source[key];
-    const objValue = result[key];
-
-    const customResult = customizer(objValue, srcValue);
-    if (customResult !== undefined) {
-      result[key] = customResult;
-    } else if (objValue !== null && typeof objValue === 'object' && srcValue !== null && typeof srcValue === 'object') {
-      result[key] = mergeWith(objValue, srcValue, customizer);
-    } else if (srcValue !== undefined) {
-      result[key] = srcValue;
-    }
-  }
-  return result;
-}
 
 async function getTaskConfigInternal() {
   if (process.env.BLENDID_CONFIG_PATH) {
