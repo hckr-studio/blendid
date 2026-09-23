@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.7.9
+
+- Fixed taskConfig corruption after `lodash-es` migration
+
 ## 9.7.8
 
 - Fix `gulp-inject` internal usage
