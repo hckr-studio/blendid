@@ -1,11 +1,10 @@
 export function mergeWith(object, source, customizer) {
-  // If both are arrays, handle as arrays
   if (Array.isArray(object) && Array.isArray(source)) {
     const customResult = customizer(object, source);
     if (customResult !== undefined) {
       return customResult;
     }
-    return Array.from(new Set(object).union(new Set(source)));
+    return Array.from(source);
   }
 
   const result = Object.assign({}, object);

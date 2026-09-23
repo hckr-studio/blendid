@@ -8,7 +8,10 @@ function replaceArrays(objValue, srcValue) {
   }
 }
 
-describe("mergeWith array corruption bug", () => {
+const noop = () => undefined;
+const identity = (value) => value;
+
+describe("mergeWith", () => {
   it("should preserve array type when merging arrays directly", () => {
     const result = mergeWith([1, 2, 3], [4, 5, 6], replaceArrays);
     assert.ok(Array.isArray(result), "Result should be an array");
@@ -117,5 +120,56 @@ describe("mergeWith array corruption bug", () => {
       [4, "five", { six: 6 }],
       "Array values should be replaced"
     );
+  });
+
+  describe("mergeWith customizer behavior", () => {
+    it("should handle merging when customizer returns undefined", () => {
+      const actual = mergeWith({ a: { b: [1, 1] } }, { a: { b: [0] } }, noop);
+      assert.deepStrictEqual(actual, { a: { b: [0] } });
+    });
+
+    it("should merge arrays with identity customizer", () => {
+      const result = mergeWith([], [undefined], identity);
+      // identity returns first argument, so customizer([], [undefined]) returns []
+      assert.deepStrictEqual(result, []);
+    });
+
+    it("should clone sources when customizer returns undefined", () => {
+      const source1 = { a: { b: { c: 1 } } };
+      const source2 = { a: { b: { d: 2 } } };
+
+      mergeWith(mergeWith({}, source1, noop), source2, noop);
+      assert.deepStrictEqual(source1.a.b, { c: 1 });
+    });
+
+    it("should defer to customizer for non-undefined results", () => {
+      const actual = mergeWith(
+        { a: { b: [0, 1] } },
+        { a: { b: [2] } },
+        (a, b) => (Array.isArray(a) ? a.concat(b) : undefined)
+      );
+
+      assert.deepStrictEqual(actual, { a: { b: [0, 1, 2] } });
+    });
+
+    it("should overwrite primitives with source object clones", () => {
+      const actual = mergeWith({ a: 0 }, { a: { b: ["c"] } }, (a, b) =>
+        Array.isArray(a) ? a.concat(b) : undefined
+      );
+
+      assert.deepStrictEqual(actual, { a: { b: ["c"] } });
+    });
+
+    it("should handle array concatenation for each sibling property", () => {
+      const array = ["b", "c"];
+      const object = { a: ["a"] };
+      const source = { a: array, b: array };
+
+      const actual = mergeWith(object, source, (a, b) =>
+        Array.isArray(a) ? a.concat(b) : undefined
+      );
+
+      assert.deepStrictEqual(actual, { a: ["a", "b", "c"], b: ["b", "c"] });
+    });
   });
 });
