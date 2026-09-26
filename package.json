@@ -55,7 +55,7 @@
     "gulp-merge-json": "2.2.1",
     "gulp-postcss": "10.0.0",
     "gulplog": "2.2.0",
-    "html-minifier-next": "8.5.2",
+    "html-minifier-next": "8.5.3",
     "istextorbinary": "9.5.0",
     "js-yaml": "5.4.2",
     "linkedom": "0.18.13",
