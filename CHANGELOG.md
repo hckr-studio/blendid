@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.7.12
+
+- Simplified `svgmin` plugins resolution. Config is used as is.
+- Cleanup of npm package
+
 ## 9.7.11
 
 - More `svgmin` fixes
