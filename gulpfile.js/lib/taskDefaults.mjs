@@ -153,17 +153,22 @@ export function getTaskDefaults(mode) {
         );
         return {
           plugins: [
-            { name: "preset-default" },
-            { name: "prefixIDs", params: { prefix } },
+            "preset-default",
             {
-              name: "cleanupIDs",
+              name: "cleanupIds",
               params: {
-                prefix: `${prefix}-`,
                 minify: true,
                 force: true
               }
             },
-            { name: "removeXMLNS" }
+            {
+              name: "prefixIds",
+              params: {
+                prefix: `${prefix}-`
+              }
+            },
+            { name: "removeXMLNS" },
+            { name: "removeXlink" }
           ]
         };
       }
