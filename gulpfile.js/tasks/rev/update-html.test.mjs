@@ -72,9 +72,17 @@ describe("RevUpdateHtmlRegistry", () => {
 
   describe("source paths", () => {
     it("uses correct source path pattern for HTML files", () => {
+      const configWithImportmap = {
+        html: {},
+        production: { rev: { importmap: true } }
+      };
+      const registryWithImportmap = new RevUpdateHtmlRegistry(
+        configWithImportmap,
+        mockPathConfig
+      );
       const srcCalls = [];
 
-      registry.init({
+      registryWithImportmap.init({
         ...createMockTaker(tasksCalled, taskRegistry),
         src: (p) => {
           srcCalls.push(p);
@@ -117,6 +125,14 @@ describe("RevUpdateHtmlRegistry", () => {
     });
 
     it("reads importmap file from correct path", () => {
+      const configWithImportmap = {
+        html: {},
+        production: { rev: { importmap: true } }
+      };
+      const registryWithImportmap = new RevUpdateHtmlRegistry(
+        configWithImportmap,
+        mockPathConfig
+      );
       const importmapSrcCalls = [];
       const importmapPath = path.resolve(
         "/tmp/test-project",
@@ -124,7 +140,7 @@ describe("RevUpdateHtmlRegistry", () => {
         "import-map.importmap"
       );
 
-      registry.init({
+      registryWithImportmap.init({
         ...createMockTaker(tasksCalled, taskRegistry),
         src: (p) => {
           importmapSrcCalls.push(p);
@@ -141,9 +157,17 @@ describe("RevUpdateHtmlRegistry", () => {
     });
 
     it("importmap src has allowEmpty option", () => {
+      const configWithImportmap = {
+        html: {},
+        production: { rev: { importmap: true } }
+      };
+      const registryWithImportmap = new RevUpdateHtmlRegistry(
+        configWithImportmap,
+        mockPathConfig
+      );
       const srcOptions = [];
 
-      registry.init({
+      registryWithImportmap.init({
         ...createMockTaker(tasksCalled, taskRegistry),
         src: (p, options) => {
           if (p.includes("import-map.importmap")) {

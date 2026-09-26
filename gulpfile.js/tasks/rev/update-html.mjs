@@ -6,6 +6,7 @@ import when from "#gulp-if";
 import inject from "#gulp-inject";
 import revReplace from "#gulp-rev-rewrite";
 import projectPath from "#lib/projectPath.mjs";
+import { passthrough } from "#lib/stream.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
@@ -31,10 +32,11 @@ export class RevUpdateHtmlRegistry extends DefaultRegistry {
       const manifest = fs.existsSync(manifestPath)
         ? fs.readFileSync(manifestPath)
         : null;
-      const importmap = src(
-        projectPath(this.pathConfig.dest, "import-map.importmap"),
-        { allowEmpty: true }
-      );
+      const importmap = this.config.production?.rev?.importmap
+        ? src(projectPath(this.pathConfig.dest, "import-map.importmap"), {
+            allowEmpty: true
+          })
+        : passthrough();
       return src(
         projectPath(
           this.pathConfig.dest,
