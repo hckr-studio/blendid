@@ -1,5 +1,5 @@
-gulpfile.js/**/*.test.js
-gulpfile.js/**/test-fixture/**/*
+gulpfile.js/**/*.test.m?js
+gulpfile.js/**/test-fixtures/**/*
 gulpfile.js/**/expected/**/*
 biome.json
 renovate.json
