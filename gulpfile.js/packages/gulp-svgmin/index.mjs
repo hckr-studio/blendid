@@ -1,6 +1,7 @@
 import { Transform } from "node:stream";
 import PluginError from "plugin-error";
 import { loadConfig, optimize } from "svgo";
+import { cloneDeep } from "#lib/object.mjs";
 
 // To prevent multiple scans of the disk for a svgo.config.js file, keep its
 // data in module scope. Using Map for better iteration and cache management.
@@ -36,7 +37,7 @@ async function loadConfigFromCache(configFile, cwd) {
 
 export async function getSvgoConfig(options = null, doDeepClone = false) {
   // Construct the svgo config from the given options.
-  let config = structuredClone(options ?? {});
+  let config = Object.assign({}, options);
 
   // Get the options that are for this gulp plugin and not for svgo.
   const pluginOptions = {
@@ -71,9 +72,7 @@ export async function getSvgoConfig(options = null, doDeepClone = false) {
     // want to prevent that function from making modifications to the
     // returned config object that would bleed into subsequent usages of
     // the config object.
-    const baseConfig = doDeepClone
-      ? structuredClone(loadedConfig)
-      : loadedConfig;
+    const baseConfig = doDeepClone ? cloneDeep(loadedConfig) : loadedConfig;
     config = Object.assign({}, baseConfig, config);
   }
 
