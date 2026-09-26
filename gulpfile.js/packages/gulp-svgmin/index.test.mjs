@@ -71,7 +71,14 @@ describe("gulp-svgmin", () => {
 
   it("should honor disabling plugins, such as keeping the doctype", async () => {
     const result = await makeTest(
-      { plugins: [{ removeDoctype: false }] },
+      {
+        plugins: [
+          {
+            name: "preset-default",
+            params: { overrides: { removeDoctype: false } }
+          }
+        ]
+      },
       inputSVG
     );
 
@@ -80,7 +87,16 @@ describe("gulp-svgmin", () => {
 
   it("should allow disabling multiple plugins", async () => {
     const result = await makeTest(
-      { plugins: [{ removeDoctype: false }, { removeComments: false }] },
+      {
+        plugins: [
+          {
+            name: "preset-default",
+            params: {
+              overrides: { removeDoctype: false, removeComments: false }
+            }
+          }
+        ]
+      },
       inputSVG
     );
 
@@ -93,7 +109,14 @@ describe("gulp-svgmin", () => {
 
     const result = await makeTest((file) => {
       assert.strictEqual(file, vinylFile);
-      return { plugins: [{ removeDoctype: false }] };
+      return {
+        plugins: [
+          {
+            name: "preset-default",
+            params: { overrides: { removeDoctype: false } }
+          }
+        ]
+      };
     }, vinylFile);
 
     assert.match(result, /DOCTYPE/);

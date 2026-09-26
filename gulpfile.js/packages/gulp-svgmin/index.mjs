@@ -55,11 +55,6 @@ export async function getSvgoConfig(options = null, doDeepClone = false) {
     return config;
   }
 
-  // Extract the svgo plugins list from the config as we will need to handle
-  // them specially later.
-  const plugins = config.plugins ?? [];
-  delete config.plugins;
-
   const loadedConfig = await loadConfigFromCache(
     pluginOptions.configFile,
     pluginOptions.cwd
@@ -76,57 +71,7 @@ export async function getSvgoConfig(options = null, doDeepClone = false) {
     config = Object.assign({}, baseConfig, config);
   }
 
-  // Merge any plugins given in options.plugins.
-  if (config.plugins) {
-    // If plugins are provided in a config file, they are assumed to be
-    // a final list of plugins; according to svgo version 2 docs, the
-    // config file is responsible for merging the default plugins list.
-    // So we just need to merge the options.plugins into the list loaded
-    // from the config file.
-    config.plugins = extendLoadedPlugins(config.plugins, plugins);
-  } else {
-    const pluginConfig = {
-      // Default provided per svgo docs in v2.4.0+
-      name: "preset-default",
-      params: {
-        overrides: {}
-      }
-    };
-
-    // Following format assuming plugins settings are for built ins
-    for (const plugin of plugins) {
-      for (const [key, value] of Object.entries(plugin)) {
-        pluginConfig.params.overrides[key] = value;
-      }
-    }
-
-    config.plugins = [pluginConfig];
-  }
-
   return config;
-}
-
-// Based on svgo's extendDefaultPlugins().
-const getPluginName = (plugin) =>
-  typeof plugin === "string" ? plugin : plugin?.name;
-
-function extendLoadedPlugins(loadedPlugins, plugins) {
-  const pluginsOrder = [];
-  const extendedPlugins = loadedPlugins.map((plugin) => {
-    pluginsOrder.push(getPluginName(plugin));
-    return plugin;
-  });
-
-  for (const plugin of plugins) {
-    const index = pluginsOrder.indexOf(getPluginName(plugin));
-    if (index === -1) {
-      extendedPlugins.push(plugin);
-    } else {
-      extendedPlugins[index] = plugin;
-    }
-  }
-
-  return extendedPlugins;
 }
 
 const PLUGIN_NAME = "gulp-svgmin";
