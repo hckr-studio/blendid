@@ -1,7 +1,7 @@
-import { PassThrough } from "node:stream";
 import { minimatch } from "minimatch";
 import PluginError from "plugin-error";
-import ternaryStream from "./lib/ternary-stream.mjs";
+import { passthrough } from "#lib/stream.mjs";
+import ternaryStream from "#lib/ternaryStream.mjs";
 
 function matchFile(file, condition, options) {
   if (!file) {
@@ -68,10 +68,6 @@ function matchFile(file, condition, options) {
   }
 
   return Boolean(condition);
-}
-
-function passthrough() {
-  return new PassThrough({ objectMode: true });
 }
 
 export default function gulpIf(

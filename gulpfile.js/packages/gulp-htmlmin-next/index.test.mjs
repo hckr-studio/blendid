@@ -2,13 +2,13 @@ import assert from "node:assert";
 import { once } from "node:events";
 import fs from "node:fs";
 import { resolve } from "node:path";
-import { PassThrough } from "node:stream";
 import { describe, it } from "node:test";
 import File from "vinyl";
+import { passthrough } from "#lib/stream.mjs";
 import minify from "./index.mjs";
 
 function toStream(contents) {
-  const stream = new PassThrough();
+  const stream = passthrough();
   stream.write(contents);
   stream.end();
   return stream;

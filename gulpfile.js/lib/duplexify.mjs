@@ -1,5 +1,5 @@
 import { Duplex, Readable, Writable } from "node:stream";
-import eos from "./end-of-stream.mjs";
+import eos from "./endOfStream.mjs";
 
 const SIGNAL_FLUSH = Buffer.from([0]);
 

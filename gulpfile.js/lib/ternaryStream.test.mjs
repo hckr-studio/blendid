@@ -1,7 +1,7 @@
 import assert from "node:assert";
 import { Transform } from "node:stream";
 import { describe, it } from "node:test";
-import ternaryStream from "./ternary-stream.mjs";
+import ternaryStream from "./ternaryStream.mjs";
 
 const through = {
   obj: (fn) =>

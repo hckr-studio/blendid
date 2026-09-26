@@ -5,7 +5,7 @@ import http from "node:http";
 import net from "node:net";
 import stream from "node:stream";
 import { describe, it } from "node:test";
-import eos from "./end-of-stream.mjs";
+import eos from "./endOfStream.mjs";
 
 describe("end-of-stream", () => {
   it("fs writestream destroy", async () => {

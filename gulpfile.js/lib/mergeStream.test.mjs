@@ -1,7 +1,7 @@
 import assert from "node:assert";
-import { PassThrough } from "node:stream";
 import { after, describe, it } from "node:test";
-import mergeStream from "./merge-stream.mjs";
+import { passthrough } from "#lib/stream.mjs";
+import mergeStream from "./mergeStream.mjs";
 
 // Store active timeouts to clean up after tests
 const activeTimeouts = new Set();
@@ -22,7 +22,7 @@ after(() => {
 // Helper to create a range stream (replaces from2)
 function range(n) {
   const k = n > 0 ? -1 : 1;
-  const stream = new PassThrough({ objectMode: true });
+  const stream = passthrough();
   let current = n;
 
   const sendNext = () => {

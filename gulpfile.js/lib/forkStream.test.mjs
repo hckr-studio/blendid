@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import { describe, it } from "node:test";
-import { ForkStream } from "./fork-stream.mjs";
+import { ForkStream } from "./forkStream.mjs";
 
 describe("fork-stream", () => {
   it("should split objects into their correct streams", async () => {

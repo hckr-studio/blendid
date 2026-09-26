@@ -1,14 +1,14 @@
-import { PassThrough } from "node:stream";
 import duplexify from "./duplexify.mjs";
-import { ForkStream } from "./fork-stream.mjs";
-import mergeStream from "./merge-stream.mjs";
+import { ForkStream } from "./forkStream.mjs";
+import mergeStream from "./mergeStream.mjs";
+import { passthrough } from "./stream.mjs";
 
 export default function ternaryStream(condition, trueStream, falseStream) {
   if (!trueStream) {
     throw new Error("ternary-stream: child action is required");
   }
 
-  const outStream = new PassThrough({ objectMode: true });
+  const outStream = passthrough();
 
   const forkStream = new ForkStream({
     classifier(chunk, cb) {

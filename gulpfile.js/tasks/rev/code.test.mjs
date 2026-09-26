@@ -1,9 +1,9 @@
 import assert from "node:assert";
 import fs from "node:fs";
 import path from "node:path";
-import { PassThrough } from "node:stream";
 import { afterEach, beforeEach, describe, it } from "node:test";
 import DefaultRegistry from "undertaker-registry";
+import { passthrough } from "#lib/stream.mjs";
 import { RevCodeRegistry } from "./code.mjs";
 import {
   assertRegistryBasics,
@@ -67,7 +67,7 @@ describe("RevCodeRegistry", () => {
         ...createMockTaker(tasksCalled, taskRegistry),
         src: (p) => {
           srcCalls.push(p);
-          return new PassThrough({ objectMode: true });
+          return passthrough();
         }
       });
       tasksCalled[0].fn();
@@ -86,7 +86,7 @@ describe("RevCodeRegistry", () => {
         ...createMockTaker(tasksCalled, taskRegistry),
         src: (p) => {
           srcCalls.push(p);
-          return new PassThrough({ objectMode: true });
+          return passthrough();
         }
       });
       tasksCalled[0].fn();
@@ -106,7 +106,7 @@ describe("RevCodeRegistry", () => {
         ...createMockTaker(tasksCalled, taskRegistry),
         dest: (p) => {
           destCalls.push(p);
-          return new PassThrough({ objectMode: true });
+          return passthrough();
         }
       });
       tasksCalled[0].fn();
@@ -134,11 +134,11 @@ describe("RevCodeRegistry", () => {
         ...createMockTaker(tasksCalled, taskRegistry),
         src: (p) => {
           srcCalls.push(p);
-          return new PassThrough({ objectMode: true });
+          return passthrough();
         },
         dest: (p) => {
           destCalls.push(p);
-          return new PassThrough({ objectMode: true });
+          return passthrough();
         }
       });
 
@@ -170,7 +170,7 @@ describe("RevCodeRegistry", () => {
         ...createMockTaker(tasksCalled, taskRegistry),
         src: (p) => {
           srcCalls.push(p);
-          return new PassThrough({ objectMode: true });
+          return passthrough();
         }
       });
 
