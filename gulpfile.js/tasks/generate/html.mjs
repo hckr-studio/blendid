@@ -99,29 +99,10 @@ export class GenerateHtmlRegistry extends DefaultRegistry {
       );
 
       const svgs = src(paths.spritesSrc)
-        .pipe(
-          svgmin((file) => {
-            const prefix = path.basename(
-              file.relative,
-              path.extname(file.relative)
-            );
-            return {
-              plugins: [
-                "preset-default",
-                { prefixIDs: { prefix } },
-                {
-                  cleanupIDs: {
-                    prefix: prefix + "-",
-                    minify: true,
-                    force: true
-                  }
-                },
-                "removeXMLNS"
-              ]
-            };
-          })
-        )
-        .pipe(svgstore(taskConfig.svgSprite.svgstore));
+        .pipe(svgmin(config.svgmin))
+        .pipe(debug({ title: "svgmin", logger: logger.debug }))
+        .pipe(svgstore(taskConfig.svgSprite.svgstore))
+        .pipe(debug({ title: "svgstore", logger: logger.debug }));
 
       function generateHtmlTask() {
         return src(sourcePath)

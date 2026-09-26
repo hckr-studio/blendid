@@ -145,6 +145,27 @@ export function getTaskDefaults(mode) {
         removeAttributeQuotes: true,
         removeOptionalTags: true,
         removeRedundantAttributes: true
+      },
+      svgmin: (file) => {
+        const prefix = path.basename(
+          file.relative,
+          path.extname(file.relative)
+        );
+        return {
+          plugins: [
+            { name: "preset-default" },
+            { name: "prefixIDs", params: { prefix } },
+            {
+              name: "cleanupIDs",
+              params: {
+                prefix: `${prefix}-`,
+                minify: true,
+                force: true
+              }
+            },
+            { name: "removeXMLNS" }
+          ]
+        };
       }
     },
 
