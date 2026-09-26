@@ -1,5 +1,11 @@
 # Changelog
 
+## 9.7.10
+
+- Fixed `svgmin` configuration (migrated to the new schema) and extracted it into taskDefaults with the ability to override on the user side.
+- Aligned `deepClone` with the original implementation and added tests.
+- Updated dependencies
+
 ## 9.7.9
 
 - Fixed taskConfig corruption after `lodash-es` migration
