@@ -341,6 +341,7 @@ describe("object", () => {
     });
 
     it("should handle arrays with holes", () => {
+      // biome-ignore lint/suspicious/noSparseArray: testing for them
       const arr = [1, , 3];
       const cloned = cloneDeep(arr);
       assert.strictEqual(cloned[0], 1);
