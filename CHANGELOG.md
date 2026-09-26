@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.7.13
+
+- Fixed `importmaps` related code
+
 ## 9.7.12
 
 - Simplified `svgmin` plugins resolution. Config is used as is.
