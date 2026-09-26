@@ -12,6 +12,7 @@ import inject from "#gulp-inject";
 import nunjucksRender from "#gulp-nunjucks-render";
 import svgmin from "#gulp-svgmin";
 import svgstore from "#gulp-svgstore";
+import { cloneDeep } from "#lib/object.mjs";
 import projectPath from "#lib/projectPath.mjs";
 import {
   createDataFunction,
@@ -19,20 +20,6 @@ import {
   getNunjucksRenderOptions,
   getPaths
 } from "../html.mjs";
-
-function cloneDeep(value) {
-  if (value === null || typeof value !== "object") {
-    return value;
-  }
-  if (Array.isArray(value)) {
-    return value.map(cloneDeep);
-  }
-  const cloned = {};
-  for (const key of Object.keys(value)) {
-    cloned[key] = cloneDeep(value[key]);
-  }
-  return cloned;
-}
 
 /** @typedef {import("@types/gulp")} Undertaker */
 

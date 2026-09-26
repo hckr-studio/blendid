@@ -13,21 +13,8 @@ import svgmin from "#gulp-svgmin";
 import svgstore from "#gulp-svgstore";
 import { marked } from "#lib/markdown.mjs";
 import { Markdown } from "#lib/nunjucksMarkdow.mjs";
+import { cloneDeep } from "#lib/object.mjs";
 import projectPath from "#lib/projectPath.mjs";
-
-function cloneDeep(value) {
-  if (value === null || typeof value !== "object") {
-    return value;
-  }
-  if (Array.isArray(value)) {
-    return value.map(cloneDeep);
-  }
-  const cloned = {};
-  for (const key of Object.keys(value)) {
-    cloned[key] = cloneDeep(value[key]);
-  }
-  return cloned;
-}
 
 /** @typedef {import("@types/nunjucks").Environment} Environment */
 /** @typedef {import("@types/gulp")} Undertaker */

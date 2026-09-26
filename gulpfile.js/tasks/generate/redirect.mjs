@@ -7,21 +7,8 @@ import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
 import htmlmin from "#gulp-htmlmin-next";
 import nunjucksRender from "#gulp-nunjucks-render";
+import { cloneDeep } from "#lib/object.mjs";
 import projectPath from "#lib/projectPath.mjs";
-
-function cloneDeep(value) {
-  if (value === null || typeof value !== "object") {
-    return value;
-  }
-  if (Array.isArray(value)) {
-    return value.map(cloneDeep);
-  }
-  const cloned = {};
-  for (const key of Object.keys(value)) {
-    cloned[key] = cloneDeep(value[key]);
-  }
-  return cloned;
-}
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
