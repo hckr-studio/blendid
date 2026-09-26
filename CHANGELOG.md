@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.7.11
+
+- More `svgmin` fixes
+
 ## 9.7.10
 
 - Fixed `svgmin` configuration (migrated to the new schema) and extracted it into taskDefaults with the ability to override on the user side.
