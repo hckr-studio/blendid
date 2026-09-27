@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.7.14
+
+- Export `front-matter` and `marked` from the package
+- Fixed markdown file rendering in nunjucks as the API is now async
+
 ## 9.7.13
 
 - Fixed `importmaps` related code
