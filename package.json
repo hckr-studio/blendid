@@ -13,9 +13,14 @@
   "exports": {
     ".": "./gulpfile.js/index.mjs",
     "./lib/*.mjs": "./gulpfile.js/lib/*.mjs",
+    "./packages/**/*.mjs": "./gulpfile.js/packages/**/*.mjs",
     "./tasks/*.mjs": "./gulpfile.js/tasks/*.mjs",
     "./front-matter": "./gulpfile.js/lib/front-matter.mjs",
-    "./marked": "./gulpfile.js/lib/markdown.mjs"
+    "./lqip": "./gulpfile.js/lib/lqip.mjs",
+    "./marked": "./gulpfile.js/lib/markdown.mjs",
+    "./project-path": "./gulpfile.js/lib/projectPath.mjs",
+    "./stream": "./gulpfile.js/lib/stream.mjs",
+    "./texy": "./gulpfile.js/lib/texy.mjs"
   },
   "imports": {
     "#lib/*.mjs": "./gulpfile.js/lib/*.mjs",
@@ -37,8 +42,7 @@
   "scripts": {
     "start": "./bin/blendid.js",
     "build": "./bin/blendid.js build --production",
-    "test": "INIT_CWD=. node --test ./gulpfile.js/**/*.test.mjs",
-    "outdated": "yarn upgrade-interactive"
+    "test": "INIT_CWD=. node --test ./gulpfile.js/**/*.test.mjs"
   },
   "dependencies": {
     "@11ty/nunjucks": "4.0.0-alpha.3",
@@ -163,7 +167,7 @@
     "yargs": "17.7.3"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=26"
   },
   "packageManager": "yarn@4.18.0"
 }
