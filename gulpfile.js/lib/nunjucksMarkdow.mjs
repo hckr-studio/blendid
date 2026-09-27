@@ -17,7 +17,7 @@ export class Markdown {
 
     // If arguments, return the fileTag constructed node
     if (args.children.length > 0) {
-      return new nodes.CallExtension(this, "fileTag", args);
+      return new nodes.CallExtensionAsync(this, "fileTag", args);
     }
 
     // Otherwise parse until the close block and move the parser to the next position
@@ -40,9 +40,9 @@ export class Markdown {
 
   // Markdown rendering for the file tag. Use the nunjucks.render function to render
   // the actual contents of the file. Pass the results through the markdown renderer.
-  fileTag(environment, file) {
+  async fileTag(environment, file) {
     return new nunjucks.runtime.SafeString(
-      this.renderMarkdown(this.env.render(file, environment.ctx))
+      this.renderMarkdown(await this.env.render(file, environment.ctx))
     );
   }
 

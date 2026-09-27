@@ -88,7 +88,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
     "@types/gulp": "4.0.18",
-    "@types/nunjucks": "3.2.6",
     "@types/undertaker": "1.2.12",
     "@types/undertaker-registry": "1.0.4",
     "esbuild": "0.28.2"

@@ -996,7 +996,6 @@ __metadata:
     "@gryphoon/texy": "npm:1.0.0"
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
-    "@types/nunjucks": "npm:3.2.6"
     "@types/undertaker": "npm:1.2.12"
     "@types/undertaker-registry": "npm:1.0.4"
     "@vitejs/plugin-basic-ssl": "npm:2.3.0"
@@ -1545,13 +1544,6 @@ __metadata:
   dependencies:
     undici-types: "npm:~8.9.0"
   checksum: 10/757d598381b690e4429b9fab3adcf48f88ac7ed17488b47724cf3df9d6d38bcac17ab61c10cabecc5dbda5717f3f819208549ba3cef4cd941300440282a2a1a8
-  languageName: node
-  linkType: hard
-
-"@types/nunjucks@npm:3.2.6":
-  version: 3.2.6
-  resolution: "@types/nunjucks@npm:3.2.6"
-  checksum: 10/6b77fd2e5e3a63f82149779ae83e6ade7f70779c63b9bdab9fdd52c388db4b442c8b5993f62917a9564fc5e5690784ea5558513c629bee5b8cf6b8e6d8eeac38
   languageName: node
   linkType: hard
 
