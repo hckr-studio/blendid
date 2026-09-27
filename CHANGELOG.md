@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.8.1
+
+- Added `logger` and `registry` exports
+
 ## 9.8.0
 
 - Added convenient exports for inlined libraries and tasks
