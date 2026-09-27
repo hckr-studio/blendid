@@ -1,5 +1,4 @@
 import fs from "node:fs";
-import path from "node:path";
 import { Transform } from "node:stream";
 import debug from "gulp-debug";
 import logger from "gulplog";
@@ -7,7 +6,7 @@ import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
 import data from "#gulp-data";
 import htmlmin from "#gulp-htmlmin-next";
-import gulpif from "#gulp-if";
+import { when } from "#gulp-if";
 import inject from "#gulp-inject";
 import nunjucksRender from "#gulp-nunjucks-render";
 import svgmin from "#gulp-svgmin";
@@ -111,8 +110,8 @@ export class GenerateHtmlRegistry extends DefaultRegistry {
           .pipe(data(dataFunction))
           .pipe(nunjucksRender(nunjucksRenderOptions))
           .pipe(
-            gulpif(
-              Boolean(taskConfig.svgSprite),
+            when(
+              taskConfig.svgSprite,
               inject(svgs, {
                 quiet: true,
                 removeTags: true,

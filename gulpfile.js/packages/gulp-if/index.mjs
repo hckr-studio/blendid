@@ -1,7 +1,6 @@
 import { minimatch } from "minimatch";
 import PluginError from "plugin-error";
-import { passthrough } from "#lib/stream.mjs";
-import ternaryStream from "#lib/ternaryStream.mjs";
+import { passthrough, ternaryStream } from "#lib/stream.mjs";
 
 function matchFile(file, condition, options) {
   if (!file) {
@@ -86,12 +85,21 @@ export default function gulpIf(
 
   // For non-boolean conditions, use ternaryStream with a wrapper condition
   function fileClassifier(file) {
-    return !!matchFile(file, condition, minimatchOptions);
+    return matchFile(file, condition, minimatchOptions);
   }
 
   // Create a stream that classifies files and routes to appropriate child
-  const trueStream = trueChild;
-  const falseStream = falseChild ?? passthrough();
+  return ternaryStream(fileClassifier, trueChild, falseChild ?? passthrough());
+}
 
-  return ternaryStream(fileClassifier, trueStream, falseStream);
+/**
+ * Same as gulpIf, but Condition is always evaluated to Boolean.
+ * @param {any} condition
+ * @param {Stream} trueChild
+ * @param {Stream} [falseChild]
+ * @param {import("minimatch").MinimatchOptions} [minimatchOptions]
+ * @returns {Stream}
+ */
+export function when(condition, trueChild, falseChild, minimatchOptions) {
+  return gulpIf(Boolean(condition), trueChild, falseChild, minimatchOptions);
 }

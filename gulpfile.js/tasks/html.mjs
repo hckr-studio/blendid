@@ -6,7 +6,7 @@ import logger from "gulplog";
 import DefaultRegistry from "undertaker-registry";
 import data from "#gulp-data";
 import htmlmin from "#gulp-htmlmin-next";
-import gulpIf from "#gulp-if";
+import { when } from "#gulp-if";
 import inject from "#gulp-inject";
 import nunjucksRender from "#gulp-nunjucks-render";
 import svgmin from "#gulp-svgmin";
@@ -187,8 +187,8 @@ export class HtmlRegistry extends DefaultRegistry {
         .pipe(nunjucksRender(nunjucksRenderOptions))
         .pipe(debug({ title: "html+njk:", logger: logger.debug }))
         .pipe(
-          gulpIf(
-            Boolean(this.config.svgSprite),
+          when(
+            this.config.svgSprite,
             inject(svgs, {
               quiet: true,
               removeTags: true,
@@ -199,8 +199,8 @@ export class HtmlRegistry extends DefaultRegistry {
           )
         )
         .pipe(
-          gulpIf(
-            Boolean(this.config.svgSprite),
+          when(
+            this.config.svgSprite,
             debug({ title: "injectsvg", logger: logger.debug })
           )
         )
