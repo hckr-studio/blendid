@@ -2,6 +2,31 @@ export function cloneDeep(value, seen = new WeakMap()) {
   if (value === null || typeof value !== "object") return value;
   if (seen.has(value)) return seen.get(value);
 
+  // Handle Temporal API objects (Node.js 22+)
+  if (value?.constructor?.name === "ZonedDateTime") {
+    return Temporal.ZonedDateTime.from(value.toString());
+  }
+  if (value?.constructor?.name === "PlainDateTime") {
+    return Temporal.PlainDateTime.from(value.toString());
+  }
+  if (value?.constructor?.name === "PlainDate") {
+    return Temporal.PlainDate.from(value.toString());
+  }
+  if (value?.constructor?.name === "PlainTime") {
+    return Temporal.PlainTime.from(value.toString());
+  }
+  if (value?.constructor?.name === "Duration") {
+    return Temporal.Duration.from(value.toString());
+  }
+  if (value?.constructor?.name === "Instant") {
+    return Temporal.Instant.from(value.toString());
+  }
+  if (value?.constructor?.name === "PlainYearMonth") {
+    return Temporal.PlainYearMonth.from(value.toString());
+  }
+  if (value?.constructor?.name === "PlainMonthDay") {
+    return Temporal.PlainMonthDay.from(value.toString());
+  }
   if (value instanceof Date) return new Date(value);
   if (value instanceof RegExp) return new RegExp(value);
   if (value instanceof Map) {

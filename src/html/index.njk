@@ -49,6 +49,8 @@ Very nice beautiful markdown
 <script type="module">
   import { helloWorld } from "{{ 'index.js' | assetUrl('esm') }}";
 
+  const date = {{ date | dump | safe }};
+
   helloWorld();
 </script>
 {% endblock %}
