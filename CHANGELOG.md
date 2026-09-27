@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.8.0
+
+- Added convenient exports for inlined libraries and tasks
+- Improved `gulp-if` API
+
 ## 9.7.15
 
 - Fixed async rendering with `@11ty/nunjucks`
