@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.7.15
+
+- Fixed async rendering with `@11ty/nunjucks`
+- `cloneDeep` support for `Temporal` values
+
 ## 9.7.14
 
 - Export `front-matter` and `marked` from the package
