@@ -111,34 +111,29 @@ class NunjucksTransform extends Transform {
 
     const filePath = file.path;
 
-    try {
-      nunjucksEnv.renderString(
-        file.contents.toString(),
-        data,
-        (err, result) => {
-          if (err) {
-            this.emit(
-              "error",
-              new PluginError(PLUGIN_NAME, err, { fileName: filePath })
-            );
-            return cb();
-          }
-          file.contents = Buffer.from(result);
-          // Replace file extension if inheritExtension is false
-          if (!options.inheritExtension) {
-            file.path = replaceExtension(filePath, options.ext);
-          }
-          this.push(file);
-          cb();
+    // In @11ty/nunjucks@4.0.0-alpha.3, renderString always returns a Promise
+    // We need to use async/await to properly handle it
+    (async () => {
+      try {
+        const result = await nunjucksEnv.renderString(
+          file.contents.toString(),
+          data
+        );
+        file.contents = Buffer.from(result);
+        // Replace file extension if inheritExtension is false
+        if (!options.inheritExtension) {
+          file.path = replaceExtension(filePath, options.ext);
         }
-      );
-    } catch (err) {
-      this.emit(
-        "error",
-        new PluginError(PLUGIN_NAME, err, { fileName: filePath })
-      );
-      cb();
-    }
+        this.push(file);
+        cb();
+      } catch (err) {
+        this.emit(
+          "error",
+          new PluginError(PLUGIN_NAME, err, { fileName: filePath })
+        );
+        cb();
+      }
+    })();
   }
 }
 

@@ -40,10 +40,15 @@ export class Markdown {
 
   // Markdown rendering for the file tag. Use the nunjucks.render function to render
   // the actual contents of the file. Pass the results through the markdown renderer.
-  async fileTag(environment, file) {
-    return new nunjucks.runtime.SafeString(
-      this.renderMarkdown(await this.env.render(file, environment.ctx))
-    );
+  fileTag(environment, file, cb) {
+    this.env
+      .render(file, environment.ctx)
+      .then((data) => {
+        cb(null, new nunjucks.runtime.SafeString(this.renderMarkdown(data)));
+      })
+      .catch((err) => {
+        cb(err);
+      });
   }
 
   // Markdown rendering for the block. Pretty simple, just get the body text and pass
