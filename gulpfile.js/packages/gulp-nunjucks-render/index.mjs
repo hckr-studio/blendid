@@ -2,6 +2,7 @@ import { basename, dirname, extname, join } from "node:path";
 import { Transform } from "node:stream";
 import nunjucks from "@11ty/nunjucks";
 import PluginError from "plugin-error";
+import { cloneDeep } from "#lib/object.mjs";
 
 function replaceExtension(filePath, newExt) {
   const dir = dirname(filePath);
@@ -9,42 +10,7 @@ function replaceExtension(filePath, newExt) {
   return join(dir, base + newExt);
 }
 
-function deepClone(value) {
-  if (value === null || typeof value !== "object") {
-    return value;
-  }
-  if (value instanceof Date) {
-    return new Date(value);
-  }
-  if (typeof value === "function") {
-    return value;
-  }
-  // Handle Temporal objects - check for any Temporal type
-  if (typeof Temporal !== "undefined") {
-    if (
-      value instanceof Temporal.PlainDate ||
-      value instanceof Temporal.PlainTime ||
-      value instanceof Temporal.PlainDateTime ||
-      value instanceof Temporal.ZonedDateTime ||
-      value instanceof Temporal.PlainMonthDay ||
-      value instanceof Temporal.PlainYearMonth ||
-      value instanceof Temporal.Duration ||
-      value instanceof Temporal.Instant
-    ) {
-      return Temporal[value.constructor.name].from(value);
-    }
-  }
-  if (Array.isArray(value)) {
-    return value.map(deepClone);
-  }
-  const result = {};
-  for (const key in value) {
-    if (Object.hasOwn(value, key)) {
-      result[key] = deepClone(value[key]);
-    }
-  }
-  return result;
-}
+export const deepClone = cloneDeep;
 
 function deepMerge(a, b) {
   if (a == null || b == null) return b != null ? deepClone(b) : deepClone(a);
@@ -179,5 +145,3 @@ class NunjucksTransform extends Transform {
 export default function (userOptions) {
   return new NunjucksTransform(userOptions);
 }
-
-export { deepClone };

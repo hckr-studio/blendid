@@ -4,7 +4,7 @@ import { Transform } from "node:stream";
 import { isText } from "istextorbinary";
 import PluginError from "plugin-error";
 import Vinyl from "vinyl";
-import frontmatter from "./lib/front-matter.mjs";
+import frontmatter from "#lib/front-matter.mjs";
 
 const NAME = "gulp-markdown-to-json";
 

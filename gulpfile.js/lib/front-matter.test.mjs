@@ -2,7 +2,7 @@ import { strict as assert } from "node:assert";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { describe, it } from "node:test";
-import fm, { test } from "../lib/front-matter.mjs";
+import fm, { test } from "./front-matter.mjs";
 
 describe("front-matter", () => {
   it("should export a function", () => {

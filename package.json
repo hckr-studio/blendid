@@ -13,7 +13,9 @@
   "exports": {
     ".": "./gulpfile.js/index.mjs",
     "./lib/*.mjs": "./gulpfile.js/lib/*.mjs",
-    "./tasks/*.mjs": "./gulpfile.js/tasks/*.mjs"
+    "./tasks/*.mjs": "./gulpfile.js/tasks/*.mjs",
+    "./front-matter": "./gulpfile.js/lib/front-matter.mjs",
+    "./marked": "./gulpfile.js/lib/markdown.mjs"
   },
   "imports": {
     "#lib/*.mjs": "./gulpfile.js/lib/*.mjs",
