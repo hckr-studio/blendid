@@ -2,8 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import gulp from "gulp";
 import debug from "gulp-debug";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import data from "#gulp-data";
 import htmlmin from "#gulp-htmlmin-next";
 import { when } from "#gulp-if";
@@ -11,10 +9,12 @@ import inject from "#gulp-inject";
 import nunjucksRender from "#gulp-nunjucks-render";
 import svgmin from "#gulp-svgmin";
 import svgstore from "#gulp-svgstore";
+import { logger } from "#lib/logger.mjs";
 import { marked } from "#lib/markdown.mjs";
 import { Markdown } from "#lib/nunjucksMarkdow.mjs";
 import { cloneDeep } from "#lib/object.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/nunjucks").Environment} Environment */
 /** @typedef {import("@types/gulp")} Undertaker */
@@ -140,7 +140,7 @@ export function getNunjucksRenderOptions(config, pathConfig) {
   return nunjucksRenderOptions;
 }
 
-export class HtmlRegistry extends DefaultRegistry {
+export class HtmlRegistry extends Registry {
   constructor(config, pathConfig, mode) {
     super();
     this.config = config;

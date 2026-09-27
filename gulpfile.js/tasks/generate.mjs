@@ -1,7 +1,7 @@
-import DefaultRegistry from "undertaker-registry";
-import { GenerateRedirectsRegistry } from "./generate/redirect.mjs";
-import { GenerateJsonRegistry } from "./generate/json.mjs";
+import { Registry } from "#lib/registry.mjs";
 import { GenerateHtmlRegistry } from "./generate/html.mjs";
+import { GenerateJsonRegistry } from "./generate/json.mjs";
+import { GenerateRedirectsRegistry } from "./generate/redirect.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
@@ -9,7 +9,7 @@ const noop = (done) => {
   done();
 };
 
-export class GenerateRegistry extends DefaultRegistry {
+export class GenerateRegistry extends Registry {
   constructor(config, pathConfig, mode) {
     super();
     this.config = config;

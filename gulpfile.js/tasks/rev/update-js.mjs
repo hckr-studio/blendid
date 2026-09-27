@@ -1,13 +1,13 @@
 import fs from "node:fs";
 import debug from "gulp-debug";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import revReplace from "#gulp-rev-rewrite";
+import { logger } from "#lib/logger.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class RevUpdateJsRegistry extends DefaultRegistry {
+export class RevUpdateJsRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

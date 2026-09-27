@@ -1,11 +1,12 @@
 import debug from "gulp-debug";
 import gulpEsbuild from "gulp-esbuild";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
-import projectPath from "../lib/projectPath.mjs";
+import { logger } from "#lib/logger.mjs";
+import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
-export class ESBuildRegistry extends DefaultRegistry {
+
+export class ESBuildRegistry extends Registry {
   constructor(config, pathConfig, mode, verbose) {
     super();
     if (pathConfig.esbuild) {

@@ -1,5 +1,5 @@
-import DefaultRegistry from "undertaker-registry";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
@@ -18,7 +18,7 @@ function getTaskPathFor(taskName, pathConfig) {
   }
 }
 
-export class WatchRegistry extends DefaultRegistry {
+export class WatchRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;
@@ -45,7 +45,7 @@ export class WatchRegistry extends DefaultRegistry {
           "static"
         ].concat(this.config.watch?.tasks);
 
-        watchableTasks.forEach((taskName) => {
+        for (const taskName of watchableTasks) {
           const taskConfig = this.config[taskName];
           const taskPath = getTaskPathFor(taskName, this.pathConfig);
 
@@ -62,7 +62,7 @@ export class WatchRegistry extends DefaultRegistry {
               task(taskName)
             );
           }
-        });
+        }
         watch(
           ["**/*.{json,mjs}"],
           { cwd: projectPath(this.pathConfig.src, this.pathConfig.data.src) },

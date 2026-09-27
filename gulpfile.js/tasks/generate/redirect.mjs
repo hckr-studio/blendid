@@ -2,13 +2,13 @@ import fs from "node:fs";
 import path from "node:path";
 import { Transform } from "node:stream";
 import debug from "gulp-debug";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
 import htmlmin from "#gulp-htmlmin-next";
 import nunjucksRender from "#gulp-nunjucks-render";
+import { logger } from "#lib/logger.mjs";
 import { cloneDeep } from "#lib/object.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
@@ -51,7 +51,7 @@ function generateHtmlFile(col) {
   });
 }
 
-export class GenerateRedirectsRegistry extends DefaultRegistry {
+export class GenerateRedirectsRegistry extends Registry {
   #ownTasks = new Set();
 
   constructor(config, pathConfig, mode) {

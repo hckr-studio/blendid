@@ -1,11 +1,12 @@
-import projectPath from "../lib/projectPath.mjs";
-import logger from "gulplog";
 import debug from "gulp-debug";
-import DefaultRegistry from "undertaker-registry";
+import { logger } from "#lib/logger.mjs";
+import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/nunjucks").Environment} Environment */
+/** @typedef {import("@types/gulp")} Undertaker */
 
-export class CloudflareRegistry extends DefaultRegistry {
+export class CloudflareRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;
@@ -20,6 +21,9 @@ export class CloudflareRegistry extends DefaultRegistry {
     };
   }
 
+  /**
+   * @param {Undertaker} taker
+   */
   init({ task, src, dest }) {
     if (!this.config) return;
     task("cloudflare-pages", () =>

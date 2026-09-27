@@ -1,10 +1,10 @@
-import DefaultRegistry from "undertaker-registry";
 import sizereport from "#gulp-sizereport";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class SizeReportRegistry extends DefaultRegistry {
+export class SizeReportRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

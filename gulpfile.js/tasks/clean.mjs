@@ -1,10 +1,10 @@
-import DefaultRegistry from "undertaker-registry";
 import { deleteAsync } from "del";
-import projectPath from "../lib/projectPath.mjs";
+import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class CleanRegistry extends DefaultRegistry {
+export class CleanRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

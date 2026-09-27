@@ -1,18 +1,18 @@
 import fs from "node:fs";
 import debug from "gulp-debug";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import { when } from "#gulp-if";
 import inject from "#gulp-inject";
 import revReplace from "#gulp-rev-rewrite";
+import { logger } from "#lib/logger.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 import { passthrough } from "#lib/stream.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
 // 4) Update asset references in HTML
 
-export class RevUpdateHtmlRegistry extends DefaultRegistry {
+export class RevUpdateHtmlRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

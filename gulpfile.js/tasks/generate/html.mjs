@@ -1,8 +1,6 @@
 import fs from "node:fs";
 import { Transform } from "node:stream";
 import debug from "gulp-debug";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import Vinyl from "vinyl";
 import data from "#gulp-data";
 import htmlmin from "#gulp-htmlmin-next";
@@ -11,8 +9,10 @@ import inject from "#gulp-inject";
 import nunjucksRender from "#gulp-nunjucks-render";
 import svgmin from "#gulp-svgmin";
 import svgstore from "#gulp-svgstore";
+import { logger } from "#lib/logger.mjs";
 import { cloneDeep } from "#lib/object.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 import {
   createDataFunction,
   createDataFunctionV2,
@@ -48,7 +48,7 @@ function generateHtmlFile(route, template) {
   });
 }
 
-export class GenerateHtmlRegistry extends DefaultRegistry {
+export class GenerateHtmlRegistry extends Registry {
   #ownTasks = new Set();
 
   constructor(config, pathConfig, mode) {

@@ -1,4 +1,4 @@
-gulpfile.js/**/*.test.m?js
+gulpfile.js/**/*.test.mjs
 gulpfile.js/**/test-fixtures/**/*
 gulpfile.js/**/expected/**/*
 biome.json

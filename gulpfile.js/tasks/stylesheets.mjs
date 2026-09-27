@@ -1,13 +1,13 @@
 import debug from "gulp-debug";
 import postcss from "gulp-postcss";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
+import { logger } from "#lib/logger.mjs";
 import getPostCSSPlugins from "#lib/postCSS.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class StyleSheetsRegistry extends DefaultRegistry {
+export class StyleSheetsRegistry extends Registry {
   constructor(config, pathConfig, mode) {
     super();
     this.config = config;

@@ -1,11 +1,11 @@
 import { styleText } from "node:util";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
+import { logger } from "#lib/logger.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class InitConfigRegistry extends DefaultRegistry {
+export class InitConfigRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

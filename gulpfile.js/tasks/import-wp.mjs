@@ -2,9 +2,9 @@ import { existsSync } from "node:fs";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { parseArgs, styleText } from "node:util";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
+import { logger } from "#lib/logger.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 async function fetchObjects(objectType, url) {
   const hostname = new URL(url).hostname;
@@ -132,7 +132,7 @@ async function importPosts(url, dest, options) {
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class ImportWPRegistry extends DefaultRegistry {
+export class ImportWPRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;
@@ -154,7 +154,7 @@ export class ImportWPRegistry extends DefaultRegistry {
   /**
    * @param {Undertaker} taker
    */
-  init({ task, src }) {
+  init({ task }) {
     task("import-wp", async () => {
       if (this.args.pages) {
         const dest = {

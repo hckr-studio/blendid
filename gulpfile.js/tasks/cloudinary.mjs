@@ -2,10 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 import changed from "gulp-changed";
 import debug from "gulp-debug";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import cloudinaryUpload, { manifest } from "#gulp-cloudinary-upload";
-import projectPath from "../lib/projectPath.mjs";
+import { logger } from "#lib/logger.mjs";
+import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
@@ -17,7 +17,7 @@ function readManifest(path) {
     .catch(() => null);
 }
 
-export class CloudinaryRegistry extends DefaultRegistry {
+export class CloudinaryRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

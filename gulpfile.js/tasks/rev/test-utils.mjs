@@ -1,7 +1,7 @@
 import assert from "node:assert";
 import fs from "node:fs";
 import { PassThrough } from "node:stream";
-import DefaultRegistry from "undertaker-registry";
+import { Registry } from "#lib/registry.mjs";
 
 const originalInitCwd = process.env.INIT_CWD;
 
@@ -67,7 +67,7 @@ export function cleanupTestEnv(testDir) {
  * @param {Object} mockPathConfig - Expected pathConfig
  */
 export function assertRegistryBasics(registry, mockConfig, mockPathConfig) {
-  assert.ok(registry instanceof DefaultRegistry);
+  assert.ok(registry instanceof Registry);
   assert.deepStrictEqual(registry.config, mockConfig);
   assert.deepStrictEqual(registry.pathConfig, mockPathConfig);
 }

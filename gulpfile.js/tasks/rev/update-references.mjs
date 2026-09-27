@@ -1,15 +1,15 @@
 import fs from "node:fs";
 import debug from "gulp-debug";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import revReplace from "#gulp-rev-rewrite";
+import { logger } from "#lib/logger.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
 // 2) Update asset references with reved filenames in compiled css + js
 
-export class RevUpdateReferencesRegistry extends DefaultRegistry {
+export class RevUpdateReferencesRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

@@ -1,14 +1,14 @@
 import debug from "gulp-debug";
 import merge from "gulp-merge-json";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import markdownToJSON from "#gulp-markdown-to-json";
+import { logger } from "#lib/logger.mjs";
 import { marked } from "#lib/markdown.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class GenerateJsonRegistry extends DefaultRegistry {
+export class GenerateJsonRegistry extends Registry {
   #ownTasks = new Set();
 
   constructor(config, pathConfig) {

@@ -1,13 +1,13 @@
 import debug from "gulp-debug";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
 import rev from "#gulp-rev";
 import revdel from "#gulp-rev-delete-original";
+import { logger } from "#lib/logger.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class RevAssetsRegistry extends DefaultRegistry {
+export class RevAssetsRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

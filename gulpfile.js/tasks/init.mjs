@@ -1,8 +1,8 @@
 import { Readable } from "node:stream";
 import { styleText } from "node:util";
-import logger from "gulplog";
-import DefaultRegistry from "undertaker-registry";
+import { logger } from "#lib/logger.mjs";
 import projectPath from "#lib/projectPath.mjs";
+import { Registry } from "#lib/registry.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
@@ -14,7 +14,7 @@ async function* merge(streams) {
   }
 }
 
-export class InitRegistry extends DefaultRegistry {
+export class InitRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;

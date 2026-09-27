@@ -17,8 +17,10 @@
     "./tasks/*.mjs": "./gulpfile.js/tasks/*.mjs",
     "./front-matter": "./gulpfile.js/lib/front-matter.mjs",
     "./lqip": "./gulpfile.js/lib/lqip.mjs",
+    "./logger": "./gulpfile.js/lib/logger.mjs",
     "./marked": "./gulpfile.js/lib/markdown.mjs",
     "./project-path": "./gulpfile.js/lib/projectPath.mjs",
+    "./registry": "./gulpfile.js/lib/registry.mjs",
     "./stream": "./gulpfile.js/lib/stream.mjs",
     "./texy": "./gulpfile.js/lib/texy.mjs"
   },

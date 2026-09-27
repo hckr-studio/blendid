@@ -1,14 +1,14 @@
-import DefaultRegistry from "undertaker-registry";
+import { Registry } from "#lib/registry.mjs";
 import { RevAssetsRegistry } from "./rev/assets.mjs";
 import { RevCodeRegistry } from "./rev/code.mjs";
 import { RevImportmapsCodeRegistry } from "./rev/importmaps-code.mjs";
-import { RevUpdateReferencesRegistry } from "./rev/update-references.mjs";
 import { RevUpdateHtmlRegistry } from "./rev/update-html.mjs";
 import { RevUpdateJsRegistry } from "./rev/update-js.mjs";
+import { RevUpdateReferencesRegistry } from "./rev/update-references.mjs";
 
 /** @typedef {import("@types/gulp")} Undertaker */
 
-export class RevRegistry extends DefaultRegistry {
+export class RevRegistry extends Registry {
   constructor(config, pathConfig) {
     super();
     this.config = config;
