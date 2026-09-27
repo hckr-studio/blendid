@@ -213,6 +213,7 @@ export function getTaskDefaults(mode) {
 
     production: {
       rev: {
+        importmap: false,
         exclude: ["_headers", "_redirects"]
       }
     },
