@@ -1,11 +1,11 @@
-import type { ConfigOptions } from "cloudinary";
+import type { ConfigOptions, v2 } from "cloudinary";
 import type { BuildOptions } from "esbuild";
-import type { pluginOptions } from "postcss-preset-env/dist/index";
 import type { AcceptedPlugin } from "postcss";
-import type { ResolvedConfig } from "vite";
+import type { pluginOptions } from "postcss-preset-env";
+import type * as File from "vinyl";
 import type { BufferFile } from "vinyl";
 import type { SrcOptions } from "vinyl-fs";
-import type * as File from "vinyl";
+import type { ResolvedConfig } from "vite";
 
 export interface TaskConfig {
   images?: boolean | ImagesTask;
@@ -48,7 +48,7 @@ interface CloudinaryTask extends Task {
   getMetadata?: (
     file: BufferFile
   ) => Promise<{ lqip: null | number } | undefined>;
-  setup?: (cloudinary) => Promise<void>;
+  setup?: (cloudinary: typeof v2) => Promise<void>;
 }
 
 interface EsbuildTask extends Task {
