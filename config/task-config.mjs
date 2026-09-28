@@ -1,4 +1,4 @@
-import { texyTypography } from "@hckr_/blendid/lib/texy.mjs";
+import { texyTypography } from "@hckr_/blendid/texy";
 
 /**
  * @param {Record<string, *>} pathConfig
