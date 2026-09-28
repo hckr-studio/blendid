@@ -996,8 +996,6 @@ __metadata:
     "@gryphoon/texy": "npm:1.0.0"
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
-    "@types/undertaker": "npm:1.2.12"
-    "@types/undertaker-registry": "npm:1.0.4"
     "@vitejs/plugin-basic-ssl": "npm:2.3.0"
     cli-table: "npm:0.3.11"
     cloudinary: "npm:2.11.0"
@@ -1033,7 +1031,6 @@ __metadata:
     sharp: "npm:0.35.4"
     sort-keys: "npm:6.0.1"
     svgo: "npm:4.1.0"
-    undertaker-registry: "npm:2.0.0"
     vinyl: "npm:3.0.1"
     vinyl-file: "npm:5.0.0"
     vinyl-fs: "npm:4.0.2"
@@ -1563,14 +1560,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/undertaker-registry@npm:*, @types/undertaker-registry@npm:1.0.4":
+"@types/undertaker-registry@npm:*":
   version: 1.0.4
   resolution: "@types/undertaker-registry@npm:1.0.4"
   checksum: 10/7df9a9d7d2aee6b0d66aca0e3b6d00e2b067339a507dc0c268b8a5b30c94ea56c76ecb22aec9c93697300b26a1fb6f1f56a3a475b903c13221168b5117c4f55a
   languageName: node
   linkType: hard
 
-"@types/undertaker@npm:1.2.12, @types/undertaker@npm:>=1.2.6":
+"@types/undertaker@npm:>=1.2.6":
   version: 1.2.12
   resolution: "@types/undertaker@npm:1.2.12"
   dependencies:
@@ -5190,7 +5187,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undertaker-registry@npm:2.0.0, undertaker-registry@npm:^2.0.0":
+"undertaker-registry@npm:^2.0.0":
   version: 2.0.0
   resolution: "undertaker-registry@npm:2.0.0"
   checksum: 10/c1ebb4b72eeacf563a583f5928e7cee7a71391b0f33d5bac939fbb4e3ea1f00298850ca2449776f18e4c2eab8c57434327fc826f3ca43061cce22471bdf3604e

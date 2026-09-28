@@ -85,7 +85,6 @@
     "sharp": "0.35.4",
     "sort-keys": "6.0.1",
     "svgo": "4.1.0",
-    "undertaker-registry": "2.0.0",
     "vinyl": "3.0.1",
     "vinyl-file": "5.0.0",
     "vinyl-fs": "4.0.2",
@@ -94,8 +93,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
     "@types/gulp": "4.0.18",
-    "@types/undertaker": "1.2.12",
-    "@types/undertaker-registry": "1.0.4",
     "esbuild": "0.28.2"
   },
   "resolutions": {

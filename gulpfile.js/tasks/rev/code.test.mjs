@@ -2,7 +2,7 @@ import assert from "node:assert";
 import fs from "node:fs";
 import path from "node:path";
 import { afterEach, beforeEach, describe, it } from "node:test";
-import DefaultRegistry from "undertaker-registry";
+import { Registry } from "#lib/registry.mjs";
 import { passthrough } from "#lib/stream.mjs";
 import { RevCodeRegistry } from "./code.mjs";
 import {
@@ -34,8 +34,8 @@ describe("RevCodeRegistry", () => {
   afterEach(cleanupTestEnv(testDir));
 
   describe("constructor", () => {
-    it("extends DefaultRegistry", () => {
-      assert.ok(registry instanceof DefaultRegistry);
+    it("extends Registry", () => {
+      assert.ok(registry instanceof Registry);
     });
 
     it("sets config and pathConfig", () => {
