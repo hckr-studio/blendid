@@ -997,7 +997,6 @@ __metadata:
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
     "@vitejs/plugin-basic-ssl": "npm:2.3.0"
-    cli-table: "npm:0.3.11"
     cloudinary: "npm:2.11.0"
     cssnano: "npm:9.0.5"
     del: "npm:8.0.1"
@@ -1933,15 +1932,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-table@npm:0.3.11":
-  version: 0.3.11
-  resolution: "cli-table@npm:0.3.11"
-  dependencies:
-    colors: "npm:1.0.3"
-  checksum: 10/1cf68fcc717cc7fa4a5fdac6722bcd756883201068a65a8a4550b800e9e6ae107c5b350821128d604cb3eb6a977619bc673e616ff402c3ddc179deb4d00626f7
-  languageName: node
-  linkType: hard
-
 "cliui@npm:^8.0.1":
   version: 8.0.1
   resolution: "cliui@npm:8.0.1"
@@ -1991,13 +1981,6 @@ __metadata:
   bin:
     color-support: bin.js
   checksum: 10/4bcfe30eea1498fe1cabc852bbda6c9770f230ea0e4faf4611c5858b1b9e4dde3730ac485e65f54ca182f4c50b626c1bea7c8441ceda47367a54a818c248aa7a
-  languageName: node
-  linkType: hard
-
-"colors@npm:1.0.3":
-  version: 1.0.3
-  resolution: "colors@npm:1.0.3"
-  checksum: 10/8d81835f217ffca6de6665c8dd9ed132c562d108d4ba842d638c7cb5f8127cff47cb1b54c6bbea49e22eaa7b56caee6b85278dde9c2564f8a0eaef161e028ae0
   languageName: node
   linkType: hard
 

@@ -52,7 +52,6 @@
     "@gryphoon/texy": "1.0.0",
     "@lokesh.dhakar/quantize": "1.4.0",
     "@vitejs/plugin-basic-ssl": "2.3.0",
-    "cli-table": "0.3.11",
     "cloudinary": "2.11.0",
     "cssnano": "9.0.5",
     "del": "8.0.1",

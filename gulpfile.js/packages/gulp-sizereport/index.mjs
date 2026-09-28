@@ -6,9 +6,9 @@ import {
   gzipSync,
   zstdCompressSync
 } from "node:zlib";
-import Table from "cli-table";
 import PluginError from "plugin-error";
 import prettyBytes from "pretty-bytes";
+import { Table } from "#lib/cli-table.mjs";
 
 const formatBuffer = (incoming) =>
   typeof incoming === "string" ? Buffer.from(incoming, "utf8") : incoming;
