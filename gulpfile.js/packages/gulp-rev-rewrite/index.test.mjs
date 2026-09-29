@@ -174,7 +174,6 @@ describe("gulp-rev-rewrite", () => {
     const files = await streamToPromise(stream);
     for (const file of files) {
       const contents = file.contents.toString();
-      console.log(contents);
       if (file.extname === ".html") {
         assert.strictEqual(contents.includes("css/style-81a53f7d04.css"), true);
         assert.strictEqual(contents.includes("image-d41d8cd98f.png"), false);
@@ -199,7 +198,6 @@ describe("gulp-rev-rewrite", () => {
     const files = await streamToPromise(stream);
     for (const file of files) {
       const contents = file.contents.toString();
-      console.log(contents);
       if (file.extname === ".html") {
         assert.strictEqual(
           contents.includes("assets/css/style-81a53f7d04.css"),

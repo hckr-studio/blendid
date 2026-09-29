@@ -5,6 +5,7 @@
   "license": "MIT",
   "main": "gulpfile.js/index.mjs",
   "homepage": "https://github.com/hckr-studio/blendid",
+  "funding": "https://github.com/sponsors/rarous",
   "repository": {
     "type": "git",
     "url": "git://github.com/hckr-studio/blendid.git"
@@ -39,7 +40,9 @@
     "#gulp-rev-rewrite": "./gulpfile.js/packages/gulp-rev-rewrite/index.mjs",
     "#gulp-sizereport": "./gulpfile.js/packages/gulp-sizereport/index.mjs",
     "#gulp-svgmin": "./gulpfile.js/packages/gulp-svgmin/index.mjs",
-    "#gulp-svgstore": "./gulpfile.js/packages/gulp-svgstore/index.mjs"
+    "#gulp-svgstore": "./gulpfile.js/packages/gulp-svgstore/index.mjs",
+    "#postcss-functions": "./gulpfile.js/packages/postcss-functions/index.mjs",
+    "#postcss-value-parser": "./gulpfile.js/packages/postcss-value-parser/index.mjs"
   },
   "scripts": {
     "start": "./bin/blendid.js",
@@ -75,7 +78,6 @@
     "ndarray-pixels": "5.2.0",
     "plugin-error": "2.0.1",
     "postcss": "8.5.28",
-    "postcss-functions": "4.0.2",
     "postcss-import": "17.0.0",
     "postcss-preset-env": "11.5.3",
     "pretty-bytes": "7.1.3",

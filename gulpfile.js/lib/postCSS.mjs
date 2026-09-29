@@ -1,8 +1,8 @@
 import postcssGamutMapping from "@csstools/postcss-gamut-mapping";
 import cssnano from "cssnano";
-import functions from "postcss-functions";
 import atImport from "postcss-import";
 import presetEnv from "postcss-preset-env";
+import functions from "#postcss-functions";
 
 function getPresetEnvConfig(config) {
   return Object.assign({ autoprefixer: config.autoprefixer }, config.presetEnv);

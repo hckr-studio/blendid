@@ -1,0 +1,60 @@
+/**
+ * Stringify a parsed CSS value node
+ * @param {Object} node - The node to stringify
+ * @param {Function} [custom] - Custom stringifier function
+ * @returns {string} The stringified node
+ */
+function stringifyNode(node, custom) {
+  const type = node.type;
+  const value = node.value;
+  let buf;
+  let customResult;
+
+  if (custom && (customResult = custom(node)) !== undefined) {
+    return customResult;
+  } else if (type === "word" || type === "space") {
+    return value;
+  } else if (type === "string") {
+    buf = node.quote || "";
+    return buf + value + (node.unclosed ? "" : buf);
+  } else if (type === "comment") {
+    return "/*" + value + (node.unclosed ? "" : "*/");
+  } else if (type === "div") {
+    return (node.before || "") + value + (node.after || "");
+  } else if (Array.isArray(node.nodes)) {
+    buf = stringify(node.nodes, custom);
+    if (type !== "function") {
+      return buf;
+    }
+    return (
+      value +
+      "(" +
+      (node.before || "") +
+      buf +
+      (node.after || "") +
+      (node.unclosed ? "" : ")")
+    );
+  }
+  return value;
+}
+
+/**
+ * Stringify parsed CSS value nodes back to a string
+ * @param {Array|Object} nodes - The node(s) to stringify
+ * @param {Function} [custom] - Custom stringifier function
+ * @returns {string} The stringified CSS value
+ */
+function stringify(nodes, custom) {
+  let result, i;
+
+  if (Array.isArray(nodes)) {
+    result = "";
+    for (i = nodes.length - 1; ~i; i -= 1) {
+      result = stringifyNode(nodes[i], custom) + result;
+    }
+    return result;
+  }
+  return stringifyNode(nodes, custom);
+}
+
+export default stringify;

@@ -1021,7 +1021,6 @@ __metadata:
     ndarray-pixels: "npm:5.2.0"
     plugin-error: "npm:2.0.1"
     postcss: "npm:8.5.28"
-    postcss-functions: "npm:4.0.2"
     postcss-import: "npm:17.0.0"
     postcss-preset-env: "npm:11.5.3"
     pretty-bytes: "npm:7.1.3"
@@ -3962,17 +3961,6 @@ __metadata:
   peerDependencies:
     postcss: ^8.1.0
   checksum: 10/738328282cf71750f6efc72d72017f938a6e76c9c49602aae4cc4337beac6d13e72a4ade608567293cb87cad2af502e6aaef652fdcc500e09b4aba38c3e32fc6
-  languageName: node
-  linkType: hard
-
-"postcss-functions@npm:4.0.2":
-  version: 4.0.2
-  resolution: "postcss-functions@npm:4.0.2"
-  dependencies:
-    postcss-value-parser: "npm:^4.0.0"
-  peerDependencies:
-    postcss: ^8.0.0
-  checksum: 10/2768cf1c059fe67a3088f08eeaf1dc649b170a57abe975a55317713160cb4c20d398aefe102651b3ac9c67291f5e2450444f21ca451a677fb0ee5392af8b74da
   languageName: node
   linkType: hard
 
