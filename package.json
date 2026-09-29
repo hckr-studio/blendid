@@ -1,6 +1,6 @@
 {
   "name": "@hckr_/blendid",
-  "version": "9.8.1",
+  "version": "9.8.2",
   "description": "A full featured configurable front-end asset pipeline and static site builder",
   "license": "MIT",
   "main": "gulpfile.js/index.mjs",
@@ -16,6 +16,7 @@
     "./lib/*.mjs": "./gulpfile.js/lib/*.mjs",
     "./packages/**/*.mjs": "./gulpfile.js/packages/**/*.mjs",
     "./tasks/*.mjs": "./gulpfile.js/tasks/*.mjs",
+    "./cli-table": "./gulpfile.js/lib/cli-table.mjs",
     "./front-matter": "./gulpfile.js/lib/front-matter.mjs",
     "./lqip": "./gulpfile.js/lib/lqip.mjs",
     "./logger": "./gulpfile.js/lib/logger.mjs",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.8.2
+
+- Moved in another bunch of unmaintained packages.
+
 ## 9.8.1
 
 - Added `logger` and `registry` exports
