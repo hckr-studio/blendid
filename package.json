@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@11ty/nunjucks": "4.0.0-alpha.3",
-    "@csstools/postcss-gamut-mapping": "3.0.12",
+    "@csstools/postcss-gamut-mapping": "3.0.13",
     "@gryphoon/texy": "1.0.0",
     "@lokesh.dhakar/quantize": "1.4.0",
     "@vitejs/plugin-basic-ssl": "2.3.0",

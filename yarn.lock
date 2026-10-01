@@ -127,6 +127,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@csstools/color-helpers@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "@csstools/color-helpers@npm:6.1.2"
+  checksum: 10/344d8638d853e8a31f059d8c647b5a45c90c05482c1e9d390b03041152747f8df7464f0c3eb3bf7bf2ac34338eca7807bf5971f5a8dd07299f56bdf2071df0fa
+  languageName: node
+  linkType: hard
+
 "@csstools/css-calc@npm:^3.4.0":
   version: 3.4.0
   resolution: "@csstools/css-calc@npm:3.4.0"
@@ -134,6 +141,16 @@ __metadata:
     "@csstools/css-parser-algorithms": ^4.0.0
     "@csstools/css-tokenizer": ^4.0.0
   checksum: 10/d015a7b70ed26ea1723f6e003fde1adf43f80a86c0823d7409b1d0cf79b42a44a6664d8bf2150017baa6f9bd3dc1a0ef6ca4e1e5f731b942335611c9ed66f917
+  languageName: node
+  linkType: hard
+
+"@csstools/css-calc@npm:^3.4.2":
+  version: 3.4.2
+  resolution: "@csstools/css-calc@npm:3.4.2"
+  peerDependencies:
+    "@csstools/css-parser-algorithms": ^4.0.2
+    "@csstools/css-tokenizer": ^4.0.2
+  checksum: 10/e48b2f365e6d3916e2d7bdca2b9d26ecaffd6070c6081d9b1e5d1830735413d0122e8cfecc1cecb44a3c8ec60834cf0c00ad8f1cde7851ca7cc09f30567add39
   languageName: node
   linkType: hard
 
@@ -150,6 +167,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@csstools/css-color-parser@npm:^4.2.4":
+  version: 4.2.5
+  resolution: "@csstools/css-color-parser@npm:4.2.5"
+  dependencies:
+    "@csstools/color-helpers": "npm:^6.1.2"
+    "@csstools/css-calc": "npm:^3.4.2"
+  peerDependencies:
+    "@csstools/css-parser-algorithms": ^4.0.2
+    "@csstools/css-tokenizer": ^4.0.2
+  checksum: 10/25a9f5dc43ffc5693b88886226d05e3a3b7a280192fc458f91e8461a6567be79370a026662c7f32bacf6872168aa5a0a4593496805bbe27925e869d685504308
+  languageName: node
+  linkType: hard
+
 "@csstools/css-parser-algorithms@npm:^4.0.0":
   version: 4.0.0
   resolution: "@csstools/css-parser-algorithms@npm:4.0.0"
@@ -159,10 +189,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@csstools/css-parser-algorithms@npm:^4.0.1":
+  version: 4.0.2
+  resolution: "@csstools/css-parser-algorithms@npm:4.0.2"
+  peerDependencies:
+    "@csstools/css-tokenizer": ^4.0.2
+  checksum: 10/10ece52dea89581cd3f9cc2406c2d4a6c90e7cfbd59d0dad7160aaaffb880d44dce20df2097e7d500d619b97a7db726d0dd90d33ba92b18eeb41a67c985ed60e
+  languageName: node
+  linkType: hard
+
 "@csstools/css-tokenizer@npm:^4.0.0, @csstools/css-tokenizer@npm:^4.0.1":
   version: 4.0.1
   resolution: "@csstools/css-tokenizer@npm:4.0.1"
   checksum: 10/2b434814f71c2d0ada19fc517df0089ef72a59b50f34d31abe3e923bec0371d1aba795c8dbecacfe6d0009da5512c80beaf30cabe91915beb2a450b17b30e49d
+  languageName: node
+  linkType: hard
+
+"@csstools/css-tokenizer@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "@csstools/css-tokenizer@npm:4.0.2"
+  checksum: 10/d01ac3d39fc699b61221237f11b281f3fe0e1c029581aa6733c894754eef2f6c4b077584acacdd37853ac4573e69d53ecd76db2db4898ed0da2466ae27758923
   languageName: node
   linkType: hard
 
@@ -349,7 +395,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-gamut-mapping@npm:3.0.12, @csstools/postcss-gamut-mapping@npm:^3.0.12":
+"@csstools/postcss-gamut-mapping@npm:3.0.13":
+  version: 3.0.13
+  resolution: "@csstools/postcss-gamut-mapping@npm:3.0.13"
+  dependencies:
+    "@csstools/css-color-parser": "npm:^4.2.4"
+    "@csstools/css-parser-algorithms": "npm:^4.0.1"
+    "@csstools/css-tokenizer": "npm:^4.0.2"
+  peerDependencies:
+    postcss: ^8.4
+  checksum: 10/fb67d3addb65fbe193b1ab735a454ac66f23a67346fcaea9858fa388720351d4b4c3d297ea5aef720aa001816955c8af697ff916aa1efa196ee3b8cb901fd7cd
+  languageName: node
+  linkType: hard
+
+"@csstools/postcss-gamut-mapping@npm:^3.0.12":
   version: 3.0.12
   resolution: "@csstools/postcss-gamut-mapping@npm:3.0.12"
   dependencies:
@@ -992,7 +1051,7 @@ __metadata:
   dependencies:
     "@11ty/nunjucks": "npm:4.0.0-alpha.3"
     "@biomejs/biome": "npm:2.5.14"
-    "@csstools/postcss-gamut-mapping": "npm:3.0.12"
+    "@csstools/postcss-gamut-mapping": "npm:3.0.13"
     "@gryphoon/texy": "npm:1.0.0"
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
