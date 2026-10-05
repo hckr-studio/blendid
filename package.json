@@ -90,7 +90,7 @@
     "vinyl": "3.0.1",
     "vinyl-file": "5.0.0",
     "vinyl-fs": "4.0.2",
-    "vite": "8.3.0"
+    "vite": "8.3.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
@@ -127,7 +127,7 @@
     "supports-color": "11.0.0",
     "svgo": "4.1.0",
     "vinyl": "3.0.1",
-    "vite": "8.3.0",
+    "vite": "8.3.2",
     "which": "7.0.0",
     "yallist": "5.0.0",
     "yargs": "17.7.3"
@@ -162,7 +162,7 @@
     "supports-color": "11.0.0",
     "svgo": "4.1.0",
     "vinyl": "3.0.1",
-    "vite": "8.3.0",
+    "vite": "8.3.2",
     "which": "7.0.0",
     "yallist": "5.0.0",
     "yargs": "17.7.3"
