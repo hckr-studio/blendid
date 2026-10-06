@@ -1056,6 +1056,7 @@ __metadata:
     minimatch: "npm:10.2.6"
     modify-filename: "npm:2.0.0"
     ndarray-pixels: "npm:5.2.0"
+    once: "npm:1.4.0"
     plugin-error: "npm:2.0.1"
     postcss: "npm:8.5.28"
     postcss-import: "npm:17.0.0"
@@ -3904,7 +3905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"once@npm:^1.4.0":
+"once@npm:1.4.0, once@npm:^1.4.0":
   version: 1.4.0
   resolution: "once@npm:1.4.0"
   dependencies:
