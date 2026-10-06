@@ -1,8 +1,11 @@
 import { texyTypography } from "@hckr_/blendid/texy";
 
+/** @typedef {import("./task-config.d.ts").Mode} Mode */
+/** @typedef {import("./task-config.d.ts").TaskConfig} TaskConfig */
+
 /**
  * @param {Record<string, *>} pathConfig
- * @param {{development: () => boolean, production: () => boolean}} mode
+ * @param {Mode} mode
  * @param {Boolean} verbose
  * @return {TaskConfig}
  */

@@ -1,3 +1,4 @@
+import type { Stream } from "node:stream";
 import type { ConfigOptions, v2 } from "cloudinary";
 import type { BuildOptions } from "esbuild";
 import type { AcceptedPlugin } from "postcss";
@@ -156,4 +157,9 @@ interface IGulpMergeJsonOptions {
    * @default false
    */
   json5?: boolean;
+}
+
+export interface Mode {
+  development: (stream: Stream) => boolean;
+  production: (stream: Stream) => boolean;
 }
