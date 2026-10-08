@@ -3718,10 +3718,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdn-data@npm:2.37.1":
-  version: 2.37.1
-  resolution: "mdn-data@npm:2.37.1"
-  checksum: 10/0a63b3066b98265b01556a68713b64185fe096363f57d08d652c9e6c936579b925ec3a0a36ce0c5bd9a19cabddde5d168977788912e341358e96fd91e657387b
+"mdn-data@npm:2.37.2":
+  version: 2.37.2
+  resolution: "mdn-data@npm:2.37.2"
+  checksum: 10/ad971b6c03a816f82da1be4051e59cb4d6a454467777dbe6c031dfb81628baf74306c8f9d71af239ffa62f5cf3546bd580b799320965f8dff230fa3d234f0b6f
   languageName: node
   linkType: hard
 
