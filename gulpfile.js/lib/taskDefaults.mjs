@@ -123,6 +123,9 @@ export function getTaskDefaults(mode) {
           },
           assetUrl,
           cloudinaryUrl,
+          cloudinaryFetch(img, opts = {}) {
+            return cloudinaryUrl(img, Object.assign({ type: "fetch" }, opts));
+          },
           parseUrl(input, base) {
             return URL.parse(input, base);
           },
