@@ -19,7 +19,7 @@
 </script>
 {% endmacro %}
 
-{% macro cloudinaryImage(image, images, width, height, alt, style, class="responsive", phoneWidth, phoneHeight, tabletWidth, title) -%}
+{% macro cloudinaryImage(images, image, width, height, alt, style, class="responsive", phoneWidth, phoneHeight, tabletWidth, title) -%}
   {% set imageUrl = images[image]["public_id"] %}
   {% set metadata = images[image].metadata %}
   {% set w = phoneWidth if phoneWidth else width %}
@@ -48,9 +48,8 @@
   </picture>
 {%- endmacro %}
 
-{% macro twitterCardImage(image, images) -%}
+{% macro ogImage(images, image) -%}
   {% set publicId = images[image]["public_id"] %}
-  <meta name="twitter:image" property="og:image"
-        content="{{ publicId | cloudinaryUrl(width=1200, height=630, crop="fill", dpr="1") }}">
+  <meta property="og:image" content="{{ publicId | cloudinaryUrl(width=1200, height=630, crop="fill", dpr="1") }}">
 {%- endmacro %}
 
