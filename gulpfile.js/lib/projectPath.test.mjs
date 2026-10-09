@@ -7,7 +7,7 @@ describe("projectPath", () => {
 
   before(() => {
     // Save the original environment variables
-    originalEnv = { ...process.env };
+    originalEnv = Object.assign({}, process.env);
 
     // Set the INIT_CWD environment variable to a known value
     process.env.INIT_CWD = "/home/user/project";
