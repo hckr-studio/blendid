@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import * as texy from "@gryphoon/texy";
 import gulp from "gulp";
 import debug from "gulp-debug";
 import data from "#gulp-data";
@@ -12,6 +13,7 @@ import svgstore from "#gulp-svgstore";
 import { logger } from "#lib/logger.mjs";
 import { marked } from "#lib/markdown.mjs";
 import { Markdown } from "#lib/nunjucksMarkdow.mjs";
+import { Texy } from "#lib/nunjucksTexy.mjs";
 import { cloneDeep } from "#lib/object.mjs";
 import projectPath from "#lib/projectPath.mjs";
 import { Registry } from "#lib/registry.mjs";
@@ -127,6 +129,7 @@ export function getNunjucksRenderOptions(config, pathConfig) {
       marked.use(...config.markedExtensions);
     }
     env.addExtension("markdown", new Markdown(env, marked.parse));
+    env.addExtension("texy", new Texy(env, texy.process));
     for (const key of Object.keys(globals)) {
       env.addGlobal(key, globals[key]);
     }
