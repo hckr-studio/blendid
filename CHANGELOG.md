@@ -1,5 +1,13 @@
 # Changelog
 
+## 9.9.0
+
+- Updated dependencies
+- Updated typedefs
+- Updated boilerplate layout
+- Added `cloudinaryFetch` Nunjucks filter
+- Added full support for Texy! in Nunjucks. You can use `{% texy %}` blocks for inline Texy markup or to import Texy files, same as Markdown.
+
 ## 9.8.2
 
 - Moved in another bunch of unmaintained packages.
