@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.9.1
+
+- Added Texy! configuration in `html` section.
+
 ## 9.9.0
 
 - Updated dependencies
