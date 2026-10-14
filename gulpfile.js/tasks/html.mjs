@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import * as texy from "@gryphoon/texy";
+import { Texy } from "@gryphoon/texy/Texy.js";
 import gulp from "gulp";
 import debug from "gulp-debug";
 import data from "#gulp-data";
@@ -12,8 +12,8 @@ import svgmin from "#gulp-svgmin";
 import svgstore from "#gulp-svgstore";
 import { logger } from "#lib/logger.mjs";
 import { marked } from "#lib/markdown.mjs";
-import { Markdown } from "#lib/nunjucksMarkdow.mjs";
-import { Texy } from "#lib/nunjucksTexy.mjs";
+import { Markdown as MarkdownExtension } from "#lib/nunjucksMarkdow.mjs";
+import { Texy as TexyExtension } from "#lib/nunjucksTexy.mjs";
 import { cloneDeep } from "#lib/object.mjs";
 import projectPath from "#lib/projectPath.mjs";
 import { Registry } from "#lib/registry.mjs";
@@ -118,6 +118,19 @@ export function getNunjucksRenderOptions(config, pathConfig) {
     path: customPath,
     ...nunjucksRenderOptions
   } = config.nunjucksRender;
+
+  const texy = new Texy();
+  if (typeof config.texy === "object") {
+    for (const [key, val] of Object.entries(config.texy)) {
+      if (typeof val === "object") {
+        for (const [k, v] of Object.entries(val)) {
+          texy[key][k] = v;
+        }
+      } else {
+        texy[key] = val;
+      }
+    }
+  }
   nunjucksRenderOptions.path = customPath ?? [
     projectPath(pathConfig.src, pathConfig.html.src)
   ];
@@ -128,8 +141,8 @@ export function getNunjucksRenderOptions(config, pathConfig) {
     if (Array.isArray(config.markedExtensions)) {
       marked.use(...config.markedExtensions);
     }
-    env.addExtension("markdown", new Markdown(env, marked.parse));
-    env.addExtension("texy", new Texy(env, texy.process));
+    env.addExtension("markdown", new MarkdownExtension(env, marked.parse));
+    env.addExtension("texy", new TexyExtension(env, texy.process.bind(texy)));
     for (const key of Object.keys(globals)) {
       env.addGlobal(key, globals[key]);
     }
