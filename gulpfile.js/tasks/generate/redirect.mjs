@@ -15,21 +15,22 @@ import { Registry } from "#lib/registry.mjs";
 async function createFile(item, { host, route }) {
   const [originalUrl, targetUrl] = route(item);
   const path = originalUrl.endsWith("/")
-    ? originalUrl + "index.html"
+    ? `${originalUrl}index.html`
     : originalUrl;
   return new Vinyl({
     path,
     contents: Buffer.from(
-      [
-        `<!DOCTYPE html>`,
-        `<meta charset=utf-8>`,
-        `<title>This page has been moved</title>`,
-        `<meta name=robots content=noindex>`,
-        `<meta http-equiv=refresh content="0;url={{host}}{{targetUrl}}">`,
-        `<link rel=canonical href="{{host}}{{targetUrl}}">`,
-        `<script>window.location.replace(new URL("{{targetUrl}}", "{{host}}"));</script>`,
-        `<p>This page has been moved to <a href="{{host}}{{targetUrl}}">{{host}}{{targetUrl}}</a>`
-      ].join("")
+      `<!DOCTYPE html>
+<html lang=en>
+<meta charset=utf-8>
+<title>This page has been moved</title>
+<meta name=robots content=noindex>
+<meta http-equiv=refresh content="0;url={{host}}{{targetUrl}}">
+<link rel=canonical href="{{host}}{{targetUrl}}">
+<script>window.location.replace(new URL("{{targetUrl}}", "{{host}}"));</script>
+<p>This page has been moved to <a href="{{host}}{{targetUrl}}">{{host}}{{targetUrl}}</a>
+</html>`,
+      "utf-8"
     ),
     data: { host, targetUrl }
   });
