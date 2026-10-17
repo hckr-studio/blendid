@@ -51,7 +51,7 @@
     "test": "INIT_CWD=. node --test ./gulpfile.js/**/*.test.mjs"
   },
   "dependencies": {
-    "@11ty/nunjucks": "4.0.0-alpha.3",
+    "@11ty/nunjucks": "4.0.0-alpha.4",
     "@csstools/postcss-gamut-mapping": "3.0.15",
     "@gryphoon/texy": "2.0.2",
     "@lokesh.dhakar/quantize": "1.4.0",

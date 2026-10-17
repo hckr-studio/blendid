@@ -5,10 +5,10 @@ __metadata:
   version: 10
   cacheKey: 10
 
-"@11ty/nunjucks@npm:4.0.0-alpha.3":
-  version: 4.0.0-alpha.3
-  resolution: "@11ty/nunjucks@npm:4.0.0-alpha.3"
-  checksum: 10/d3948d0425bef6e0a8a694a4f5184a8910bb17c896e509c1e1eb16ba868a067f886ecb5a63b39c63dc73595664e956b3fee3a0a7e71b873a15f84eeaf7b42b16
+"@11ty/nunjucks@npm:4.0.0-alpha.4":
+  version: 4.0.0-alpha.4
+  resolution: "@11ty/nunjucks@npm:4.0.0-alpha.4"
+  checksum: 10/ebda9447f7745605652abe7450361c31adf5842dd631ce5e7be5a45353de027afd206c39f4f990b1c0a5240c41107c1e94a7c94163367e2fb5edc5744c531d95
   languageName: node
   linkType: hard
 
@@ -1029,7 +1029,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hckr_/blendid@workspace:."
   dependencies:
-    "@11ty/nunjucks": "npm:4.0.0-alpha.3"
+    "@11ty/nunjucks": "npm:4.0.0-alpha.4"
     "@biomejs/biome": "npm:2.5.15"
     "@csstools/postcss-gamut-mapping": "npm:3.0.15"
     "@gryphoon/texy": "npm:2.0.2"
