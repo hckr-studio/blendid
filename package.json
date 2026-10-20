@@ -58,7 +58,7 @@
     "@vitejs/plugin-basic-ssl": "2.3.0",
     "cloudinary": "2.11.0",
     "cssnano": "9.8.0",
-    "del": "8.0.1",
+    "del": "9.0.1",
     "gulp": "5.0.1",
     "gulp-changed": "5.0.4",
     "gulp-debug": "5.0.1",
