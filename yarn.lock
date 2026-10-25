@@ -2152,10 +2152,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:1.0.30001814":
-  version: 1.0.30001814
-  resolution: "caniuse-lite@npm:1.0.30001814"
-  checksum: 10/387fa630eeb43c9a6ff5e669da4cc3010b611bfb43118ffa4d6ff89374b6245e95643bb4ca20058caf7d5ab3e46cf87f4a3f05346cc85ad23631618a5295754d
+"caniuse-lite@npm:1.0.30001819":
+  version: 1.0.30001819
+  resolution: "caniuse-lite@npm:1.0.30001819"
+  checksum: 10/3ddcc8c96dab52d87c76caee88afd2409b0e66b4b67c9ce9dfe98b84a16b90f1d931ea0c31f52693d45b4318aaa25965b75ab51c1f12d03e261531d716cb34cd
   languageName: node
   linkType: hard
 
