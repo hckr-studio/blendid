@@ -1942,10 +1942,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"argparse@npm:3.0.2":
-  version: 3.0.2
-  resolution: "argparse@npm:3.0.2"
-  checksum: 10/83731af2299db686e8fc9b161cd73e89ff692b7582f2496da9729afe91b5fe7b9cf40611a713de737cd08f8f3897d3e30c2d0458ab3932ddf43cb76766ab8d16
+"argparse@npm:3.0.4":
+  version: 3.0.4
+  resolution: "argparse@npm:3.0.4"
+  checksum: 10/682c0e8ff7a17b86bc48f46b83977f3207f70bef1e1bbe8653db92bf9860388536ff1728709b805f8df8ff4b561cfaec4bf912614b4c152acd05036fa22eb267
   languageName: node
   linkType: hard
 
