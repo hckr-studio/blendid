@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.9.2
+
+- Updated dependencies
+- Texy! Modifier supports RDFa
+
 ## 9.9.1
 
 - Added Texy! configuration in `html` section.
