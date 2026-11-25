@@ -3776,10 +3776,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdn-data@npm:2.37.2":
-  version: 2.37.2
-  resolution: "mdn-data@npm:2.37.2"
-  checksum: 10/ad971b6c03a816f82da1be4051e59cb4d6a454467777dbe6c031dfb81628baf74306c8f9d71af239ffa62f5cf3546bd580b799320965f8dff230fa3d234f0b6f
+"mdn-data@npm:2.38.1":
+  version: 2.38.1
+  resolution: "mdn-data@npm:2.38.1"
+  checksum: 10/534c10ac432ed023fc9e6d2ca2ad7d7b8093b69e7d96ee7907f783a77dd447cbce1a53aec5cedb16a34b35c44467c2370d849e18211e6806ac18616f43acd301
   languageName: node
   linkType: hard
 
