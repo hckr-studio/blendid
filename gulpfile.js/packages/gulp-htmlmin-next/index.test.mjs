@@ -55,7 +55,7 @@ describe("gulp-htmlmin", () => {
         resolve(import.meta.dirname, "expected/normal.html"),
         "utf8"
       );
-      const stream = minify();
+      const stream = minify({ minifyJSON: true });
       const files = [];
       stream.on("data", (file) => files.push(file));
       stream.write(fakeFile);
@@ -72,7 +72,7 @@ describe("gulp-htmlmin", () => {
         resolve(import.meta.dirname, "expected/collapse.html"),
         "utf8"
       );
-      const stream = minify({ collapseWhitespace: true });
+      const stream = minify({ collapseWhitespace: true, minifyJSON: true });
       const files = [];
       stream.on("data", (file) => files.push(file));
       stream.write(fakeFile);

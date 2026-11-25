@@ -145,6 +145,7 @@ export function getTaskDefaults(mode) {
         collapseBooleanAttributes: true,
         decodeEntities: true,
         minifyCSS: true,
+        minifyJSON: true,
         removeAttributeQuotes: true,
         removeOptionalTags: true,
         removeRedundantAttributes: true
