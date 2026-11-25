@@ -1178,7 +1178,7 @@ __metadata:
     gulp-merge-json: "npm:2.2.2"
     gulp-postcss: "npm:10.0.0"
     gulplog: "npm:2.2.0"
-    html-minifier-next: "npm:8.11.0"
+    html-minifier-next: "npm:9.1.2"
     istextorbinary: "npm:9.5.0"
     js-yaml: "npm:5.5.0"
     linkedom: "npm:0.18.15"
@@ -2705,10 +2705,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^8.0.0, entities@npm:^8.1.0":
+"entities@npm:^8.0.0":
   version: 8.1.0
   resolution: "entities@npm:8.1.0"
   checksum: 10/bd2fadbcabcf2cbd5de6b8155289acec9394d004fc095b9c7b3fdb4135468d8823a6de12275b07085e5dc077a142ede24e71098ffeb064000312d2a6960330a2
+  languageName: node
+  linkType: hard
+
+"entities@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "entities@npm:9.0.0"
+  checksum: 10/bbb55a5c7e701f484fd0fbf6d9ffc9748b6eac9d27cdf73d18a1917e18efc0d8cf747bbd363018921fd0c3fa7f8fc6d2940bfa751363a2194c90840acc9dc716
   languageName: node
   linkType: hard
 
@@ -3307,12 +3314,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-minifier-next@npm:8.11.0":
-  version: 8.11.0
-  resolution: "html-minifier-next@npm:8.11.0"
+"html-minifier-next@npm:9.1.2":
+  version: 9.1.2
+  resolution: "html-minifier-next@npm:9.1.2"
   dependencies:
     commander: "npm:^15.0.0"
-    entities: "npm:^8.1.0"
+    entities: "npm:^9.0.0"
     lightningcss: "npm:^1.33.0"
     svgo: "npm:^4.1.0"
     terser: "npm:^5.51.2"
@@ -3324,7 +3331,7 @@ __metadata:
   bin:
     hmn: cli.js
     html-minifier-next: cli.js
-  checksum: 10/d515c952a59041dc6142c8d501ba068d926475d3837e7f485f7c6069cacd1e0780d102f7e83bd37a19687993f4ce5e4adbacd517bb4f571051bb670fa980e653
+  checksum: 10/b205362066bc9254f6f272ae50cc66ee87b0eeca6256eed8fd52324ad8fc5eaf1befa204248f34ee4b039db62964b93b1bde72f8ebfb37453d6da6c6d5afe2c9
   languageName: node
   linkType: hard
 
