@@ -10,8 +10,13 @@ jobs:
     resource_class: arm.medium
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
+      - node/install
+      - run:
+          name: Enable Corepack
+          command: |
+            npm install -g corepack
+            corepack enable --install-directory="/home/circleci/bin"
+      - node/install-yarn
       - node/install-packages:
           pkg-manager: yarn-berry
           with-cache: false
@@ -28,8 +33,13 @@ jobs:
     resource_class: arm.medium
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
+      - node/install
+      - run:
+          name: Enable Corepack
+          command: |
+            npm install -g corepack
+            corepack enable --install-directory="/home/circleci/bin"
+      - node/install-yarn
       - node/install-packages:
           pkg-manager: yarn-berry
           with-cache: false
