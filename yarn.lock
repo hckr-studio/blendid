@@ -448,20 +448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-gamut-mapping@npm:3.0.16":
-  version: 3.0.16
-  resolution: "@csstools/postcss-gamut-mapping@npm:3.0.16"
-  dependencies:
-    "@csstools/css-color-parser": "npm:^4.2.7"
-    "@csstools/css-parser-algorithms": "npm:^4.0.2"
-    "@csstools/css-tokenizer": "npm:^4.0.2"
-  peerDependencies:
-    postcss: ^8.4
-  checksum: 10/937b5d66a1486d3a044842a6b101dcc552ec0152dcd30eccdf59c4acf69328dc62205ea26f8e8de36a73d27af4bc4a8059e902dff4842325a3ea34d407031403
-  languageName: node
-  linkType: hard
-
-"@csstools/postcss-gamut-mapping@npm:^3.0.17":
+"@csstools/postcss-gamut-mapping@npm:3.0.17, @csstools/postcss-gamut-mapping@npm:^3.0.17":
   version: 3.0.17
   resolution: "@csstools/postcss-gamut-mapping@npm:3.0.17"
   dependencies:
@@ -1134,7 +1121,7 @@ __metadata:
   dependencies:
     "@11ty/nunjucks": "npm:4.0.0-alpha.4"
     "@biomejs/biome": "npm:2.6.4"
-    "@csstools/postcss-gamut-mapping": "npm:3.0.16"
+    "@csstools/postcss-gamut-mapping": "npm:3.0.17"
     "@gryphoon/texy": "npm:4.0.0"
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
