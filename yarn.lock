@@ -12,13 +12,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acemir/cssom@npm:^0.9.32":
-  version: 0.9.32
-  resolution: "@acemir/cssom@npm:0.9.32"
-  checksum: 10/ad7d3cdd55fc72b90f535fe5512c00392e72405476ac2a38b5784493aba0819c6050ec465f2da540489fe6d04e19cb817c16e3bcdfd7b3e63717f759ad31a9ca
-  languageName: node
-  linkType: hard
-
 "@biomejs/biome@npm:2.6.4":
   version: 2.6.4
   resolution: "@biomejs/biome@npm:2.6.4"
@@ -1110,12 +1103,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gryphoon/texy@npm:2.1.0":
-  version: 2.1.0
-  resolution: "@gryphoon/texy@npm:2.1.0"
+"@gryphoon/texy@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@gryphoon/texy@npm:4.0.0"
   dependencies:
-    linkedom: "npm:0.18.14"
-  checksum: 10/20b6c51d708ed4b73b75351c6e2037d286fbfec6128efb9f35f61cac3e32d1bab62d23ccaaa6d0030b716a6311cfc5074d6f7c621cb8c1359e48a997af75b9f0
+    linkedom: "npm:0.18.15"
+  checksum: 10/e2222020f3d95b9c779945c7b6e4887c2866451b01d032c87f3b6bec7564922d00eef41a14af4096dad9f5a94cfaf32d68caa7fb33e5d07a56480da4c05b5ff7
   languageName: node
   linkType: hard
 
@@ -1142,7 +1135,7 @@ __metadata:
     "@11ty/nunjucks": "npm:4.0.0-alpha.4"
     "@biomejs/biome": "npm:2.6.4"
     "@csstools/postcss-gamut-mapping": "npm:3.0.16"
-    "@gryphoon/texy": "npm:2.1.0"
+    "@gryphoon/texy": "npm:4.0.0"
     "@lokesh.dhakar/quantize": "npm:1.4.0"
     "@types/gulp": "npm:4.0.18"
     "@vitejs/plugin-basic-ssl": "npm:2.3.0"
@@ -3696,24 +3689,6 @@ __metadata:
   version: 3.1.3
   resolution: "lilconfig@npm:3.1.3"
   checksum: 10/b932ce1af94985f0efbe8896e57b1f814a48c8dbd7fc0ef8469785c6303ed29d0090af3ccad7e36b626bfca3a4dc56cc262697e9a8dd867623cf09a39d54e4c3
-  languageName: node
-  linkType: hard
-
-"linkedom@npm:0.18.14":
-  version: 0.18.14
-  resolution: "linkedom@npm:0.18.14"
-  dependencies:
-    "@acemir/cssom": "npm:^0.9.32"
-    css-select: "npm:^7.0.0"
-    html-escaper: "npm:^3.0.3"
-    htmlparser2: "npm:^10.1.0"
-    uhyphen: "npm:^0.2.0"
-  peerDependencies:
-    canvas: ">= 2"
-  peerDependenciesMeta:
-    canvas:
-      optional: true
-  checksum: 10/bbc21d8597c0e055b4f60b082563cbff8ad536b6ef576326a9b15f050735ffc4ad144a2883c7444bac0b52c346261ffe67dc9def5690b001f5f8248b9cd95c8a
   languageName: node
   linkType: hard
 
