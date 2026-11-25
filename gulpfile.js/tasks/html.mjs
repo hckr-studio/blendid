@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { Texy } from "@gryphoon/texy/Texy.js";
+import { process } from "@gryphoon/texy";
 import gulp from "gulp";
 import debug from "gulp-debug";
 import data from "#gulp-data";
@@ -119,18 +119,6 @@ export function getNunjucksRenderOptions(config, pathConfig) {
     ...nunjucksRenderOptions
   } = config.nunjucksRender;
 
-  const texy = new Texy();
-  if (typeof config.texy === "object") {
-    for (const [key, val] of Object.entries(config.texy)) {
-      if (typeof val === "object") {
-        for (const [k, v] of Object.entries(val)) {
-          texy[key][k] = v;
-        }
-      } else {
-        texy[key] = val;
-      }
-    }
-  }
   nunjucksRenderOptions.path = customPath ?? [
     projectPath(pathConfig.src, pathConfig.html.src)
   ];
@@ -142,7 +130,12 @@ export function getNunjucksRenderOptions(config, pathConfig) {
       marked.use(...config.markedExtensions);
     }
     env.addExtension("markdown", new MarkdownExtension(env, marked.parse));
-    env.addExtension("texy", new TexyExtension(env, texy.process.bind(texy)));
+    env.addExtension(
+      "texy",
+      new TexyExtension(env, (text, config) =>
+        process(text, Object.assign({}, config.texy, config))
+      )
+    );
     for (const key of Object.keys(globals)) {
       env.addGlobal(key, globals[key]);
     }
