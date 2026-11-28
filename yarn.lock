@@ -2025,10 +2025,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:1.0.30001827":
-  version: 1.0.30001827
-  resolution: "caniuse-lite@npm:1.0.30001827"
-  checksum: 10/4aed17531cf81db2da612214b7f26932e68435ef2a5747df9bad47bbb648ab498b44c0f32021c6d0bdd4fc98f3a6e9a076ff19e6bb91279b9462008e903fe56c
+"caniuse-lite@npm:1.0.30001828":
+  version: 1.0.30001828
+  resolution: "caniuse-lite@npm:1.0.30001828"
+  checksum: 10/c5f7c046700a3ad0cbb56231e5a8cede0a91333674707b28843b7b0f12f2dd3a2b5a6f33fed5094281f7e8105b8fa797331bcbe33f89bcac0eb78f6ba0b2e7ef
   languageName: node
   linkType: hard
 
