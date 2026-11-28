@@ -2772,12 +2772,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob-parent@npm:6.0.2":
-  version: 6.0.2
-  resolution: "glob-parent@npm:6.0.2"
+"glob-parent@npm:7.0.0":
+  version: 7.0.0
+  resolution: "glob-parent@npm:7.0.0"
   dependencies:
-    is-glob: "npm:^4.0.3"
-  checksum: 10/c13ee97978bef4f55106b71e66428eb1512e71a7466ba49025fc2aec59a5bfb0954d5abd58fc5ee6c9b076eef4e1f6d3375c2e964b88466ca390da4419a786a8
+    minimatch: "npm:10.2.6"
+  checksum: 10/cae2f67a620705bbf07f5eab1a3d60be3cfd45e0f625792eefd3818b00a95c919f93d8154734d6ba3f21ce640d16eba19cc3aa10fe0a306991296d1c02d1a722
   languageName: node
   linkType: hard
 
